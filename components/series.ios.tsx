@@ -6,7 +6,7 @@ export default function SeriesScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
-        /explore
+        /series
       </Text>
     </View>
   );

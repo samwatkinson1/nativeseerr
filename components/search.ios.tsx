@@ -1,17 +1,18 @@
-import { useTheme } from "@react-navigation/core";
-import { StyleSheet, Text, View } from "react-native";
+import { ContentUnavailableView, Host } from "@expo/ui/swift-ui";
+import { useLocalSearchParams } from "expo-router";
 
 export default function SearchScreen() {
-  const { colors, fonts } = useTheme();
+  const { query } = useLocalSearchParams<{ query: string }>();
+
+  if (!query) return null;
+
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
-        /search
-      </Text>
-    </View>
+    <Host style={{ flex: 1 }}>
+      <ContentUnavailableView
+        systemImage="magnifyingglass"
+        title={`No Results for "${query}"`}
+        description="Check the spelling and try again."
+      />
+    </Host>
   );
 }
-
-const styles = StyleSheet.create({
-  body: { fontSize: 17, lineHeight: 22 },
-});
