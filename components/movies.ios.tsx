@@ -1,9 +1,17 @@
-import { Host, Text } from "@expo/ui/swift-ui";
+import { useTheme } from "@react-navigation/core";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function MoviesScreen() {
+  const { colors, fonts } = useTheme();
   return (
-    <Host style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text color="black">/movies</Text>
-    </Host>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
+        /movies
+      </Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  body: { fontSize: 17, lineHeight: 22 },
+});
