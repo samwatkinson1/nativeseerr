@@ -10,6 +10,9 @@
     "newArchEnabled": true,
     "ios": {
       "bundleIdentifier": "io.samw.nativeseerr",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
       "supportsTablet": false
     },
     "android": {
