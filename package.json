@@ -8,7 +8,8 @@
     "android": "expo run:android",
     "preios": "rm -rf ios",
     "ios": "expo run:ios",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "openapi-ts": "openapi-ts"
   },
   "dependencies": {
     "@expo/ui": "~0.2.0-beta.7",
@@ -39,9 +40,11 @@
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0",
     "react-native-web": "~0.21.0",
-    "react-native-worklets": "0.5.1"
+    "react-native-worklets": "0.5.1",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@hey-api/openapi-ts": "0.85.2",
     "@types/react": "~19.1.0",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~10.0.0",

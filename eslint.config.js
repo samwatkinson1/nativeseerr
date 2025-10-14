@@ -7,7 +7,7 @@ const unusedImports = require("eslint-plugin-unused-imports");
 module.exports = defineConfig([
   expoConfig,
   {
-    ignores: ["dist/*"],
+    ignores: ["dist/*", "http/gen/*"],
     plugins: { "simple-import-sort": sis, "unused-imports": unusedImports },
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
