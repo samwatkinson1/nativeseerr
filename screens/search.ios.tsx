@@ -1,5 +1,6 @@
 import { ContentUnavailableView, Host } from "@expo/ui/swift-ui";
 import { useLocalSearchParams } from "expo-router";
+import { StyleSheet } from "react-native";
 
 export default function SearchScreen() {
   const { query } = useLocalSearchParams<{ query: string }>();
@@ -7,7 +8,7 @@ export default function SearchScreen() {
   if (!query) return null;
 
   return (
-    <Host style={{ flex: 1 }}>
+    <Host style={styles.container}>
       <ContentUnavailableView
         systemImage="magnifyingglass"
         title={`No Results for "${query}"`}
@@ -16,3 +17,7 @@ export default function SearchScreen() {
     </Host>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
+});

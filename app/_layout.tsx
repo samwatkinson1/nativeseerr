@@ -1,5 +1,9 @@
-import { ThemeProvider } from "@react-navigation/core";
-import { DarkTheme, DefaultTheme } from "@react-navigation/native";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+  useTheme,
+} from "@react-navigation/native";
 import {
   focusManager,
   onlineManager,
@@ -7,13 +11,37 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import * as Network from "expo-network";
-import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
+import { Stack } from "expo-router";
 import { useEffect } from "react";
-import { AppState, Platform, useColorScheme } from "react-native";
+import { AppState, LogBox, Platform, useColorScheme } from "react-native";
+
+import { client } from "@/http/gen/client.gen";
+import { mapHttpErrors } from "@/http/interceptors";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { experimental_prefetchInRender: true } },
 });
+
+client.interceptors.error.use(mapHttpErrors);
+// fixme: disable logbox until expo-router handles suspense better
+LogBox.uninstall();
+
+function App() {
+  const { colors } = useTheme();
+
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen
+        name="login"
+        options={{
+          presentation: "formSheet",
+          contentStyle: { backgroundColor: colors.card },
+        }}
+      />
+    </Stack>
+  );
+}
 
 export default function RootLayout() {
   const scheme = useColorScheme();
@@ -37,35 +65,7 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={scheme === "dark" ? DarkTheme : DefaultTheme}>
-        <NativeTabs>
-          <NativeTabs.Trigger name="discover">
-            <Label>Discover</Label>
-            {Platform.select({
-              ios: <Icon sf="sparkles" />,
-            })}
-          </NativeTabs.Trigger>
-          <NativeTabs.Trigger name="movies">
-            <Label>Movies</Label>
-            {Platform.select({
-              ios: <Icon sf={{ default: "film", selected: "film.fill" }} />,
-            })}
-          </NativeTabs.Trigger>
-          <NativeTabs.Trigger name="series">
-            <Label>Series</Label>
-            {Platform.select({
-              ios: <Icon sf={{ default: "tv", selected: "tv.fill" }} />,
-            })}
-          </NativeTabs.Trigger>
-          <NativeTabs.Trigger name="requests">
-            <Label>Requests</Label>
-            {Platform.select({
-              ios: <Icon sf={{ default: "clock", selected: "clock.fill" }} />,
-            })}
-          </NativeTabs.Trigger>
-          <NativeTabs.Trigger name="search" role="search">
-            <Label>Search</Label>
-          </NativeTabs.Trigger>
-        </NativeTabs>
+        <App />
       </ThemeProvider>
     </QueryClientProvider>
   );

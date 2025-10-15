@@ -1,17 +1,18 @@
 import { useTheme } from "@react-navigation/core";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function RequestsScreen() {
+export default function MoviesScreen() {
   const { colors, fonts } = useTheme();
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View style={styles.container}>
       <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
-        /requests
+        /movies
       </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
   body: { fontSize: 17, lineHeight: 22 },
 });

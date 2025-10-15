@@ -3,10 +3,18 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Suspense, use } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
-function DiscoverList({ query }: { query: UseQueryResult }) {
+import { GetSettingsDiscoverResponse } from "@/http/gen";
+import { getSettingsDiscoverOptions } from "@/http/gen/@tanstack/react-query.gen";
+
+function DiscoverList({
+  query,
+}: {
+  query: UseQueryResult<GetSettingsDiscoverResponse>;
+}) {
   const { colors, fonts } = useTheme();
 
-  const _data = use(query.promise);
+  const _ = use(query.promise);
+  console.log(_);
 
   return (
     <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
@@ -16,17 +24,11 @@ function DiscoverList({ query }: { query: UseQueryResult }) {
 }
 
 export default function DiscoverScreen() {
-  const query = useQuery({
-    queryKey: ["settings", "discover"],
-    queryFn: async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-      return res.json();
-    },
-  });
+  const query = useQuery({ ...getSettingsDiscoverOptions() });
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Suspense fallback={<ActivityIndicator size="large" />}>
+    <View style={styles.container}>
+      <Suspense fallback={<ActivityIndicator size="small" />}>
         <DiscoverList query={query} />
       </Suspense>
     </View>
@@ -34,5 +36,6 @@ export default function DiscoverScreen() {
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
   body: { fontSize: 17, lineHeight: 22 },
 });
