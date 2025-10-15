@@ -19,7 +19,9 @@ import { client } from "@/http/gen/client.gen";
 import { mapHttpErrors } from "@/http/interceptors";
 
 const queryClient = new QueryClient({
-  defaultOptions: { queries: { experimental_prefetchInRender: true } },
+  defaultOptions: {
+    queries: { experimental_prefetchInRender: true, retry: false },
+  },
 });
 
 client.interceptors.error.use(mapHttpErrors);
