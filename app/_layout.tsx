@@ -23,8 +23,8 @@ const queryClient = new QueryClient({
 });
 
 client.interceptors.error.use(mapHttpErrors);
-// fixme: disable logbox until expo-router handles suspense better
-LogBox.uninstall();
+
+LogBox.uninstall(); // fixme: disable logbox until expo-router handles suspense better
 
 function App() {
   const { colors } = useTheme();
