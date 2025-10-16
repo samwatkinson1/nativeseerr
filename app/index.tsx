@@ -12,13 +12,13 @@ function RedirectToDiscover({
   query: UseQueryResult<GetAuthMeResponse>;
 }) {
   const data = use(query.promise);
-  return <Redirect href={!data ? "/login" : "/discover"} />;
+  return <Redirect href={!data ? "/login/jellyfin" : "/discover"} />;
 }
 
 export function ErrorBoundary() {
   useFocusEffect(
     useCallback(() => {
-      router.navigate("/login");
+      router.navigate("/login/jellyfin");
     }, [])
   );
 

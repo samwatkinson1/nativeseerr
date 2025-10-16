@@ -1,9 +1,4 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-  useTheme,
-} from "@react-navigation/native";
+import { ThemeProvider } from "@react-navigation/native";
 import {
   focusManager,
   onlineManager,
@@ -15,6 +10,7 @@ import { Stack } from "expo-router";
 import { useEffect } from "react";
 import { AppState, LogBox, Platform, useColorScheme } from "react-native";
 
+import { DarkTheme, DefaultTheme } from "@/const/theme";
 import { client } from "@/http/gen/client.gen";
 import { mapHttpErrors } from "@/http/interceptors";
 
@@ -27,23 +23,6 @@ const queryClient = new QueryClient({
 client.interceptors.error.use(mapHttpErrors);
 
 LogBox.uninstall(); // fixme: disable logbox until expo-router handles suspense better
-
-function App() {
-  const { colors } = useTheme();
-
-  return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen
-        name="login"
-        options={{
-          presentation: "formSheet",
-          contentStyle: { backgroundColor: colors.card },
-        }}
-      />
-    </Stack>
-  );
-}
 
 export default function RootLayout() {
   const scheme = useColorScheme();
@@ -67,7 +46,16 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={scheme === "dark" ? DarkTheme : DefaultTheme}>
-        <App />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen
+            name="login"
+            options={{
+              presentation: "formSheet",
+              contentStyle: { height: "100%" },
+            }}
+          />
+        </Stack>
       </ThemeProvider>
     </QueryClientProvider>
   );
