@@ -8,8 +8,7 @@
     "android": "expo run:android",
     "preios": "rm -rf ios",
     "ios": "expo run:ios",
-    "lint": "expo lint",
-    "openapi-ts": "openapi-ts"
+    "lint": "expo lint"
   },
   "dependencies": {
     "@expo/ui": "~0.2.0-canary-20251015-a6a1272",
@@ -17,6 +16,7 @@
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
+    "@tanstack/react-form": "^1.23.7",
     "@tanstack/react-query": "^5.90.3",
     "expo": "~54.0.13",
     "expo-constants": "~18.0.9",
@@ -27,6 +27,7 @@
     "expo-linking": "~8.0.8",
     "expo-network": "~8.0.7",
     "expo-router": "~6.0.11",
+    "expo-secure-store": "~15.0.7",
     "expo-splash-screen": "~31.0.10",
     "expo-status-bar": "~3.0.8",
     "expo-symbols": "~1.0.7",

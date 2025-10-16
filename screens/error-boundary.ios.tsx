@@ -3,14 +3,14 @@ import { ErrorBoundaryProps, router, useFocusEffect } from "expo-router";
 import { useCallback } from "react";
 import { StyleSheet } from "react-native";
 
-import { UnauthorizedError } from "@/http/errors";
+import { HttpError, UnauthorizedError } from "@/http/errors";
 
 // todo: generic error messaging
 export default function ErrorBoundary({ error }: ErrorBoundaryProps) {
   useFocusEffect(
     useCallback(() => {
       if (error instanceof UnauthorizedError) {
-        router.navigate("/login");
+        router.navigate("/login/jellyfin");
       }
     }, [error])
   );
@@ -19,8 +19,8 @@ export default function ErrorBoundary({ error }: ErrorBoundaryProps) {
     <Host style={styles.container}>
       <ContentUnavailableView
         systemImage="slash.circle"
-        title="Not logged in"
-        description="Login with your Seerr account to continue."
+        title={(error as HttpError).title}
+        description={(error as HttpError).message}
       />
     </Host>
   );

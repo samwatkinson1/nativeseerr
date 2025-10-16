@@ -10,6 +10,7 @@
     "newArchEnabled": true,
     "platforms": ["ios", "android"],
     "ios": {
+      "appleTeamId": "AQW92S5L9V",
       "bundleIdentifier": "io.samw.nativeseerr",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -41,7 +42,8 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,

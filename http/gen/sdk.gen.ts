@@ -4,7 +4,6 @@ import type { Client, Options as Options2, TDataShape } from './client';
 import { client } from './client.gen';
 import { getCollectionByCollectionIdResponseTransformer, getDiscoverKeywordByKeywordIdMoviesResponseTransformer, getDiscoverMoviesGenreByGenreIdResponseTransformer, getDiscoverMoviesLanguageByLanguageResponseTransformer, getDiscoverMoviesResponseTransformer, getDiscoverMoviesStudioByStudioIdResponseTransformer, getDiscoverMoviesUpcomingResponseTransformer, getDiscoverTrendingResponseTransformer, getDiscoverTvGenreByGenreIdResponseTransformer, getDiscoverTvLanguageByLanguageResponseTransformer, getDiscoverTvNetworkByNetworkIdResponseTransformer, getDiscoverTvResponseTransformer, getDiscoverTvUpcomingResponseTransformer, getIssueByIssueIdResponseTransformer, getIssueResponseTransformer, getMediaResponseTransformer, getMovieByMovieIdRecommendationsResponseTransformer, getMovieByMovieIdResponseTransformer, getMovieByMovieIdSimilarResponseTransformer, getPersonByPersonIdCombinedCreditsResponseTransformer, getRequestByRequestIdResponseTransformer, getRequestResponseTransformer, getSearchResponseTransformer, getTvByTvIdRecommendationsResponseTransformer, getTvByTvIdResponseTransformer, getTvByTvIdSimilarResponseTransformer, getUserByUserIdRequestsResponseTransformer, getUserByUserIdWatchDataResponseTransformer, postIssueByIssueIdByStatusResponseTransformer, postIssueByIssueIdCommentResponseTransformer, postIssueResponseTransformer, postMediaByMediaIdByStatusResponseTransformer, postRequestByRequestIdByStatusResponseTransformer, postRequestByRequestIdRetryResponseTransformer, postRequestResponseTransformer, postWatchlistResponseTransformer, putRequestByRequestIdResponseTransformer } from './transformers.gen';
 import type { DeleteBlacklistByTmdbIdData, DeleteBlacklistByTmdbIdResponses, DeleteIssueByIssueIdData, DeleteIssueByIssueIdResponses, DeleteIssueCommentByCommentIdData, DeleteIssueCommentByCommentIdResponses, DeleteMediaByMediaIdData, DeleteMediaByMediaIdFileData, DeleteMediaByMediaIdFileResponses, DeleteMediaByMediaIdResponses, DeleteOverrideRuleByRuleIdData, DeleteOverrideRuleByRuleIdResponses, DeleteRequestByRequestIdData, DeleteRequestByRequestIdResponses, DeleteSettingsDiscoverBySliderIdData, DeleteSettingsDiscoverBySliderIdResponses, DeleteSettingsRadarrByRadarrIdData, DeleteSettingsRadarrByRadarrIdResponses, DeleteSettingsSonarrBySonarrIdData, DeleteSettingsSonarrBySonarrIdResponses, DeleteUserByUserIdData, DeleteUserByUserIdPushSubscriptionByEndpointData, DeleteUserByUserIdPushSubscriptionByEndpointResponses, DeleteUserByUserIdResponses, DeleteUserByUserIdSettingsLinkedAccountsJellyfinData, DeleteUserByUserIdSettingsLinkedAccountsJellyfinErrors, DeleteUserByUserIdSettingsLinkedAccountsJellyfinResponses, DeleteUserByUserIdSettingsLinkedAccountsPlexData, DeleteUserByUserIdSettingsLinkedAccountsPlexErrors, DeleteUserByUserIdSettingsLinkedAccountsPlexResponses, DeleteWatchlistByTmdbIdData, DeleteWatchlistByTmdbIdResponses, GetAuthMeData, GetAuthMeResponses, GetBackdropsData, GetBackdropsResponses, GetBlacklistByTmdbIdData, GetBlacklistByTmdbIdResponses, GetBlacklistData, GetBlacklistResponses, GetCertificationsMovieData, GetCertificationsMovieErrors, GetCertificationsMovieResponses, GetCertificationsTvData, GetCertificationsTvErrors, GetCertificationsTvResponses, GetCollectionByCollectionIdData, GetCollectionByCollectionIdResponses, GetDiscoverGenresliderMovieData, GetDiscoverGenresliderMovieResponses, GetDiscoverGenresliderTvData, GetDiscoverGenresliderTvResponses, GetDiscoverKeywordByKeywordIdMoviesData, GetDiscoverKeywordByKeywordIdMoviesResponses, GetDiscoverMoviesData, GetDiscoverMoviesGenreByGenreIdData, GetDiscoverMoviesGenreByGenreIdResponses, GetDiscoverMoviesLanguageByLanguageData, GetDiscoverMoviesLanguageByLanguageResponses, GetDiscoverMoviesResponses, GetDiscoverMoviesStudioByStudioIdData, GetDiscoverMoviesStudioByStudioIdResponses, GetDiscoverMoviesUpcomingData, GetDiscoverMoviesUpcomingResponses, GetDiscoverTrendingData, GetDiscoverTrendingResponses, GetDiscoverTvData, GetDiscoverTvGenreByGenreIdData, GetDiscoverTvGenreByGenreIdResponses, GetDiscoverTvLanguageByLanguageData, GetDiscoverTvLanguageByLanguageResponses, GetDiscoverTvNetworkByNetworkIdData, GetDiscoverTvNetworkByNetworkIdResponses, GetDiscoverTvResponses, GetDiscoverTvUpcomingData, GetDiscoverTvUpcomingResponses, GetDiscoverWatchlistData, GetDiscoverWatchlistResponses, GetGenresMovieData, GetGenresMovieResponses, GetGenresTvData, GetGenresTvResponses, GetIssueByIssueIdData, GetIssueByIssueIdResponses, GetIssueCommentByCommentIdData, GetIssueCommentByCommentIdResponses, GetIssueCountData, GetIssueCountResponses, GetIssueData, GetIssueResponses, GetKeywordByKeywordIdData, GetKeywordByKeywordIdErrors, GetKeywordByKeywordIdResponses, GetLanguagesData, GetLanguagesResponses, GetMediaByMediaIdWatchDataData, GetMediaByMediaIdWatchDataResponses, GetMediaData, GetMediaResponses, GetMovieByMovieIdData, GetMovieByMovieIdRatingscombinedData, GetMovieByMovieIdRatingscombinedResponses, GetMovieByMovieIdRatingsData, GetMovieByMovieIdRatingsResponses, GetMovieByMovieIdRecommendationsData, GetMovieByMovieIdRecommendationsResponses, GetMovieByMovieIdResponses, GetMovieByMovieIdSimilarData, GetMovieByMovieIdSimilarResponses, GetNetworkByNetworkIdData, GetNetworkByNetworkIdResponses, GetOverrideRuleData, GetOverrideRuleResponses, GetPersonByPersonIdCombinedCreditsData, GetPersonByPersonIdCombinedCreditsResponses, GetPersonByPersonIdData, GetPersonByPersonIdResponses, GetRegionsData, GetRegionsResponses, GetRequestByRequestIdData, GetRequestByRequestIdResponses, GetRequestCountData, GetRequestCountResponses, GetRequestData, GetRequestResponses, GetSearchCompanyData, GetSearchCompanyResponses, GetSearchData, GetSearchKeywordData, GetSearchKeywordResponses, GetSearchResponses, GetServiceRadarrByRadarrIdData, GetServiceRadarrByRadarrIdResponses, GetServiceRadarrData, GetServiceRadarrResponses, GetServiceSonarrBySonarrIdData, GetServiceSonarrBySonarrIdResponses, GetServiceSonarrData, GetServiceSonarrLookupByTmdbIdData, GetServiceSonarrLookupByTmdbIdResponses, GetServiceSonarrResponses, GetSettingsAboutData, GetSettingsAboutResponses, GetSettingsCacheData, GetSettingsCacheResponses, GetSettingsDiscoverData, GetSettingsDiscoverResetData, GetSettingsDiscoverResetResponses, GetSettingsDiscoverResponses, GetSettingsJellyfinData, GetSettingsJellyfinLibraryData, GetSettingsJellyfinLibraryResponses, GetSettingsJellyfinResponses, GetSettingsJellyfinSyncData, GetSettingsJellyfinSyncResponses, GetSettingsJellyfinUsersData, GetSettingsJellyfinUsersResponses, GetSettingsJobsData, GetSettingsJobsResponses, GetSettingsLogsData, GetSettingsLogsResponses, GetSettingsMainData, GetSettingsMainResponses, GetSettingsNetworkData, GetSettingsNetworkResponses, GetSettingsNotificationsDiscordData, GetSettingsNotificationsDiscordResponses, GetSettingsNotificationsEmailData, GetSettingsNotificationsEmailResponses, GetSettingsNotificationsGotifyData, GetSettingsNotificationsGotifyResponses, GetSettingsNotificationsNtfyData, GetSettingsNotificationsNtfyResponses, GetSettingsNotificationsPushbulletData, GetSettingsNotificationsPushbulletResponses, GetSettingsNotificationsPushoverData, GetSettingsNotificationsPushoverResponses, GetSettingsNotificationsPushoverSoundsData, GetSettingsNotificationsPushoverSoundsResponses, GetSettingsNotificationsSlackData, GetSettingsNotificationsSlackResponses, GetSettingsNotificationsTelegramData, GetSettingsNotificationsTelegramResponses, GetSettingsNotificationsWebhookData, GetSettingsNotificationsWebhookResponses, GetSettingsNotificationsWebpushData, GetSettingsNotificationsWebpushResponses, GetSettingsPlexData, GetSettingsPlexDevicesServersData, GetSettingsPlexDevicesServersResponses, GetSettingsPlexLibraryData, GetSettingsPlexLibraryResponses, GetSettingsPlexResponses, GetSettingsPlexSyncData, GetSettingsPlexSyncResponses, GetSettingsPlexUsersData, GetSettingsPlexUsersResponses, GetSettingsPublicData, GetSettingsPublicResponses, GetSettingsRadarrByRadarrIdProfilesData, GetSettingsRadarrByRadarrIdProfilesResponses, GetSettingsRadarrData, GetSettingsRadarrResponses, GetSettingsSonarrData, GetSettingsSonarrResponses, GetSettingsTautulliData, GetSettingsTautulliResponses, GetStatusAppdataData, GetStatusAppdataResponses, GetStatusData, GetStatusResponses, GetStudioByStudioIdData, GetStudioByStudioIdResponses, GetTvByTvIdData, GetTvByTvIdRatingsData, GetTvByTvIdRatingsResponses, GetTvByTvIdRecommendationsData, GetTvByTvIdRecommendationsResponses, GetTvByTvIdResponses, GetTvByTvIdSeasonBySeasonIdData, GetTvByTvIdSeasonBySeasonIdResponses, GetTvByTvIdSimilarData, GetTvByTvIdSimilarResponses, GetUserByUserIdData, GetUserByUserIdPushSubscriptionByEndpointData, GetUserByUserIdPushSubscriptionByEndpointResponses, GetUserByUserIdPushSubscriptionsData, GetUserByUserIdPushSubscriptionsResponses, GetUserByUserIdQuotaData, GetUserByUserIdQuotaResponses, GetUserByUserIdRequestsData, GetUserByUserIdRequestsResponses, GetUserByUserIdResponses, GetUserByUserIdSettingsMainData, GetUserByUserIdSettingsMainResponses, GetUserByUserIdSettingsNotificationsData, GetUserByUserIdSettingsNotificationsResponses, GetUserByUserIdSettingsPasswordData, GetUserByUserIdSettingsPasswordResponses, GetUserByUserIdSettingsPermissionsData, GetUserByUserIdSettingsPermissionsResponses, GetUserByUserIdWatchDataData, GetUserByUserIdWatchDataResponses, GetUserByUserIdWatchlistData, GetUserByUserIdWatchlistResponses, GetUserData, GetUserResponses, GetWatchprovidersMoviesData, GetWatchprovidersMoviesResponses, GetWatchprovidersRegionsData, GetWatchprovidersRegionsResponses, GetWatchprovidersTvData, GetWatchprovidersTvResponses, PostAuthJellyfinData, PostAuthJellyfinResponses, PostAuthLocalData, PostAuthLocalResponses, PostAuthLogoutData, PostAuthLogoutResponses, PostAuthPlexData, PostAuthPlexResponses, PostAuthResetPasswordByGuidData, PostAuthResetPasswordByGuidResponses, PostAuthResetPasswordData, PostAuthResetPasswordResponses, PostBlacklistData, PostBlacklistErrors, PostBlacklistResponses, PostIssueByIssueIdByStatusData, PostIssueByIssueIdByStatusResponses, PostIssueByIssueIdCommentData, PostIssueByIssueIdCommentResponses, PostIssueData, PostIssueResponses, PostMediaByMediaIdByStatusData, PostMediaByMediaIdByStatusResponses, PostOverrideRuleData, PostOverrideRuleResponses, PostRequestByRequestIdByStatusData, PostRequestByRequestIdByStatusResponses, PostRequestByRequestIdRetryData, PostRequestByRequestIdRetryResponses, PostRequestData, PostRequestResponses, PostSettingsCacheByCacheIdFlushData, PostSettingsCacheByCacheIdFlushResponses, PostSettingsDiscoverAddData, PostSettingsDiscoverAddResponses, PostSettingsDiscoverData, PostSettingsDiscoverResponses, PostSettingsInitializeData, PostSettingsInitializeResponses, PostSettingsJellyfinData, PostSettingsJellyfinResponses, PostSettingsJellyfinSyncData, PostSettingsJellyfinSyncResponses, PostSettingsJobsByJobIdCancelData, PostSettingsJobsByJobIdCancelResponses, PostSettingsJobsByJobIdRunData, PostSettingsJobsByJobIdRunResponses, PostSettingsJobsByJobIdScheduleData, PostSettingsJobsByJobIdScheduleResponses, PostSettingsMainData, PostSettingsMainRegenerateData, PostSettingsMainRegenerateResponses, PostSettingsMainResponses, PostSettingsNetworkData, PostSettingsNetworkResponses, PostSettingsNotificationsDiscordData, PostSettingsNotificationsDiscordResponses, PostSettingsNotificationsDiscordTestData, PostSettingsNotificationsDiscordTestResponses, PostSettingsNotificationsEmailData, PostSettingsNotificationsEmailResponses, PostSettingsNotificationsEmailTestData, PostSettingsNotificationsEmailTestResponses, PostSettingsNotificationsGotifyData, PostSettingsNotificationsGotifyResponses, PostSettingsNotificationsGotifyTestData, PostSettingsNotificationsGotifyTestResponses, PostSettingsNotificationsNtfyData, PostSettingsNotificationsNtfyResponses, PostSettingsNotificationsNtfyTestData, PostSettingsNotificationsNtfyTestResponses, PostSettingsNotificationsPushbulletData, PostSettingsNotificationsPushbulletResponses, PostSettingsNotificationsPushbulletTestData, PostSettingsNotificationsPushbulletTestResponses, PostSettingsNotificationsPushoverData, PostSettingsNotificationsPushoverResponses, PostSettingsNotificationsPushoverTestData, PostSettingsNotificationsPushoverTestResponses, PostSettingsNotificationsSlackData, PostSettingsNotificationsSlackResponses, PostSettingsNotificationsSlackTestData, PostSettingsNotificationsSlackTestResponses, PostSettingsNotificationsTelegramData, PostSettingsNotificationsTelegramResponses, PostSettingsNotificationsTelegramTestData, PostSettingsNotificationsTelegramTestResponses, PostSettingsNotificationsWebhookData, PostSettingsNotificationsWebhookResponses, PostSettingsNotificationsWebhookTestData, PostSettingsNotificationsWebhookTestResponses, PostSettingsNotificationsWebpushData, PostSettingsNotificationsWebpushResponses, PostSettingsNotificationsWebpushTestData, PostSettingsNotificationsWebpushTestResponses, PostSettingsPlexData, PostSettingsPlexResponses, PostSettingsPlexSyncData, PostSettingsPlexSyncResponses, PostSettingsRadarrData, PostSettingsRadarrResponses, PostSettingsRadarrTestData, PostSettingsRadarrTestResponses, PostSettingsSonarrData, PostSettingsSonarrResponses, PostSettingsSonarrTestData, PostSettingsSonarrTestResponses, PostSettingsTautulliData, PostSettingsTautulliResponses, PostUserByUserIdSettingsLinkedAccountsJellyfinData, PostUserByUserIdSettingsLinkedAccountsJellyfinErrors, PostUserByUserIdSettingsLinkedAccountsJellyfinResponses, PostUserByUserIdSettingsLinkedAccountsPlexData, PostUserByUserIdSettingsLinkedAccountsPlexErrors, PostUserByUserIdSettingsLinkedAccountsPlexResponses, PostUserByUserIdSettingsMainData, PostUserByUserIdSettingsMainResponses, PostUserByUserIdSettingsNotificationsData, PostUserByUserIdSettingsNotificationsResponses, PostUserByUserIdSettingsPasswordData, PostUserByUserIdSettingsPasswordResponses, PostUserByUserIdSettingsPermissionsData, PostUserByUserIdSettingsPermissionsResponses, PostUserData, PostUserImportFromJellyfinData, PostUserImportFromJellyfinResponses, PostUserImportFromPlexData, PostUserImportFromPlexResponses, PostUserRegisterPushSubscriptionData, PostUserRegisterPushSubscriptionResponses, PostUserResponses, PostWatchlistData, PostWatchlistResponses, PutIssueCommentByCommentIdData, PutIssueCommentByCommentIdResponses, PutOverrideRuleByRuleIdData, PutOverrideRuleByRuleIdResponses, PutRequestByRequestIdData, PutRequestByRequestIdResponses, PutSettingsDiscoverBySliderIdData, PutSettingsDiscoverBySliderIdResponses, PutSettingsRadarrByRadarrIdData, PutSettingsRadarrByRadarrIdResponses, PutSettingsSonarrBySonarrIdData, PutSettingsSonarrBySonarrIdResponses, PutUserByUserIdData, PutUserByUserIdResponses, PutUserData, PutUserResponses } from './types.gen';
-import { zDeleteBlacklistByTmdbIdData, zDeleteBlacklistByTmdbIdResponse, zDeleteIssueByIssueIdData, zDeleteIssueByIssueIdResponse, zDeleteIssueCommentByCommentIdData, zDeleteIssueCommentByCommentIdResponse, zDeleteMediaByMediaIdData, zDeleteMediaByMediaIdFileData, zDeleteMediaByMediaIdFileResponse, zDeleteMediaByMediaIdResponse, zDeleteOverrideRuleByRuleIdData, zDeleteOverrideRuleByRuleIdResponse, zDeleteRequestByRequestIdData, zDeleteRequestByRequestIdResponse, zDeleteSettingsDiscoverBySliderIdData, zDeleteSettingsDiscoverBySliderIdResponse, zDeleteSettingsRadarrByRadarrIdData, zDeleteSettingsRadarrByRadarrIdResponse, zDeleteSettingsSonarrBySonarrIdData, zDeleteSettingsSonarrBySonarrIdResponse, zDeleteUserByUserIdData, zDeleteUserByUserIdPushSubscriptionByEndpointData, zDeleteUserByUserIdPushSubscriptionByEndpointResponse, zDeleteUserByUserIdResponse, zDeleteUserByUserIdSettingsLinkedAccountsJellyfinData, zDeleteUserByUserIdSettingsLinkedAccountsJellyfinResponse, zDeleteUserByUserIdSettingsLinkedAccountsPlexData, zDeleteUserByUserIdSettingsLinkedAccountsPlexResponse, zDeleteWatchlistByTmdbIdData, zDeleteWatchlistByTmdbIdResponse, zGetAuthMeData, zGetAuthMeResponse, zGetBackdropsData, zGetBackdropsResponse, zGetBlacklistByTmdbIdData, zGetBlacklistData, zGetBlacklistResponse, zGetCertificationsMovieData, zGetCertificationsMovieResponse, zGetCertificationsTvData, zGetCertificationsTvResponse, zGetCollectionByCollectionIdData, zGetCollectionByCollectionIdResponse, zGetDiscoverGenresliderMovieData, zGetDiscoverGenresliderMovieResponse, zGetDiscoverGenresliderTvData, zGetDiscoverGenresliderTvResponse, zGetDiscoverKeywordByKeywordIdMoviesData, zGetDiscoverKeywordByKeywordIdMoviesResponse, zGetDiscoverMoviesData, zGetDiscoverMoviesGenreByGenreIdData, zGetDiscoverMoviesGenreByGenreIdResponse, zGetDiscoverMoviesLanguageByLanguageData, zGetDiscoverMoviesLanguageByLanguageResponse, zGetDiscoverMoviesResponse, zGetDiscoverMoviesStudioByStudioIdData, zGetDiscoverMoviesStudioByStudioIdResponse, zGetDiscoverMoviesUpcomingData, zGetDiscoverMoviesUpcomingResponse, zGetDiscoverTrendingData, zGetDiscoverTrendingResponse, zGetDiscoverTvData, zGetDiscoverTvGenreByGenreIdData, zGetDiscoverTvGenreByGenreIdResponse, zGetDiscoverTvLanguageByLanguageData, zGetDiscoverTvLanguageByLanguageResponse, zGetDiscoverTvNetworkByNetworkIdData, zGetDiscoverTvNetworkByNetworkIdResponse, zGetDiscoverTvResponse, zGetDiscoverTvUpcomingData, zGetDiscoverTvUpcomingResponse, zGetDiscoverWatchlistData, zGetDiscoverWatchlistResponse, zGetGenresMovieData, zGetGenresMovieResponse, zGetGenresTvData, zGetGenresTvResponse, zGetIssueByIssueIdData, zGetIssueByIssueIdResponse, zGetIssueCommentByCommentIdData, zGetIssueCommentByCommentIdResponse, zGetIssueCountData, zGetIssueCountResponse, zGetIssueData, zGetIssueResponse, zGetKeywordByKeywordIdData, zGetKeywordByKeywordIdResponse, zGetLanguagesData, zGetLanguagesResponse, zGetMediaByMediaIdWatchDataData, zGetMediaByMediaIdWatchDataResponse, zGetMediaData, zGetMediaResponse, zGetMovieByMovieIdData, zGetMovieByMovieIdRatingscombinedData, zGetMovieByMovieIdRatingscombinedResponse, zGetMovieByMovieIdRatingsData, zGetMovieByMovieIdRatingsResponse, zGetMovieByMovieIdRecommendationsData, zGetMovieByMovieIdRecommendationsResponse, zGetMovieByMovieIdResponse, zGetMovieByMovieIdSimilarData, zGetMovieByMovieIdSimilarResponse, zGetNetworkByNetworkIdData, zGetNetworkByNetworkIdResponse, zGetOverrideRuleData, zGetOverrideRuleResponse, zGetPersonByPersonIdCombinedCreditsData, zGetPersonByPersonIdCombinedCreditsResponse, zGetPersonByPersonIdData, zGetPersonByPersonIdResponse, zGetRegionsData, zGetRegionsResponse, zGetRequestByRequestIdData, zGetRequestByRequestIdResponse, zGetRequestCountData, zGetRequestCountResponse, zGetRequestData, zGetRequestResponse, zGetSearchCompanyData, zGetSearchCompanyResponse, zGetSearchData, zGetSearchKeywordData, zGetSearchKeywordResponse, zGetSearchResponse, zGetServiceRadarrByRadarrIdData, zGetServiceRadarrByRadarrIdResponse, zGetServiceRadarrData, zGetServiceRadarrResponse, zGetServiceSonarrBySonarrIdData, zGetServiceSonarrBySonarrIdResponse, zGetServiceSonarrData, zGetServiceSonarrLookupByTmdbIdData, zGetServiceSonarrLookupByTmdbIdResponse, zGetServiceSonarrResponse, zGetSettingsAboutData, zGetSettingsAboutResponse, zGetSettingsCacheData, zGetSettingsCacheResponse, zGetSettingsDiscoverData, zGetSettingsDiscoverResetData, zGetSettingsDiscoverResetResponse, zGetSettingsDiscoverResponse, zGetSettingsJellyfinData, zGetSettingsJellyfinLibraryData, zGetSettingsJellyfinLibraryResponse, zGetSettingsJellyfinResponse, zGetSettingsJellyfinSyncData, zGetSettingsJellyfinSyncResponse, zGetSettingsJellyfinUsersData, zGetSettingsJellyfinUsersResponse, zGetSettingsJobsData, zGetSettingsJobsResponse, zGetSettingsLogsData, zGetSettingsLogsResponse, zGetSettingsMainData, zGetSettingsMainResponse, zGetSettingsNetworkData, zGetSettingsNetworkResponse, zGetSettingsNotificationsDiscordData, zGetSettingsNotificationsDiscordResponse, zGetSettingsNotificationsEmailData, zGetSettingsNotificationsEmailResponse, zGetSettingsNotificationsGotifyData, zGetSettingsNotificationsGotifyResponse, zGetSettingsNotificationsNtfyData, zGetSettingsNotificationsNtfyResponse, zGetSettingsNotificationsPushbulletData, zGetSettingsNotificationsPushbulletResponse, zGetSettingsNotificationsPushoverData, zGetSettingsNotificationsPushoverResponse, zGetSettingsNotificationsPushoverSoundsData, zGetSettingsNotificationsPushoverSoundsResponse, zGetSettingsNotificationsSlackData, zGetSettingsNotificationsSlackResponse, zGetSettingsNotificationsTelegramData, zGetSettingsNotificationsTelegramResponse, zGetSettingsNotificationsWebhookData, zGetSettingsNotificationsWebhookResponse, zGetSettingsNotificationsWebpushData, zGetSettingsNotificationsWebpushResponse, zGetSettingsPlexData, zGetSettingsPlexDevicesServersData, zGetSettingsPlexDevicesServersResponse, zGetSettingsPlexLibraryData, zGetSettingsPlexLibraryResponse, zGetSettingsPlexResponse, zGetSettingsPlexSyncData, zGetSettingsPlexSyncResponse, zGetSettingsPlexUsersData, zGetSettingsPlexUsersResponse, zGetSettingsPublicData, zGetSettingsPublicResponse, zGetSettingsRadarrByRadarrIdProfilesData, zGetSettingsRadarrByRadarrIdProfilesResponse, zGetSettingsRadarrData, zGetSettingsRadarrResponse, zGetSettingsSonarrData, zGetSettingsSonarrResponse, zGetSettingsTautulliData, zGetSettingsTautulliResponse, zGetStatusAppdataData, zGetStatusAppdataResponse, zGetStatusData, zGetStatusResponse, zGetStudioByStudioIdData, zGetStudioByStudioIdResponse, zGetTvByTvIdData, zGetTvByTvIdRatingsData, zGetTvByTvIdRatingsResponse, zGetTvByTvIdRecommendationsData, zGetTvByTvIdRecommendationsResponse, zGetTvByTvIdResponse, zGetTvByTvIdSeasonBySeasonIdData, zGetTvByTvIdSeasonBySeasonIdResponse, zGetTvByTvIdSimilarData, zGetTvByTvIdSimilarResponse, zGetUserByUserIdData, zGetUserByUserIdPushSubscriptionByEndpointData, zGetUserByUserIdPushSubscriptionByEndpointResponse, zGetUserByUserIdPushSubscriptionsData, zGetUserByUserIdPushSubscriptionsResponse, zGetUserByUserIdQuotaData, zGetUserByUserIdQuotaResponse, zGetUserByUserIdRequestsData, zGetUserByUserIdRequestsResponse, zGetUserByUserIdResponse, zGetUserByUserIdSettingsMainData, zGetUserByUserIdSettingsMainResponse, zGetUserByUserIdSettingsNotificationsData, zGetUserByUserIdSettingsNotificationsResponse, zGetUserByUserIdSettingsPasswordData, zGetUserByUserIdSettingsPasswordResponse, zGetUserByUserIdSettingsPermissionsData, zGetUserByUserIdSettingsPermissionsResponse, zGetUserByUserIdWatchDataData, zGetUserByUserIdWatchDataResponse, zGetUserByUserIdWatchlistData, zGetUserByUserIdWatchlistResponse, zGetUserData, zGetUserResponse, zGetWatchprovidersMoviesData, zGetWatchprovidersMoviesResponse, zGetWatchprovidersRegionsData, zGetWatchprovidersRegionsResponse, zGetWatchprovidersTvData, zGetWatchprovidersTvResponse, zPostAuthJellyfinData, zPostAuthJellyfinResponse, zPostAuthLocalData, zPostAuthLocalResponse, zPostAuthLogoutData, zPostAuthLogoutResponse, zPostAuthPlexData, zPostAuthPlexResponse, zPostAuthResetPasswordByGuidData, zPostAuthResetPasswordByGuidResponse, zPostAuthResetPasswordData, zPostAuthResetPasswordResponse, zPostBlacklistData, zPostIssueByIssueIdByStatusData, zPostIssueByIssueIdByStatusResponse, zPostIssueByIssueIdCommentData, zPostIssueByIssueIdCommentResponse, zPostIssueData, zPostIssueResponse, zPostMediaByMediaIdByStatusData, zPostMediaByMediaIdByStatusResponse, zPostOverrideRuleData, zPostOverrideRuleResponse, zPostRequestByRequestIdByStatusData, zPostRequestByRequestIdByStatusResponse, zPostRequestByRequestIdRetryData, zPostRequestByRequestIdRetryResponse, zPostRequestData, zPostRequestResponse, zPostSettingsCacheByCacheIdFlushData, zPostSettingsCacheByCacheIdFlushResponse, zPostSettingsDiscoverAddData, zPostSettingsDiscoverAddResponse, zPostSettingsDiscoverData, zPostSettingsDiscoverResponse, zPostSettingsInitializeData, zPostSettingsInitializeResponse, zPostSettingsJellyfinData, zPostSettingsJellyfinResponse, zPostSettingsJellyfinSyncData, zPostSettingsJellyfinSyncResponse, zPostSettingsJobsByJobIdCancelData, zPostSettingsJobsByJobIdCancelResponse, zPostSettingsJobsByJobIdRunData, zPostSettingsJobsByJobIdRunResponse, zPostSettingsJobsByJobIdScheduleData, zPostSettingsJobsByJobIdScheduleResponse, zPostSettingsMainData, zPostSettingsMainRegenerateData, zPostSettingsMainRegenerateResponse, zPostSettingsMainResponse, zPostSettingsNetworkData, zPostSettingsNetworkResponse, zPostSettingsNotificationsDiscordData, zPostSettingsNotificationsDiscordResponse, zPostSettingsNotificationsDiscordTestData, zPostSettingsNotificationsDiscordTestResponse, zPostSettingsNotificationsEmailData, zPostSettingsNotificationsEmailResponse, zPostSettingsNotificationsEmailTestData, zPostSettingsNotificationsEmailTestResponse, zPostSettingsNotificationsGotifyData, zPostSettingsNotificationsGotifyResponse, zPostSettingsNotificationsGotifyTestData, zPostSettingsNotificationsGotifyTestResponse, zPostSettingsNotificationsNtfyData, zPostSettingsNotificationsNtfyResponse, zPostSettingsNotificationsNtfyTestData, zPostSettingsNotificationsNtfyTestResponse, zPostSettingsNotificationsPushbulletData, zPostSettingsNotificationsPushbulletResponse, zPostSettingsNotificationsPushbulletTestData, zPostSettingsNotificationsPushbulletTestResponse, zPostSettingsNotificationsPushoverData, zPostSettingsNotificationsPushoverResponse, zPostSettingsNotificationsPushoverTestData, zPostSettingsNotificationsPushoverTestResponse, zPostSettingsNotificationsSlackData, zPostSettingsNotificationsSlackResponse, zPostSettingsNotificationsSlackTestData, zPostSettingsNotificationsSlackTestResponse, zPostSettingsNotificationsTelegramData, zPostSettingsNotificationsTelegramResponse, zPostSettingsNotificationsTelegramTestData, zPostSettingsNotificationsTelegramTestResponse, zPostSettingsNotificationsWebhookData, zPostSettingsNotificationsWebhookResponse, zPostSettingsNotificationsWebhookTestData, zPostSettingsNotificationsWebhookTestResponse, zPostSettingsNotificationsWebpushData, zPostSettingsNotificationsWebpushResponse, zPostSettingsNotificationsWebpushTestData, zPostSettingsNotificationsWebpushTestResponse, zPostSettingsPlexData, zPostSettingsPlexResponse, zPostSettingsPlexSyncData, zPostSettingsPlexSyncResponse, zPostSettingsRadarrData, zPostSettingsRadarrResponse, zPostSettingsRadarrTestData, zPostSettingsRadarrTestResponse, zPostSettingsSonarrData, zPostSettingsSonarrResponse, zPostSettingsSonarrTestData, zPostSettingsSonarrTestResponse, zPostSettingsTautulliData, zPostSettingsTautulliResponse, zPostUserByUserIdSettingsLinkedAccountsJellyfinData, zPostUserByUserIdSettingsLinkedAccountsJellyfinResponse, zPostUserByUserIdSettingsLinkedAccountsPlexData, zPostUserByUserIdSettingsLinkedAccountsPlexResponse, zPostUserByUserIdSettingsMainData, zPostUserByUserIdSettingsMainResponse, zPostUserByUserIdSettingsNotificationsData, zPostUserByUserIdSettingsNotificationsResponse, zPostUserByUserIdSettingsPasswordData, zPostUserByUserIdSettingsPasswordResponse, zPostUserByUserIdSettingsPermissionsData, zPostUserByUserIdSettingsPermissionsResponse, zPostUserData, zPostUserImportFromJellyfinData, zPostUserImportFromJellyfinResponse, zPostUserImportFromPlexData, zPostUserImportFromPlexResponse, zPostUserRegisterPushSubscriptionData, zPostUserRegisterPushSubscriptionResponse, zPostUserResponse, zPostWatchlistData, zPostWatchlistResponse, zPutIssueCommentByCommentIdData, zPutIssueCommentByCommentIdResponse, zPutOverrideRuleByRuleIdData, zPutOverrideRuleByRuleIdResponse, zPutRequestByRequestIdData, zPutRequestByRequestIdResponse, zPutSettingsDiscoverBySliderIdData, zPutSettingsDiscoverBySliderIdResponse, zPutSettingsRadarrByRadarrIdData, zPutSettingsRadarrByRadarrIdResponse, zPutSettingsSonarrBySonarrIdData, zPutSettingsSonarrBySonarrIdResponse, zPutUserByUserIdData, zPutUserByUserIdResponse, zPutUserData, zPutUserResponse } from './zod.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean> = Options2<TData, ThrowOnError> & {
     /**
@@ -27,12 +26,6 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
  */
 export const getStatus = <ThrowOnError extends boolean = false>(options?: Options<GetStatusData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetStatusResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetStatusData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetStatusResponse.parseAsync(data);
-        },
         url: '/status',
         ...options
     });
@@ -45,12 +38,6 @@ export const getStatus = <ThrowOnError extends boolean = false>(options?: Option
  */
 export const getStatusAppdata = <ThrowOnError extends boolean = false>(options?: Options<GetStatusAppdataData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetStatusAppdataResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetStatusAppdataData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetStatusAppdataResponse.parseAsync(data);
-        },
         url: '/status/appdata',
         ...options
     });
@@ -63,12 +50,6 @@ export const getStatusAppdata = <ThrowOnError extends boolean = false>(options?:
  */
 export const getSettingsMain = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsMainData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsMainResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsMainData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsMainResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -92,12 +73,6 @@ export const getSettingsMain = <ThrowOnError extends boolean = false>(options?: 
  */
 export const postSettingsMain = <ThrowOnError extends boolean = false>(options: Options<PostSettingsMainData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsMainResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsMainData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsMainResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -125,12 +100,6 @@ export const postSettingsMain = <ThrowOnError extends boolean = false>(options: 
  */
 export const getSettingsNetwork = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNetworkData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNetworkResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNetworkData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNetworkResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -154,12 +123,6 @@ export const getSettingsNetwork = <ThrowOnError extends boolean = false>(options
  */
 export const postSettingsNetwork = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNetworkData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNetworkResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNetworkData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNetworkResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -187,12 +150,6 @@ export const postSettingsNetwork = <ThrowOnError extends boolean = false>(option
  */
 export const postSettingsMainRegenerate = <ThrowOnError extends boolean = false>(options?: Options<PostSettingsMainRegenerateData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostSettingsMainRegenerateResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsMainRegenerateData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsMainRegenerateResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -216,12 +173,6 @@ export const postSettingsMainRegenerate = <ThrowOnError extends boolean = false>
  */
 export const getSettingsJellyfin = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsJellyfinData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsJellyfinResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsJellyfinData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsJellyfinResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -245,12 +196,6 @@ export const getSettingsJellyfin = <ThrowOnError extends boolean = false>(option
  */
 export const postSettingsJellyfin = <ThrowOnError extends boolean = false>(options: Options<PostSettingsJellyfinData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsJellyfinResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsJellyfinData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsJellyfinResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -278,12 +223,6 @@ export const postSettingsJellyfin = <ThrowOnError extends boolean = false>(optio
  */
 export const getSettingsJellyfinLibrary = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsJellyfinLibraryData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsJellyfinLibraryResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsJellyfinLibraryData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsJellyfinLibraryResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -307,12 +246,6 @@ export const getSettingsJellyfinLibrary = <ThrowOnError extends boolean = false>
  */
 export const getSettingsJellyfinUsers = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsJellyfinUsersData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsJellyfinUsersResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsJellyfinUsersData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsJellyfinUsersResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -336,12 +269,6 @@ export const getSettingsJellyfinUsers = <ThrowOnError extends boolean = false>(o
  */
 export const getSettingsJellyfinSync = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsJellyfinSyncData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsJellyfinSyncResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsJellyfinSyncData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsJellyfinSyncResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -365,12 +292,6 @@ export const getSettingsJellyfinSync = <ThrowOnError extends boolean = false>(op
  */
 export const postSettingsJellyfinSync = <ThrowOnError extends boolean = false>(options?: Options<PostSettingsJellyfinSyncData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostSettingsJellyfinSyncResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsJellyfinSyncData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsJellyfinSyncResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -398,12 +319,6 @@ export const postSettingsJellyfinSync = <ThrowOnError extends boolean = false>(o
  */
 export const getSettingsPlex = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsPlexData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsPlexResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsPlexData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsPlexResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -427,12 +342,6 @@ export const getSettingsPlex = <ThrowOnError extends boolean = false>(options?: 
  */
 export const postSettingsPlex = <ThrowOnError extends boolean = false>(options: Options<PostSettingsPlexData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsPlexResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsPlexData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsPlexResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -460,12 +369,6 @@ export const postSettingsPlex = <ThrowOnError extends boolean = false>(options: 
  */
 export const getSettingsPlexLibrary = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsPlexLibraryData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsPlexLibraryResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsPlexLibraryData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsPlexLibraryResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -489,12 +392,6 @@ export const getSettingsPlexLibrary = <ThrowOnError extends boolean = false>(opt
  */
 export const getSettingsPlexSync = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsPlexSyncData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsPlexSyncResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsPlexSyncData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsPlexSyncResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -518,12 +415,6 @@ export const getSettingsPlexSync = <ThrowOnError extends boolean = false>(option
  */
 export const postSettingsPlexSync = <ThrowOnError extends boolean = false>(options?: Options<PostSettingsPlexSyncData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostSettingsPlexSyncResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsPlexSyncData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsPlexSyncResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -551,12 +442,6 @@ export const postSettingsPlexSync = <ThrowOnError extends boolean = false>(optio
  */
 export const getSettingsPlexDevicesServers = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsPlexDevicesServersData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsPlexDevicesServersResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsPlexDevicesServersData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsPlexDevicesServersResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -583,12 +468,6 @@ export const getSettingsPlexDevicesServers = <ThrowOnError extends boolean = fal
  */
 export const getSettingsPlexUsers = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsPlexUsersData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsPlexUsersResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsPlexUsersData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsPlexUsersResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -612,12 +491,6 @@ export const getSettingsPlexUsers = <ThrowOnError extends boolean = false>(optio
  */
 export const getSettingsTautulli = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsTautulliData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsTautulliResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsTautulliData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsTautulliResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -641,12 +514,6 @@ export const getSettingsTautulli = <ThrowOnError extends boolean = false>(option
  */
 export const postSettingsTautulli = <ThrowOnError extends boolean = false>(options: Options<PostSettingsTautulliData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsTautulliResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsTautulliData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsTautulliResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -674,12 +541,6 @@ export const postSettingsTautulli = <ThrowOnError extends boolean = false>(optio
  */
 export const getSettingsRadarr = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsRadarrData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsRadarrResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsRadarrData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsRadarrResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -703,12 +564,6 @@ export const getSettingsRadarr = <ThrowOnError extends boolean = false>(options?
  */
 export const postSettingsRadarr = <ThrowOnError extends boolean = false>(options: Options<PostSettingsRadarrData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsRadarrResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsRadarrData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsRadarrResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -736,12 +591,6 @@ export const postSettingsRadarr = <ThrowOnError extends boolean = false>(options
  */
 export const postSettingsRadarrTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsRadarrTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsRadarrTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsRadarrTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsRadarrTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -769,12 +618,6 @@ export const postSettingsRadarrTest = <ThrowOnError extends boolean = false>(opt
  */
 export const deleteSettingsRadarrByRadarrId = <ThrowOnError extends boolean = false>(options: Options<DeleteSettingsRadarrByRadarrIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteSettingsRadarrByRadarrIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteSettingsRadarrByRadarrIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteSettingsRadarrByRadarrIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -798,12 +641,6 @@ export const deleteSettingsRadarrByRadarrId = <ThrowOnError extends boolean = fa
  */
 export const putSettingsRadarrByRadarrId = <ThrowOnError extends boolean = false>(options: Options<PutSettingsRadarrByRadarrIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutSettingsRadarrByRadarrIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutSettingsRadarrByRadarrIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutSettingsRadarrByRadarrIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -831,12 +668,6 @@ export const putSettingsRadarrByRadarrId = <ThrowOnError extends boolean = false
  */
 export const getSettingsRadarrByRadarrIdProfiles = <ThrowOnError extends boolean = false>(options: Options<GetSettingsRadarrByRadarrIdProfilesData, ThrowOnError>) => {
     return (options.client ?? client).get<GetSettingsRadarrByRadarrIdProfilesResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsRadarrByRadarrIdProfilesData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsRadarrByRadarrIdProfilesResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -860,12 +691,6 @@ export const getSettingsRadarrByRadarrIdProfiles = <ThrowOnError extends boolean
  */
 export const getSettingsSonarr = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsSonarrData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsSonarrResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsSonarrData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsSonarrResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -889,12 +714,6 @@ export const getSettingsSonarr = <ThrowOnError extends boolean = false>(options?
  */
 export const postSettingsSonarr = <ThrowOnError extends boolean = false>(options: Options<PostSettingsSonarrData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsSonarrResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsSonarrData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsSonarrResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -922,12 +741,6 @@ export const postSettingsSonarr = <ThrowOnError extends boolean = false>(options
  */
 export const postSettingsSonarrTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsSonarrTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsSonarrTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsSonarrTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsSonarrTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -955,12 +768,6 @@ export const postSettingsSonarrTest = <ThrowOnError extends boolean = false>(opt
  */
 export const deleteSettingsSonarrBySonarrId = <ThrowOnError extends boolean = false>(options: Options<DeleteSettingsSonarrBySonarrIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteSettingsSonarrBySonarrIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteSettingsSonarrBySonarrIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteSettingsSonarrBySonarrIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -984,12 +791,6 @@ export const deleteSettingsSonarrBySonarrId = <ThrowOnError extends boolean = fa
  */
 export const putSettingsSonarrBySonarrId = <ThrowOnError extends boolean = false>(options: Options<PutSettingsSonarrBySonarrIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutSettingsSonarrBySonarrIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutSettingsSonarrBySonarrIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutSettingsSonarrBySonarrIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1017,12 +818,6 @@ export const putSettingsSonarrBySonarrId = <ThrowOnError extends boolean = false
  */
 export const getSettingsPublic = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsPublicData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsPublicResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsPublicData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsPublicResponse.parseAsync(data);
-        },
         url: '/settings/public',
         ...options
     });
@@ -1035,12 +830,6 @@ export const getSettingsPublic = <ThrowOnError extends boolean = false>(options?
  */
 export const postSettingsInitialize = <ThrowOnError extends boolean = false>(options?: Options<PostSettingsInitializeData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostSettingsInitializeResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsInitializeData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsInitializeResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1064,12 +853,6 @@ export const postSettingsInitialize = <ThrowOnError extends boolean = false>(opt
  */
 export const getSettingsJobs = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsJobsData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsJobsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsJobsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsJobsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1093,12 +876,6 @@ export const getSettingsJobs = <ThrowOnError extends boolean = false>(options?: 
  */
 export const postSettingsJobsByJobIdRun = <ThrowOnError extends boolean = false>(options: Options<PostSettingsJobsByJobIdRunData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsJobsByJobIdRunResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsJobsByJobIdRunData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsJobsByJobIdRunResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1122,12 +899,6 @@ export const postSettingsJobsByJobIdRun = <ThrowOnError extends boolean = false>
  */
 export const postSettingsJobsByJobIdCancel = <ThrowOnError extends boolean = false>(options: Options<PostSettingsJobsByJobIdCancelData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsJobsByJobIdCancelResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsJobsByJobIdCancelData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsJobsByJobIdCancelResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1151,12 +922,6 @@ export const postSettingsJobsByJobIdCancel = <ThrowOnError extends boolean = fal
  */
 export const postSettingsJobsByJobIdSchedule = <ThrowOnError extends boolean = false>(options: Options<PostSettingsJobsByJobIdScheduleData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsJobsByJobIdScheduleResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsJobsByJobIdScheduleData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsJobsByJobIdScheduleResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1184,12 +949,6 @@ export const postSettingsJobsByJobIdSchedule = <ThrowOnError extends boolean = f
  */
 export const getSettingsCache = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsCacheData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsCacheResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsCacheData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsCacheResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1213,12 +972,6 @@ export const getSettingsCache = <ThrowOnError extends boolean = false>(options?:
  */
 export const postSettingsCacheByCacheIdFlush = <ThrowOnError extends boolean = false>(options: Options<PostSettingsCacheByCacheIdFlushData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsCacheByCacheIdFlushResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsCacheByCacheIdFlushData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsCacheByCacheIdFlushResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1242,12 +995,6 @@ export const postSettingsCacheByCacheIdFlush = <ThrowOnError extends boolean = f
  */
 export const getSettingsLogs = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsLogsData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsLogsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsLogsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsLogsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1271,12 +1018,6 @@ export const getSettingsLogs = <ThrowOnError extends boolean = false>(options?: 
  */
 export const getSettingsNotificationsEmail = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsEmailData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsEmailResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsEmailData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsEmailResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1300,12 +1041,6 @@ export const getSettingsNotificationsEmail = <ThrowOnError extends boolean = fal
  */
 export const postSettingsNotificationsEmail = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsEmailData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsEmailResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsEmailData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsEmailResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1333,12 +1068,6 @@ export const postSettingsNotificationsEmail = <ThrowOnError extends boolean = fa
  */
 export const postSettingsNotificationsEmailTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsEmailTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsEmailTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsEmailTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsEmailTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1366,12 +1095,6 @@ export const postSettingsNotificationsEmailTest = <ThrowOnError extends boolean 
  */
 export const getSettingsNotificationsDiscord = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsDiscordData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsDiscordResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsDiscordData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsDiscordResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1395,12 +1118,6 @@ export const getSettingsNotificationsDiscord = <ThrowOnError extends boolean = f
  */
 export const postSettingsNotificationsDiscord = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsDiscordData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsDiscordResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsDiscordData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsDiscordResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1428,12 +1145,6 @@ export const postSettingsNotificationsDiscord = <ThrowOnError extends boolean = 
  */
 export const postSettingsNotificationsDiscordTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsDiscordTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsDiscordTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsDiscordTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsDiscordTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1461,12 +1172,6 @@ export const postSettingsNotificationsDiscordTest = <ThrowOnError extends boolea
  */
 export const getSettingsNotificationsPushbullet = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsPushbulletData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsPushbulletResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsPushbulletData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsPushbulletResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1490,12 +1195,6 @@ export const getSettingsNotificationsPushbullet = <ThrowOnError extends boolean 
  */
 export const postSettingsNotificationsPushbullet = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsPushbulletData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsPushbulletResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsPushbulletData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsPushbulletResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1523,12 +1222,6 @@ export const postSettingsNotificationsPushbullet = <ThrowOnError extends boolean
  */
 export const postSettingsNotificationsPushbulletTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsPushbulletTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsPushbulletTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsPushbulletTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsPushbulletTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1556,12 +1249,6 @@ export const postSettingsNotificationsPushbulletTest = <ThrowOnError extends boo
  */
 export const getSettingsNotificationsPushover = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsPushoverData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsPushoverResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsPushoverData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsPushoverResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1585,12 +1272,6 @@ export const getSettingsNotificationsPushover = <ThrowOnError extends boolean = 
  */
 export const postSettingsNotificationsPushover = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsPushoverData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsPushoverResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsPushoverData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsPushoverResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1618,12 +1299,6 @@ export const postSettingsNotificationsPushover = <ThrowOnError extends boolean =
  */
 export const postSettingsNotificationsPushoverTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsPushoverTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsPushoverTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsPushoverTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsPushoverTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1651,12 +1326,6 @@ export const postSettingsNotificationsPushoverTest = <ThrowOnError extends boole
  */
 export const getSettingsNotificationsPushoverSounds = <ThrowOnError extends boolean = false>(options: Options<GetSettingsNotificationsPushoverSoundsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetSettingsNotificationsPushoverSoundsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsPushoverSoundsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsPushoverSoundsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1680,12 +1349,6 @@ export const getSettingsNotificationsPushoverSounds = <ThrowOnError extends bool
  */
 export const getSettingsNotificationsGotify = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsGotifyData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsGotifyResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsGotifyData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsGotifyResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1709,12 +1372,6 @@ export const getSettingsNotificationsGotify = <ThrowOnError extends boolean = fa
  */
 export const postSettingsNotificationsGotify = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsGotifyData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsGotifyResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsGotifyData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsGotifyResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1742,12 +1399,6 @@ export const postSettingsNotificationsGotify = <ThrowOnError extends boolean = f
  */
 export const postSettingsNotificationsGotifyTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsGotifyTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsGotifyTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsGotifyTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsGotifyTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1775,12 +1426,6 @@ export const postSettingsNotificationsGotifyTest = <ThrowOnError extends boolean
  */
 export const getSettingsNotificationsNtfy = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsNtfyData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsNtfyResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsNtfyData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsNtfyResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1804,12 +1449,6 @@ export const getSettingsNotificationsNtfy = <ThrowOnError extends boolean = fals
  */
 export const postSettingsNotificationsNtfy = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsNtfyData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsNtfyResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsNtfyData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsNtfyResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1837,12 +1476,6 @@ export const postSettingsNotificationsNtfy = <ThrowOnError extends boolean = fal
  */
 export const postSettingsNotificationsNtfyTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsNtfyTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsNtfyTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsNtfyTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsNtfyTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1870,12 +1503,6 @@ export const postSettingsNotificationsNtfyTest = <ThrowOnError extends boolean =
  */
 export const getSettingsNotificationsSlack = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsSlackData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsSlackResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsSlackData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsSlackResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1899,12 +1526,6 @@ export const getSettingsNotificationsSlack = <ThrowOnError extends boolean = fal
  */
 export const postSettingsNotificationsSlack = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsSlackData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsSlackResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsSlackData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsSlackResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1932,12 +1553,6 @@ export const postSettingsNotificationsSlack = <ThrowOnError extends boolean = fa
  */
 export const postSettingsNotificationsSlackTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsSlackTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsSlackTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsSlackTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsSlackTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1965,12 +1580,6 @@ export const postSettingsNotificationsSlackTest = <ThrowOnError extends boolean 
  */
 export const getSettingsNotificationsTelegram = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsTelegramData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsTelegramResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsTelegramData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsTelegramResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -1994,12 +1603,6 @@ export const getSettingsNotificationsTelegram = <ThrowOnError extends boolean = 
  */
 export const postSettingsNotificationsTelegram = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsTelegramData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsTelegramResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsTelegramData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsTelegramResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2027,12 +1630,6 @@ export const postSettingsNotificationsTelegram = <ThrowOnError extends boolean =
  */
 export const postSettingsNotificationsTelegramTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsTelegramTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsTelegramTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsTelegramTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsTelegramTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2060,12 +1657,6 @@ export const postSettingsNotificationsTelegramTest = <ThrowOnError extends boole
  */
 export const getSettingsNotificationsWebpush = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsWebpushData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsWebpushResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsWebpushData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsWebpushResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2089,12 +1680,6 @@ export const getSettingsNotificationsWebpush = <ThrowOnError extends boolean = f
  */
 export const postSettingsNotificationsWebpush = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsWebpushData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsWebpushResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsWebpushData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsWebpushResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2122,12 +1707,6 @@ export const postSettingsNotificationsWebpush = <ThrowOnError extends boolean = 
  */
 export const postSettingsNotificationsWebpushTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsWebpushTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsWebpushTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsWebpushTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsWebpushTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2155,12 +1734,6 @@ export const postSettingsNotificationsWebpushTest = <ThrowOnError extends boolea
  */
 export const getSettingsNotificationsWebhook = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsNotificationsWebhookData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsNotificationsWebhookResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsNotificationsWebhookData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsNotificationsWebhookResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2184,12 +1757,6 @@ export const getSettingsNotificationsWebhook = <ThrowOnError extends boolean = f
  */
 export const postSettingsNotificationsWebhook = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsWebhookData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsWebhookResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsWebhookData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsWebhookResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2217,12 +1784,6 @@ export const postSettingsNotificationsWebhook = <ThrowOnError extends boolean = 
  */
 export const postSettingsNotificationsWebhookTest = <ThrowOnError extends boolean = false>(options: Options<PostSettingsNotificationsWebhookTestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsNotificationsWebhookTestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsNotificationsWebhookTestData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsNotificationsWebhookTestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2250,12 +1811,6 @@ export const postSettingsNotificationsWebhookTest = <ThrowOnError extends boolea
  */
 export const getSettingsDiscover = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsDiscoverData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsDiscoverResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsDiscoverData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsDiscoverResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2282,12 +1837,6 @@ export const getSettingsDiscover = <ThrowOnError extends boolean = false>(option
  */
 export const postSettingsDiscover = <ThrowOnError extends boolean = false>(options: Options<PostSettingsDiscoverData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsDiscoverResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsDiscoverData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsDiscoverResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2315,12 +1864,6 @@ export const postSettingsDiscover = <ThrowOnError extends boolean = false>(optio
  */
 export const deleteSettingsDiscoverBySliderId = <ThrowOnError extends boolean = false>(options: Options<DeleteSettingsDiscoverBySliderIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteSettingsDiscoverBySliderIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteSettingsDiscoverBySliderIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteSettingsDiscoverBySliderIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2345,12 +1888,6 @@ export const deleteSettingsDiscoverBySliderId = <ThrowOnError extends boolean = 
  */
 export const putSettingsDiscoverBySliderId = <ThrowOnError extends boolean = false>(options: Options<PutSettingsDiscoverBySliderIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutSettingsDiscoverBySliderIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutSettingsDiscoverBySliderIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutSettingsDiscoverBySliderIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2379,12 +1916,6 @@ export const putSettingsDiscoverBySliderId = <ThrowOnError extends boolean = fal
  */
 export const postSettingsDiscoverAdd = <ThrowOnError extends boolean = false>(options: Options<PostSettingsDiscoverAddData, ThrowOnError>) => {
     return (options.client ?? client).post<PostSettingsDiscoverAddResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostSettingsDiscoverAddData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostSettingsDiscoverAddResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2412,12 +1943,6 @@ export const postSettingsDiscoverAdd = <ThrowOnError extends boolean = false>(op
  */
 export const getSettingsDiscoverReset = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsDiscoverResetData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsDiscoverResetResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsDiscoverResetData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsDiscoverResetResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2441,12 +1966,6 @@ export const getSettingsDiscoverReset = <ThrowOnError extends boolean = false>(o
  */
 export const getSettingsAbout = <ThrowOnError extends boolean = false>(options?: Options<GetSettingsAboutData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetSettingsAboutResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSettingsAboutData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSettingsAboutResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2470,12 +1989,6 @@ export const getSettingsAbout = <ThrowOnError extends boolean = false>(options?:
  */
 export const getAuthMe = <ThrowOnError extends boolean = false>(options?: Options<GetAuthMeData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetAuthMeResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetAuthMeData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetAuthMeResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2499,12 +2012,6 @@ export const getAuthMe = <ThrowOnError extends boolean = false>(options?: Option
  */
 export const postAuthPlex = <ThrowOnError extends boolean = false>(options: Options<PostAuthPlexData, ThrowOnError>) => {
     return (options.client ?? client).post<PostAuthPlexResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostAuthPlexData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostAuthPlexResponse.parseAsync(data);
-        },
         url: '/auth/plex',
         ...options,
         headers: {
@@ -2521,12 +2028,6 @@ export const postAuthPlex = <ThrowOnError extends boolean = false>(options: Opti
  */
 export const postAuthJellyfin = <ThrowOnError extends boolean = false>(options: Options<PostAuthJellyfinData, ThrowOnError>) => {
     return (options.client ?? client).post<PostAuthJellyfinResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostAuthJellyfinData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostAuthJellyfinResponse.parseAsync(data);
-        },
         url: '/auth/jellyfin',
         ...options,
         headers: {
@@ -2543,12 +2044,6 @@ export const postAuthJellyfin = <ThrowOnError extends boolean = false>(options: 
  */
 export const postAuthLocal = <ThrowOnError extends boolean = false>(options: Options<PostAuthLocalData, ThrowOnError>) => {
     return (options.client ?? client).post<PostAuthLocalResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostAuthLocalData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostAuthLocalResponse.parseAsync(data);
-        },
         url: '/auth/local',
         ...options,
         headers: {
@@ -2565,12 +2060,6 @@ export const postAuthLocal = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const postAuthLogout = <ThrowOnError extends boolean = false>(options?: Options<PostAuthLogoutData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostAuthLogoutResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostAuthLogoutData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostAuthLogoutResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2594,12 +2083,6 @@ export const postAuthLogout = <ThrowOnError extends boolean = false>(options?: O
  */
 export const postAuthResetPassword = <ThrowOnError extends boolean = false>(options: Options<PostAuthResetPasswordData, ThrowOnError>) => {
     return (options.client ?? client).post<PostAuthResetPasswordResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostAuthResetPasswordData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostAuthResetPasswordResponse.parseAsync(data);
-        },
         url: '/auth/reset-password',
         ...options,
         headers: {
@@ -2616,12 +2099,6 @@ export const postAuthResetPassword = <ThrowOnError extends boolean = false>(opti
  */
 export const postAuthResetPasswordByGuid = <ThrowOnError extends boolean = false>(options: Options<PostAuthResetPasswordByGuidData, ThrowOnError>) => {
     return (options.client ?? client).post<PostAuthResetPasswordByGuidResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostAuthResetPasswordByGuidData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostAuthResetPasswordByGuidResponse.parseAsync(data);
-        },
         url: '/auth/reset-password/{guid}',
         ...options,
         headers: {
@@ -2638,12 +2115,6 @@ export const postAuthResetPasswordByGuid = <ThrowOnError extends boolean = false
  */
 export const getUser = <ThrowOnError extends boolean = false>(options?: Options<GetUserData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetUserResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2668,12 +2139,6 @@ export const getUser = <ThrowOnError extends boolean = false>(options?: Options<
  */
 export const postUser = <ThrowOnError extends boolean = false>(options: Options<PostUserData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2704,12 +2169,6 @@ export const postUser = <ThrowOnError extends boolean = false>(options: Options<
  */
 export const putUser = <ThrowOnError extends boolean = false>(options: Options<PutUserData, ThrowOnError>) => {
     return (options.client ?? client).put<PutUserResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutUserData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutUserResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2740,12 +2199,6 @@ export const putUser = <ThrowOnError extends boolean = false>(options: Options<P
  */
 export const postUserImportFromPlex = <ThrowOnError extends boolean = false>(options?: Options<PostUserImportFromPlexData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostUserImportFromPlexResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserImportFromPlexData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserImportFromPlexResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2776,12 +2229,6 @@ export const postUserImportFromPlex = <ThrowOnError extends boolean = false>(opt
  */
 export const postUserImportFromJellyfin = <ThrowOnError extends boolean = false>(options?: Options<PostUserImportFromJellyfinData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostUserImportFromJellyfinResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserImportFromJellyfinData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserImportFromJellyfinResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2809,12 +2256,6 @@ export const postUserImportFromJellyfin = <ThrowOnError extends boolean = false>
  */
 export const postUserRegisterPushSubscription = <ThrowOnError extends boolean = false>(options: Options<PostUserRegisterPushSubscriptionData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserRegisterPushSubscriptionResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserRegisterPushSubscriptionData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserRegisterPushSubscriptionResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2843,12 +2284,6 @@ export const postUserRegisterPushSubscription = <ThrowOnError extends boolean = 
  */
 export const getUserByUserIdPushSubscriptions = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdPushSubscriptionsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdPushSubscriptionsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdPushSubscriptionsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdPushSubscriptionsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2872,12 +2307,6 @@ export const getUserByUserIdPushSubscriptions = <ThrowOnError extends boolean = 
  */
 export const deleteUserByUserIdPushSubscriptionByEndpoint = <ThrowOnError extends boolean = false>(options: Options<DeleteUserByUserIdPushSubscriptionByEndpointData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteUserByUserIdPushSubscriptionByEndpointResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteUserByUserIdPushSubscriptionByEndpointData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteUserByUserIdPushSubscriptionByEndpointResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2902,12 +2331,6 @@ export const deleteUserByUserIdPushSubscriptionByEndpoint = <ThrowOnError extend
  */
 export const getUserByUserIdPushSubscriptionByEndpoint = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdPushSubscriptionByEndpointData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdPushSubscriptionByEndpointResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdPushSubscriptionByEndpointData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdPushSubscriptionByEndpointResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2931,12 +2354,6 @@ export const getUserByUserIdPushSubscriptionByEndpoint = <ThrowOnError extends b
  */
 export const deleteUserByUserId = <ThrowOnError extends boolean = false>(options: Options<DeleteUserByUserIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteUserByUserIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteUserByUserIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteUserByUserIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2961,12 +2378,6 @@ export const deleteUserByUserId = <ThrowOnError extends boolean = false>(options
  */
 export const getUserByUserId = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -2993,12 +2404,6 @@ export const getUserByUserId = <ThrowOnError extends boolean = false>(options: O
  */
 export const putUserByUserId = <ThrowOnError extends boolean = false>(options: Options<PutUserByUserIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutUserByUserIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutUserByUserIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutUserByUserIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3027,13 +2432,7 @@ export const putUserByUserId = <ThrowOnError extends boolean = false>(options: O
  */
 export const getUserByUserIdRequests = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdRequestsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdRequestsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdRequestsData.parseAsync(data);
-        },
         responseTransformer: getUserByUserIdRequestsResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdRequestsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3058,12 +2457,6 @@ export const getUserByUserIdRequests = <ThrowOnError extends boolean = false>(op
  */
 export const getUserByUserIdQuota = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdQuotaData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdQuotaResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdQuotaData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdQuotaResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3087,12 +2480,6 @@ export const getUserByUserIdQuota = <ThrowOnError extends boolean = false>(optio
  */
 export const getBlacklist = <ThrowOnError extends boolean = false>(options?: Options<GetBlacklistData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetBlacklistResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetBlacklistData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetBlacklistResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3114,9 +2501,6 @@ export const getBlacklist = <ThrowOnError extends boolean = false>(options?: Opt
  */
 export const postBlacklist = <ThrowOnError extends boolean = false>(options: Options<PostBlacklistData, ThrowOnError>) => {
     return (options.client ?? client).post<PostBlacklistResponses, PostBlacklistErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostBlacklistData.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3142,12 +2526,6 @@ export const postBlacklist = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const deleteBlacklistByTmdbId = <ThrowOnError extends boolean = false>(options: Options<DeleteBlacklistByTmdbIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteBlacklistByTmdbIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteBlacklistByTmdbIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteBlacklistByTmdbIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3169,9 +2547,6 @@ export const deleteBlacklistByTmdbId = <ThrowOnError extends boolean = false>(op
  */
 export const getBlacklistByTmdbId = <ThrowOnError extends boolean = false>(options: Options<GetBlacklistByTmdbIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetBlacklistByTmdbIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetBlacklistByTmdbIdData.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3193,13 +2568,7 @@ export const getBlacklistByTmdbId = <ThrowOnError extends boolean = false>(optio
  */
 export const postWatchlist = <ThrowOnError extends boolean = false>(options: Options<PostWatchlistData, ThrowOnError>) => {
     return (options.client ?? client).post<PostWatchlistResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostWatchlistData.parseAsync(data);
-        },
         responseTransformer: postWatchlistResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostWatchlistResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3227,12 +2596,6 @@ export const postWatchlist = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const deleteWatchlistByTmdbId = <ThrowOnError extends boolean = false>(options: Options<DeleteWatchlistByTmdbIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteWatchlistByTmdbIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteWatchlistByTmdbIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteWatchlistByTmdbIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3257,12 +2620,6 @@ export const deleteWatchlistByTmdbId = <ThrowOnError extends boolean = false>(op
  */
 export const getUserByUserIdWatchlist = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdWatchlistData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdWatchlistResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdWatchlistData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdWatchlistResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3286,12 +2643,6 @@ export const getUserByUserIdWatchlist = <ThrowOnError extends boolean = false>(o
  */
 export const getUserByUserIdSettingsMain = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdSettingsMainData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdSettingsMainResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdSettingsMainData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdSettingsMainResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3315,12 +2666,6 @@ export const getUserByUserIdSettingsMain = <ThrowOnError extends boolean = false
  */
 export const postUserByUserIdSettingsMain = <ThrowOnError extends boolean = false>(options: Options<PostUserByUserIdSettingsMainData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserByUserIdSettingsMainResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserByUserIdSettingsMainData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserByUserIdSettingsMainResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3348,12 +2693,6 @@ export const postUserByUserIdSettingsMain = <ThrowOnError extends boolean = fals
  */
 export const getUserByUserIdSettingsPassword = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdSettingsPasswordData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdSettingsPasswordResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdSettingsPasswordData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdSettingsPasswordResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3377,12 +2716,6 @@ export const getUserByUserIdSettingsPassword = <ThrowOnError extends boolean = f
  */
 export const postUserByUserIdSettingsPassword = <ThrowOnError extends boolean = false>(options: Options<PostUserByUserIdSettingsPasswordData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserByUserIdSettingsPasswordResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserByUserIdSettingsPasswordData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserByUserIdSettingsPasswordResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3410,12 +2743,6 @@ export const postUserByUserIdSettingsPassword = <ThrowOnError extends boolean = 
  */
 export const deleteUserByUserIdSettingsLinkedAccountsPlex = <ThrowOnError extends boolean = false>(options: Options<DeleteUserByUserIdSettingsLinkedAccountsPlexData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteUserByUserIdSettingsLinkedAccountsPlexResponses, DeleteUserByUserIdSettingsLinkedAccountsPlexErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteUserByUserIdSettingsLinkedAccountsPlexData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteUserByUserIdSettingsLinkedAccountsPlexResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3439,12 +2766,6 @@ export const deleteUserByUserIdSettingsLinkedAccountsPlex = <ThrowOnError extend
  */
 export const postUserByUserIdSettingsLinkedAccountsPlex = <ThrowOnError extends boolean = false>(options: Options<PostUserByUserIdSettingsLinkedAccountsPlexData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserByUserIdSettingsLinkedAccountsPlexResponses, PostUserByUserIdSettingsLinkedAccountsPlexErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserByUserIdSettingsLinkedAccountsPlexData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserByUserIdSettingsLinkedAccountsPlexResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3472,12 +2793,6 @@ export const postUserByUserIdSettingsLinkedAccountsPlex = <ThrowOnError extends 
  */
 export const deleteUserByUserIdSettingsLinkedAccountsJellyfin = <ThrowOnError extends boolean = false>(options: Options<DeleteUserByUserIdSettingsLinkedAccountsJellyfinData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteUserByUserIdSettingsLinkedAccountsJellyfinResponses, DeleteUserByUserIdSettingsLinkedAccountsJellyfinErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteUserByUserIdSettingsLinkedAccountsJellyfinData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteUserByUserIdSettingsLinkedAccountsJellyfinResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3501,12 +2816,6 @@ export const deleteUserByUserIdSettingsLinkedAccountsJellyfin = <ThrowOnError ex
  */
 export const postUserByUserIdSettingsLinkedAccountsJellyfin = <ThrowOnError extends boolean = false>(options: Options<PostUserByUserIdSettingsLinkedAccountsJellyfinData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserByUserIdSettingsLinkedAccountsJellyfinResponses, PostUserByUserIdSettingsLinkedAccountsJellyfinErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserByUserIdSettingsLinkedAccountsJellyfinData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserByUserIdSettingsLinkedAccountsJellyfinResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3534,12 +2843,6 @@ export const postUserByUserIdSettingsLinkedAccountsJellyfin = <ThrowOnError exte
  */
 export const getUserByUserIdSettingsNotifications = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdSettingsNotificationsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdSettingsNotificationsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdSettingsNotificationsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdSettingsNotificationsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3563,12 +2866,6 @@ export const getUserByUserIdSettingsNotifications = <ThrowOnError extends boolea
  */
 export const postUserByUserIdSettingsNotifications = <ThrowOnError extends boolean = false>(options: Options<PostUserByUserIdSettingsNotificationsData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserByUserIdSettingsNotificationsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserByUserIdSettingsNotificationsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserByUserIdSettingsNotificationsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3596,12 +2893,6 @@ export const postUserByUserIdSettingsNotifications = <ThrowOnError extends boole
  */
 export const getUserByUserIdSettingsPermissions = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdSettingsPermissionsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdSettingsPermissionsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdSettingsPermissionsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdSettingsPermissionsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3625,12 +2916,6 @@ export const getUserByUserIdSettingsPermissions = <ThrowOnError extends boolean 
  */
 export const postUserByUserIdSettingsPermissions = <ThrowOnError extends boolean = false>(options: Options<PostUserByUserIdSettingsPermissionsData, ThrowOnError>) => {
     return (options.client ?? client).post<PostUserByUserIdSettingsPermissionsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostUserByUserIdSettingsPermissionsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostUserByUserIdSettingsPermissionsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3661,13 +2946,7 @@ export const postUserByUserIdSettingsPermissions = <ThrowOnError extends boolean
  */
 export const getUserByUserIdWatchData = <ThrowOnError extends boolean = false>(options: Options<GetUserByUserIdWatchDataData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserByUserIdWatchDataResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetUserByUserIdWatchDataData.parseAsync(data);
-        },
         responseTransformer: getUserByUserIdWatchDataResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetUserByUserIdWatchDataResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3691,13 +2970,7 @@ export const getUserByUserIdWatchData = <ThrowOnError extends boolean = false>(o
  */
 export const getSearch = <ThrowOnError extends boolean = false>(options: Options<GetSearchData, ThrowOnError>) => {
     return (options.client ?? client).get<GetSearchResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSearchData.parseAsync(data);
-        },
         responseTransformer: getSearchResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetSearchResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3721,12 +2994,6 @@ export const getSearch = <ThrowOnError extends boolean = false>(options: Options
  */
 export const getSearchKeyword = <ThrowOnError extends boolean = false>(options: Options<GetSearchKeywordData, ThrowOnError>) => {
     return (options.client ?? client).get<GetSearchKeywordResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSearchKeywordData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSearchKeywordResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3750,12 +3017,6 @@ export const getSearchKeyword = <ThrowOnError extends boolean = false>(options: 
  */
 export const getSearchCompany = <ThrowOnError extends boolean = false>(options: Options<GetSearchCompanyData, ThrowOnError>) => {
     return (options.client ?? client).get<GetSearchCompanyResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetSearchCompanyData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetSearchCompanyResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3779,13 +3040,7 @@ export const getSearchCompany = <ThrowOnError extends boolean = false>(options: 
  */
 export const getDiscoverMovies = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverMoviesData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverMoviesResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverMoviesData.parseAsync(data);
-        },
         responseTransformer: getDiscoverMoviesResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverMoviesResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3809,13 +3064,7 @@ export const getDiscoverMovies = <ThrowOnError extends boolean = false>(options?
  */
 export const getDiscoverMoviesGenreByGenreId = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverMoviesGenreByGenreIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverMoviesGenreByGenreIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverMoviesGenreByGenreIdData.parseAsync(data);
-        },
         responseTransformer: getDiscoverMoviesGenreByGenreIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverMoviesGenreByGenreIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3839,13 +3088,7 @@ export const getDiscoverMoviesGenreByGenreId = <ThrowOnError extends boolean = f
  */
 export const getDiscoverMoviesLanguageByLanguage = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverMoviesLanguageByLanguageData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverMoviesLanguageByLanguageResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverMoviesLanguageByLanguageData.parseAsync(data);
-        },
         responseTransformer: getDiscoverMoviesLanguageByLanguageResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverMoviesLanguageByLanguageResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3869,13 +3112,7 @@ export const getDiscoverMoviesLanguageByLanguage = <ThrowOnError extends boolean
  */
 export const getDiscoverMoviesStudioByStudioId = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverMoviesStudioByStudioIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverMoviesStudioByStudioIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverMoviesStudioByStudioIdData.parseAsync(data);
-        },
         responseTransformer: getDiscoverMoviesStudioByStudioIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverMoviesStudioByStudioIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3899,13 +3136,7 @@ export const getDiscoverMoviesStudioByStudioId = <ThrowOnError extends boolean =
  */
 export const getDiscoverMoviesUpcoming = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverMoviesUpcomingData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverMoviesUpcomingResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverMoviesUpcomingData.parseAsync(data);
-        },
         responseTransformer: getDiscoverMoviesUpcomingResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverMoviesUpcomingResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3929,13 +3160,7 @@ export const getDiscoverMoviesUpcoming = <ThrowOnError extends boolean = false>(
  */
 export const getDiscoverTv = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverTvData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverTvResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverTvData.parseAsync(data);
-        },
         responseTransformer: getDiscoverTvResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverTvResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3959,13 +3184,7 @@ export const getDiscoverTv = <ThrowOnError extends boolean = false>(options?: Op
  */
 export const getDiscoverTvLanguageByLanguage = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverTvLanguageByLanguageData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverTvLanguageByLanguageResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverTvLanguageByLanguageData.parseAsync(data);
-        },
         responseTransformer: getDiscoverTvLanguageByLanguageResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverTvLanguageByLanguageResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -3989,13 +3208,7 @@ export const getDiscoverTvLanguageByLanguage = <ThrowOnError extends boolean = f
  */
 export const getDiscoverTvGenreByGenreId = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverTvGenreByGenreIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverTvGenreByGenreIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverTvGenreByGenreIdData.parseAsync(data);
-        },
         responseTransformer: getDiscoverTvGenreByGenreIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverTvGenreByGenreIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4019,13 +3232,7 @@ export const getDiscoverTvGenreByGenreId = <ThrowOnError extends boolean = false
  */
 export const getDiscoverTvNetworkByNetworkId = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverTvNetworkByNetworkIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverTvNetworkByNetworkIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverTvNetworkByNetworkIdData.parseAsync(data);
-        },
         responseTransformer: getDiscoverTvNetworkByNetworkIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverTvNetworkByNetworkIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4049,13 +3256,7 @@ export const getDiscoverTvNetworkByNetworkId = <ThrowOnError extends boolean = f
  */
 export const getDiscoverTvUpcoming = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverTvUpcomingData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverTvUpcomingResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverTvUpcomingData.parseAsync(data);
-        },
         responseTransformer: getDiscoverTvUpcomingResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverTvUpcomingResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4079,13 +3280,7 @@ export const getDiscoverTvUpcoming = <ThrowOnError extends boolean = false>(opti
  */
 export const getDiscoverTrending = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverTrendingData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverTrendingResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverTrendingData.parseAsync(data);
-        },
         responseTransformer: getDiscoverTrendingResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverTrendingResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4109,13 +3304,7 @@ export const getDiscoverTrending = <ThrowOnError extends boolean = false>(option
  */
 export const getDiscoverKeywordByKeywordIdMovies = <ThrowOnError extends boolean = false>(options: Options<GetDiscoverKeywordByKeywordIdMoviesData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDiscoverKeywordByKeywordIdMoviesResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverKeywordByKeywordIdMoviesData.parseAsync(data);
-        },
         responseTransformer: getDiscoverKeywordByKeywordIdMoviesResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetDiscoverKeywordByKeywordIdMoviesResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4139,12 +3328,6 @@ export const getDiscoverKeywordByKeywordIdMovies = <ThrowOnError extends boolean
  */
 export const getDiscoverGenresliderMovie = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverGenresliderMovieData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverGenresliderMovieResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverGenresliderMovieData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetDiscoverGenresliderMovieResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4168,12 +3351,6 @@ export const getDiscoverGenresliderMovie = <ThrowOnError extends boolean = false
  */
 export const getDiscoverGenresliderTv = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverGenresliderTvData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverGenresliderTvResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverGenresliderTvData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetDiscoverGenresliderTvResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4195,12 +3372,6 @@ export const getDiscoverGenresliderTv = <ThrowOnError extends boolean = false>(o
  */
 export const getDiscoverWatchlist = <ThrowOnError extends boolean = false>(options?: Options<GetDiscoverWatchlistData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetDiscoverWatchlistResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetDiscoverWatchlistData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetDiscoverWatchlistResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4227,13 +3398,7 @@ export const getDiscoverWatchlist = <ThrowOnError extends boolean = false>(optio
  */
 export const getRequest = <ThrowOnError extends boolean = false>(options?: Options<GetRequestData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetRequestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetRequestData.parseAsync(data);
-        },
         responseTransformer: getRequestResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetRequestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4260,13 +3425,7 @@ export const getRequest = <ThrowOnError extends boolean = false>(options?: Optio
  */
 export const postRequest = <ThrowOnError extends boolean = false>(options: Options<PostRequestData, ThrowOnError>) => {
     return (options.client ?? client).post<PostRequestResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostRequestData.parseAsync(data);
-        },
         responseTransformer: postRequestResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostRequestResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4295,12 +3454,6 @@ export const postRequest = <ThrowOnError extends boolean = false>(options: Optio
  */
 export const getRequestCount = <ThrowOnError extends boolean = false>(options?: Options<GetRequestCountData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetRequestCountResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetRequestCountData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetRequestCountResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4324,12 +3477,6 @@ export const getRequestCount = <ThrowOnError extends boolean = false>(options?: 
  */
 export const deleteRequestByRequestId = <ThrowOnError extends boolean = false>(options: Options<DeleteRequestByRequestIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteRequestByRequestIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteRequestByRequestIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteRequestByRequestIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4353,13 +3500,7 @@ export const deleteRequestByRequestId = <ThrowOnError extends boolean = false>(o
  */
 export const getRequestByRequestId = <ThrowOnError extends boolean = false>(options: Options<GetRequestByRequestIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetRequestByRequestIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetRequestByRequestIdData.parseAsync(data);
-        },
         responseTransformer: getRequestByRequestIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetRequestByRequestIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4383,13 +3524,7 @@ export const getRequestByRequestId = <ThrowOnError extends boolean = false>(opti
  */
 export const putRequestByRequestId = <ThrowOnError extends boolean = false>(options: Options<PutRequestByRequestIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutRequestByRequestIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutRequestByRequestIdData.parseAsync(data);
-        },
         responseTransformer: putRequestByRequestIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPutRequestByRequestIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4420,13 +3555,7 @@ export const putRequestByRequestId = <ThrowOnError extends boolean = false>(opti
  */
 export const postRequestByRequestIdRetry = <ThrowOnError extends boolean = false>(options: Options<PostRequestByRequestIdRetryData, ThrowOnError>) => {
     return (options.client ?? client).post<PostRequestByRequestIdRetryResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostRequestByRequestIdRetryData.parseAsync(data);
-        },
         responseTransformer: postRequestByRequestIdRetryResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostRequestByRequestIdRetryResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4453,13 +3582,7 @@ export const postRequestByRequestIdRetry = <ThrowOnError extends boolean = false
  */
 export const postRequestByRequestIdByStatus = <ThrowOnError extends boolean = false>(options: Options<PostRequestByRequestIdByStatusData, ThrowOnError>) => {
     return (options.client ?? client).post<PostRequestByRequestIdByStatusResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostRequestByRequestIdByStatusData.parseAsync(data);
-        },
         responseTransformer: postRequestByRequestIdByStatusResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostRequestByRequestIdByStatusResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4483,13 +3606,7 @@ export const postRequestByRequestIdByStatus = <ThrowOnError extends boolean = fa
  */
 export const getMovieByMovieId = <ThrowOnError extends boolean = false>(options: Options<GetMovieByMovieIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetMovieByMovieIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMovieByMovieIdData.parseAsync(data);
-        },
         responseTransformer: getMovieByMovieIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetMovieByMovieIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4513,13 +3630,7 @@ export const getMovieByMovieId = <ThrowOnError extends boolean = false>(options:
  */
 export const getMovieByMovieIdRecommendations = <ThrowOnError extends boolean = false>(options: Options<GetMovieByMovieIdRecommendationsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetMovieByMovieIdRecommendationsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMovieByMovieIdRecommendationsData.parseAsync(data);
-        },
         responseTransformer: getMovieByMovieIdRecommendationsResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetMovieByMovieIdRecommendationsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4543,13 +3654,7 @@ export const getMovieByMovieIdRecommendations = <ThrowOnError extends boolean = 
  */
 export const getMovieByMovieIdSimilar = <ThrowOnError extends boolean = false>(options: Options<GetMovieByMovieIdSimilarData, ThrowOnError>) => {
     return (options.client ?? client).get<GetMovieByMovieIdSimilarResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMovieByMovieIdSimilarData.parseAsync(data);
-        },
         responseTransformer: getMovieByMovieIdSimilarResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetMovieByMovieIdSimilarResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4573,12 +3678,6 @@ export const getMovieByMovieIdSimilar = <ThrowOnError extends boolean = false>(o
  */
 export const getMovieByMovieIdRatings = <ThrowOnError extends boolean = false>(options: Options<GetMovieByMovieIdRatingsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetMovieByMovieIdRatingsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMovieByMovieIdRatingsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetMovieByMovieIdRatingsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4602,12 +3701,6 @@ export const getMovieByMovieIdRatings = <ThrowOnError extends boolean = false>(o
  */
 export const getMovieByMovieIdRatingscombined = <ThrowOnError extends boolean = false>(options: Options<GetMovieByMovieIdRatingscombinedData, ThrowOnError>) => {
     return (options.client ?? client).get<GetMovieByMovieIdRatingscombinedResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMovieByMovieIdRatingscombinedData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetMovieByMovieIdRatingscombinedResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4631,13 +3724,7 @@ export const getMovieByMovieIdRatingscombined = <ThrowOnError extends boolean = 
  */
 export const getTvByTvId = <ThrowOnError extends boolean = false>(options: Options<GetTvByTvIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTvByTvIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetTvByTvIdData.parseAsync(data);
-        },
         responseTransformer: getTvByTvIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetTvByTvIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4661,12 +3748,6 @@ export const getTvByTvId = <ThrowOnError extends boolean = false>(options: Optio
  */
 export const getTvByTvIdSeasonBySeasonId = <ThrowOnError extends boolean = false>(options: Options<GetTvByTvIdSeasonBySeasonIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTvByTvIdSeasonBySeasonIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetTvByTvIdSeasonBySeasonIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetTvByTvIdSeasonBySeasonIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4690,13 +3771,7 @@ export const getTvByTvIdSeasonBySeasonId = <ThrowOnError extends boolean = false
  */
 export const getTvByTvIdRecommendations = <ThrowOnError extends boolean = false>(options: Options<GetTvByTvIdRecommendationsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTvByTvIdRecommendationsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetTvByTvIdRecommendationsData.parseAsync(data);
-        },
         responseTransformer: getTvByTvIdRecommendationsResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetTvByTvIdRecommendationsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4720,13 +3795,7 @@ export const getTvByTvIdRecommendations = <ThrowOnError extends boolean = false>
  */
 export const getTvByTvIdSimilar = <ThrowOnError extends boolean = false>(options: Options<GetTvByTvIdSimilarData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTvByTvIdSimilarResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetTvByTvIdSimilarData.parseAsync(data);
-        },
         responseTransformer: getTvByTvIdSimilarResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetTvByTvIdSimilarResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4750,12 +3819,6 @@ export const getTvByTvIdSimilar = <ThrowOnError extends boolean = false>(options
  */
 export const getTvByTvIdRatings = <ThrowOnError extends boolean = false>(options: Options<GetTvByTvIdRatingsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTvByTvIdRatingsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetTvByTvIdRatingsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetTvByTvIdRatingsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4779,12 +3842,6 @@ export const getTvByTvIdRatings = <ThrowOnError extends boolean = false>(options
  */
 export const getPersonByPersonId = <ThrowOnError extends boolean = false>(options: Options<GetPersonByPersonIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetPersonByPersonIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetPersonByPersonIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetPersonByPersonIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4808,13 +3865,7 @@ export const getPersonByPersonId = <ThrowOnError extends boolean = false>(option
  */
 export const getPersonByPersonIdCombinedCredits = <ThrowOnError extends boolean = false>(options: Options<GetPersonByPersonIdCombinedCreditsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetPersonByPersonIdCombinedCreditsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetPersonByPersonIdCombinedCreditsData.parseAsync(data);
-        },
         responseTransformer: getPersonByPersonIdCombinedCreditsResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetPersonByPersonIdCombinedCreditsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4838,13 +3889,7 @@ export const getPersonByPersonIdCombinedCredits = <ThrowOnError extends boolean 
  */
 export const getMedia = <ThrowOnError extends boolean = false>(options?: Options<GetMediaData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetMediaResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMediaData.parseAsync(data);
-        },
         responseTransformer: getMediaResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetMediaResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4868,12 +3913,6 @@ export const getMedia = <ThrowOnError extends boolean = false>(options?: Options
  */
 export const deleteMediaByMediaId = <ThrowOnError extends boolean = false>(options: Options<DeleteMediaByMediaIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteMediaByMediaIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteMediaByMediaIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteMediaByMediaIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4897,12 +3936,6 @@ export const deleteMediaByMediaId = <ThrowOnError extends boolean = false>(optio
  */
 export const deleteMediaByMediaIdFile = <ThrowOnError extends boolean = false>(options: Options<DeleteMediaByMediaIdFileData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteMediaByMediaIdFileResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteMediaByMediaIdFileData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteMediaByMediaIdFileResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4926,13 +3959,7 @@ export const deleteMediaByMediaIdFile = <ThrowOnError extends boolean = false>(o
  */
 export const postMediaByMediaIdByStatus = <ThrowOnError extends boolean = false>(options: Options<PostMediaByMediaIdByStatusData, ThrowOnError>) => {
     return (options.client ?? client).post<PostMediaByMediaIdByStatusResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostMediaByMediaIdByStatusData.parseAsync(data);
-        },
         responseTransformer: postMediaByMediaIdByStatusResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostMediaByMediaIdByStatusResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4963,12 +3990,6 @@ export const postMediaByMediaIdByStatus = <ThrowOnError extends boolean = false>
  */
 export const getMediaByMediaIdWatchData = <ThrowOnError extends boolean = false>(options: Options<GetMediaByMediaIdWatchDataData, ThrowOnError>) => {
     return (options.client ?? client).get<GetMediaByMediaIdWatchDataResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetMediaByMediaIdWatchDataData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetMediaByMediaIdWatchDataResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -4992,13 +4013,7 @@ export const getMediaByMediaIdWatchData = <ThrowOnError extends boolean = false>
  */
 export const getCollectionByCollectionId = <ThrowOnError extends boolean = false>(options: Options<GetCollectionByCollectionIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetCollectionByCollectionIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetCollectionByCollectionIdData.parseAsync(data);
-        },
         responseTransformer: getCollectionByCollectionIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetCollectionByCollectionIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5022,12 +4037,6 @@ export const getCollectionByCollectionId = <ThrowOnError extends boolean = false
  */
 export const getServiceRadarr = <ThrowOnError extends boolean = false>(options?: Options<GetServiceRadarrData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetServiceRadarrResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetServiceRadarrData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetServiceRadarrResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5051,12 +4060,6 @@ export const getServiceRadarr = <ThrowOnError extends boolean = false>(options?:
  */
 export const getServiceRadarrByRadarrId = <ThrowOnError extends boolean = false>(options: Options<GetServiceRadarrByRadarrIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetServiceRadarrByRadarrIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetServiceRadarrByRadarrIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetServiceRadarrByRadarrIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5080,12 +4083,6 @@ export const getServiceRadarrByRadarrId = <ThrowOnError extends boolean = false>
  */
 export const getServiceSonarr = <ThrowOnError extends boolean = false>(options?: Options<GetServiceSonarrData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetServiceSonarrResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetServiceSonarrData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetServiceSonarrResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5109,12 +4106,6 @@ export const getServiceSonarr = <ThrowOnError extends boolean = false>(options?:
  */
 export const getServiceSonarrBySonarrId = <ThrowOnError extends boolean = false>(options: Options<GetServiceSonarrBySonarrIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetServiceSonarrBySonarrIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetServiceSonarrBySonarrIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetServiceSonarrBySonarrIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5138,12 +4129,6 @@ export const getServiceSonarrBySonarrId = <ThrowOnError extends boolean = false>
  */
 export const getServiceSonarrLookupByTmdbId = <ThrowOnError extends boolean = false>(options: Options<GetServiceSonarrLookupByTmdbIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetServiceSonarrLookupByTmdbIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetServiceSonarrLookupByTmdbIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetServiceSonarrLookupByTmdbIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5167,12 +4152,6 @@ export const getServiceSonarrLookupByTmdbId = <ThrowOnError extends boolean = fa
  */
 export const getRegions = <ThrowOnError extends boolean = false>(options?: Options<GetRegionsData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetRegionsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetRegionsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetRegionsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5196,12 +4175,6 @@ export const getRegions = <ThrowOnError extends boolean = false>(options?: Optio
  */
 export const getLanguages = <ThrowOnError extends boolean = false>(options?: Options<GetLanguagesData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetLanguagesResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetLanguagesData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetLanguagesResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5225,12 +4198,6 @@ export const getLanguages = <ThrowOnError extends boolean = false>(options?: Opt
  */
 export const getStudioByStudioId = <ThrowOnError extends boolean = false>(options: Options<GetStudioByStudioIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetStudioByStudioIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetStudioByStudioIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetStudioByStudioIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5254,12 +4221,6 @@ export const getStudioByStudioId = <ThrowOnError extends boolean = false>(option
  */
 export const getNetworkByNetworkId = <ThrowOnError extends boolean = false>(options: Options<GetNetworkByNetworkIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetNetworkByNetworkIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetNetworkByNetworkIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetNetworkByNetworkIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5283,12 +4244,6 @@ export const getNetworkByNetworkId = <ThrowOnError extends boolean = false>(opti
  */
 export const getGenresMovie = <ThrowOnError extends boolean = false>(options?: Options<GetGenresMovieData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetGenresMovieResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetGenresMovieData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetGenresMovieResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5312,12 +4267,6 @@ export const getGenresMovie = <ThrowOnError extends boolean = false>(options?: O
  */
 export const getGenresTv = <ThrowOnError extends boolean = false>(options?: Options<GetGenresTvData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetGenresTvResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetGenresTvData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetGenresTvResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5341,12 +4290,6 @@ export const getGenresTv = <ThrowOnError extends boolean = false>(options?: Opti
  */
 export const getBackdrops = <ThrowOnError extends boolean = false>(options?: Options<GetBackdropsData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetBackdropsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetBackdropsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetBackdropsResponse.parseAsync(data);
-        },
         url: '/backdrops',
         ...options
     });
@@ -5360,13 +4303,7 @@ export const getBackdrops = <ThrowOnError extends boolean = false>(options?: Opt
  */
 export const getIssue = <ThrowOnError extends boolean = false>(options?: Options<GetIssueData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetIssueResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetIssueData.parseAsync(data);
-        },
         responseTransformer: getIssueResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetIssueResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5391,13 +4328,7 @@ export const getIssue = <ThrowOnError extends boolean = false>(options?: Options
  */
 export const postIssue = <ThrowOnError extends boolean = false>(options: Options<PostIssueData, ThrowOnError>) => {
     return (options.client ?? client).post<PostIssueResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostIssueData.parseAsync(data);
-        },
         responseTransformer: postIssueResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostIssueResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5426,12 +4357,6 @@ export const postIssue = <ThrowOnError extends boolean = false>(options: Options
  */
 export const getIssueCount = <ThrowOnError extends boolean = false>(options?: Options<GetIssueCountData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetIssueCountResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetIssueCountData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetIssueCountResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5455,12 +4380,6 @@ export const getIssueCount = <ThrowOnError extends boolean = false>(options?: Op
  */
 export const deleteIssueByIssueId = <ThrowOnError extends boolean = false>(options: Options<DeleteIssueByIssueIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteIssueByIssueIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteIssueByIssueIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteIssueByIssueIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5485,13 +4404,7 @@ export const deleteIssueByIssueId = <ThrowOnError extends boolean = false>(optio
  */
 export const getIssueByIssueId = <ThrowOnError extends boolean = false>(options: Options<GetIssueByIssueIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetIssueByIssueIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetIssueByIssueIdData.parseAsync(data);
-        },
         responseTransformer: getIssueByIssueIdResponseTransformer,
-        responseValidator: async (data) => {
-            return await zGetIssueByIssueIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5516,13 +4429,7 @@ export const getIssueByIssueId = <ThrowOnError extends boolean = false>(options:
  */
 export const postIssueByIssueIdComment = <ThrowOnError extends boolean = false>(options: Options<PostIssueByIssueIdCommentData, ThrowOnError>) => {
     return (options.client ?? client).post<PostIssueByIssueIdCommentResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostIssueByIssueIdCommentData.parseAsync(data);
-        },
         responseTransformer: postIssueByIssueIdCommentResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostIssueByIssueIdCommentResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5551,12 +4458,6 @@ export const postIssueByIssueIdComment = <ThrowOnError extends boolean = false>(
  */
 export const deleteIssueCommentByCommentId = <ThrowOnError extends boolean = false>(options: Options<DeleteIssueCommentByCommentIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteIssueCommentByCommentIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteIssueCommentByCommentIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteIssueCommentByCommentIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5581,12 +4482,6 @@ export const deleteIssueCommentByCommentId = <ThrowOnError extends boolean = fal
  */
 export const getIssueCommentByCommentId = <ThrowOnError extends boolean = false>(options: Options<GetIssueCommentByCommentIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetIssueCommentByCommentIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetIssueCommentByCommentIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetIssueCommentByCommentIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5611,12 +4506,6 @@ export const getIssueCommentByCommentId = <ThrowOnError extends boolean = false>
  */
 export const putIssueCommentByCommentId = <ThrowOnError extends boolean = false>(options: Options<PutIssueCommentByCommentIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutIssueCommentByCommentIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutIssueCommentByCommentIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutIssueCommentByCommentIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5647,13 +4536,7 @@ export const putIssueCommentByCommentId = <ThrowOnError extends boolean = false>
  */
 export const postIssueByIssueIdByStatus = <ThrowOnError extends boolean = false>(options: Options<PostIssueByIssueIdByStatusData, ThrowOnError>) => {
     return (options.client ?? client).post<PostIssueByIssueIdByStatusResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostIssueByIssueIdByStatusData.parseAsync(data);
-        },
         responseTransformer: postIssueByIssueIdByStatusResponseTransformer,
-        responseValidator: async (data) => {
-            return await zPostIssueByIssueIdByStatusResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5678,12 +4561,6 @@ export const postIssueByIssueIdByStatus = <ThrowOnError extends boolean = false>
  */
 export const getKeywordByKeywordId = <ThrowOnError extends boolean = false>(options: Options<GetKeywordByKeywordIdData, ThrowOnError>) => {
     return (options.client ?? client).get<GetKeywordByKeywordIdResponses, GetKeywordByKeywordIdErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetKeywordByKeywordIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetKeywordByKeywordIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5708,12 +4585,6 @@ export const getKeywordByKeywordId = <ThrowOnError extends boolean = false>(opti
  */
 export const getWatchprovidersRegions = <ThrowOnError extends boolean = false>(options?: Options<GetWatchprovidersRegionsData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetWatchprovidersRegionsResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetWatchprovidersRegionsData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetWatchprovidersRegionsResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5738,12 +4609,6 @@ export const getWatchprovidersRegions = <ThrowOnError extends boolean = false>(o
  */
 export const getWatchprovidersMovies = <ThrowOnError extends boolean = false>(options: Options<GetWatchprovidersMoviesData, ThrowOnError>) => {
     return (options.client ?? client).get<GetWatchprovidersMoviesResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetWatchprovidersMoviesData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetWatchprovidersMoviesResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5768,12 +4633,6 @@ export const getWatchprovidersMovies = <ThrowOnError extends boolean = false>(op
  */
 export const getWatchprovidersTv = <ThrowOnError extends boolean = false>(options: Options<GetWatchprovidersTvData, ThrowOnError>) => {
     return (options.client ?? client).get<GetWatchprovidersTvResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetWatchprovidersTvData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetWatchprovidersTvResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5797,12 +4656,6 @@ export const getWatchprovidersTv = <ThrowOnError extends boolean = false>(option
  */
 export const getCertificationsMovie = <ThrowOnError extends boolean = false>(options?: Options<GetCertificationsMovieData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetCertificationsMovieResponses, GetCertificationsMovieErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetCertificationsMovieData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetCertificationsMovieResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5826,12 +4679,6 @@ export const getCertificationsMovie = <ThrowOnError extends boolean = false>(opt
  */
 export const getCertificationsTv = <ThrowOnError extends boolean = false>(options?: Options<GetCertificationsTvData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetCertificationsTvResponses, GetCertificationsTvErrors, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetCertificationsTvData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetCertificationsTvResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5855,12 +4702,6 @@ export const getCertificationsTv = <ThrowOnError extends boolean = false>(option
  */
 export const getOverrideRule = <ThrowOnError extends boolean = false>(options?: Options<GetOverrideRuleData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetOverrideRuleResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zGetOverrideRuleData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zGetOverrideRuleResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5884,12 +4725,6 @@ export const getOverrideRule = <ThrowOnError extends boolean = false>(options?: 
  */
 export const postOverrideRule = <ThrowOnError extends boolean = false>(options?: Options<PostOverrideRuleData, ThrowOnError>) => {
     return (options?.client ?? client).post<PostOverrideRuleResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPostOverrideRuleData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPostOverrideRuleResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5913,12 +4748,6 @@ export const postOverrideRule = <ThrowOnError extends boolean = false>(options?:
  */
 export const deleteOverrideRuleByRuleId = <ThrowOnError extends boolean = false>(options: Options<DeleteOverrideRuleByRuleIdData, ThrowOnError>) => {
     return (options.client ?? client).delete<DeleteOverrideRuleByRuleIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zDeleteOverrideRuleByRuleIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zDeleteOverrideRuleByRuleIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',
@@ -5942,12 +4771,6 @@ export const deleteOverrideRuleByRuleId = <ThrowOnError extends boolean = false>
  */
 export const putOverrideRuleByRuleId = <ThrowOnError extends boolean = false>(options: Options<PutOverrideRuleByRuleIdData, ThrowOnError>) => {
     return (options.client ?? client).put<PutOverrideRuleByRuleIdResponses, unknown, ThrowOnError>({
-        requestValidator: async (data) => {
-            return await zPutOverrideRuleByRuleIdData.parseAsync(data);
-        },
-        responseValidator: async (data) => {
-            return await zPutOverrideRuleByRuleIdResponse.parseAsync(data);
-        },
         security: [
             {
                 in: 'cookie',

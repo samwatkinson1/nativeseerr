@@ -1,10 +1,13 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Redirect, router, useFocusEffect } from "expo-router";
-import { Suspense, use, useCallback } from "react";
+import { getItem } from "expo-secure-store";
+import { Suspense, use, useCallback, useEffect } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
+import { store } from "@/const/keys";
 import { GetAuthMeResponse } from "@/http/gen";
 import { getAuthMeOptions } from "@/http/gen/@tanstack/react-query.gen";
+import { client } from "@/http/gen/client.gen";
 
 function RedirectToDiscover({
   query,
@@ -31,6 +34,12 @@ export function ErrorBoundary() {
 
 export default function IndexScreen() {
   const query = useQuery({ ...getAuthMeOptions() });
+
+  useEffect(() => {
+    const url = getItem(store.serverUrl);
+    if (url) client.setConfig({ baseUrl: `${url}/api/v1` });
+  }, []);
+
   return (
     <View style={styles.container}>
       <Suspense fallback={<ActivityIndicator size="small" />}>
