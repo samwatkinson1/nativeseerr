@@ -9,6 +9,7 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "platforms": ["ios", "android"],
+    "owner": "samwio",
     "ios": {
       "appleTeamId": "AQW92S5L9V",
       "bundleIdentifier": "io.samw.nativeseerr",
