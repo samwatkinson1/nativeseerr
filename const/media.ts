@@ -1,0 +1,9 @@
+export enum MediaStatus {
+  UNKNOWN = 1,
+  PENDING,
+  PROCESSING,
+  PARTIALLY_AVAILABLE,
+  AVAILABLE,
+  BLACKLISTED,
+  DELETED,
+}

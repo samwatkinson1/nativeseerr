@@ -482,6 +482,7 @@ export type MediaInfo = {
     readonly requests?: Array<MediaRequest>;
     readonly createdAt?: string;
     readonly updatedAt?: string;
+    mediaType?: 'movie' | 'tv';
 };
 
 export type Cast = {
