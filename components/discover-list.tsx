@@ -1,8 +1,8 @@
-import { LegendList } from "@legendapp/list";
 import { UseQueryResult } from "@tanstack/react-query";
-import { createElement, ElementType, Fragment, use } from "react";
-import { StyleSheet } from "react-native";
+import { ElementType, Fragment, use } from "react";
+import { ScrollView, StyleSheet } from "react-native";
 
+import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
 import { DiscoverSliderType } from "@/const/discover";
 import { GetSettingsDiscoverResponse } from "@/http/gen";
@@ -15,16 +15,16 @@ export function DiscoverList({ query }: DiscoverListProps) {
   const data = use(query.promise);
 
   return (
-    <LegendList
-      data={data}
+    <ScrollView
       automaticallyAdjustContentInsets
       contentInsetAdjustmentBehavior="always"
       contentContainerStyle={styles.container}
-      keyExtractor={(item) => DiscoverSliderType[item.type]}
-      renderItem={({ item }) => {
-        return createElement(sliders[item.type as DiscoverSliderType]);
-      }}
-    />
+    >
+      {data.map((item) => {
+        const Item = sliders[item.type as DiscoverSliderType];
+        return <Item key={DiscoverSliderType[item.type]} />;
+      })}
+    </ScrollView>
   );
 }
 

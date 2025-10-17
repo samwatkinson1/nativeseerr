@@ -1,7 +1,6 @@
-import { LegendList } from "@legendapp/list";
 import { useQuery } from "@tanstack/react-query";
 import { use } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 import { SliderHeader } from "@/components/slider-header";
 import { TitleCard } from "@/components/title-card";
@@ -15,21 +14,21 @@ export function RecentlyAddedSlider() {
   });
 
   const data = use(query.promise);
-
   if (!data.results) return null;
 
   return (
     <View style={styles.container}>
       <SliderHeader title="Recently Added" />
-      <LegendList
-        data={data.results}
+      <ScrollView
         horizontal
         contentContainerStyle={styles.content}
         scrollIndicatorInsets={{ right: 16 }}
-        // fixme: remove non-null assertion
-        keyExtractor={(item) => `recently-added-${item.id!}`}
-        renderItem={({ item }) => <TitleCard item={item} />}
-      />
+      >
+        {data.results.map((item) => {
+          // fixme: remove non-null assertion
+          return <TitleCard key={`recently-added-${item.id!}`} item={item} />;
+        })}
+      </ScrollView>
     </View>
   );
 }
