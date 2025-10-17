@@ -1,1 +1,1 @@
-export { default } from "@/screens/movie/[id]";
+export { default } from "@/screens/movies/[id]";
