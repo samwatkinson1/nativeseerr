@@ -31,6 +31,11 @@ export default defineConfig({
             readOnly: true,
           };
         },
+        User(schema) {
+          schema.properties.displayName = {
+            type: "string",
+          };
+        },
       },
     },
   },

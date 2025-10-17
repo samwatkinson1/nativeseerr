@@ -30,7 +30,7 @@ export function DiscoverList({ query }: DiscoverListProps) {
 
 const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.RECENTLY_ADDED]: RecentlyAddedSlider,
-  [DiscoverSliderType.RECENT_REQUESTS]: Fragment,
+  [DiscoverSliderType.RECENT_REQUESTS]: RecentRequestsSlider,
   [DiscoverSliderType.PLEX_WATCHLIST]: Fragment,
   [DiscoverSliderType.TRENDING]: Fragment,
   [DiscoverSliderType.POPULAR_MOVIES]: Fragment,

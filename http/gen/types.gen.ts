@@ -36,6 +36,7 @@ export type User = {
     readonly createdAt: string;
     readonly updatedAt: string;
     readonly requestCount?: number;
+    displayName?: string;
 };
 
 export type UserSettings = {
@@ -886,6 +887,7 @@ export type WatchlistWritable = {
 export type UserWritable = {
     username?: string;
     permissions?: number;
+    displayName?: string;
 };
 
 export type MainSettingsWritable = {

@@ -16,19 +16,22 @@ interface RecentlyAddedItemsProps {
 }
 
 function RecentlyAddedItems({ items }: RecentlyAddedItemsProps) {
-  const queries = useSuspenseQueries({
+  const titles = useSuspenseQueries({
     queries: items.map((item) => {
       const id = item.tmdbId!; // fixme: remove non-null assertion
       return item.mediaType === "movie"
         ? getMovieByMovieIdOptions({ path: { movieId: id } })
         : getTvByTvIdOptions({ path: { tvId: id } });
     }),
+    combine(queries) {
+      return queries.map((item) => item.data);
+    },
   });
 
   return (
     <ScrollView horizontal contentContainerStyle={styles.container}>
-      {queries.map(({ data }) => (
-        <TitleCard key={`recently-added-${data.id}`} title={data} />
+      {titles.map((title) => (
+        <TitleCard key={`recently-added-${title.id}`} title={title} />
       ))}
     </ScrollView>
   );
