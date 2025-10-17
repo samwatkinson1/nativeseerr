@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@react-navigation/native";
+import { useTanStackQueryDevTools } from "@rozenite/tanstack-query-plugin";
 import {
   focusManager,
   onlineManager,
@@ -26,6 +27,8 @@ LogBox.uninstall(); // fixme: disable logbox until expo-router handles suspense 
 
 export default function RootLayout() {
   const scheme = useColorScheme();
+
+  useTanStackQueryDevTools(queryClient);
 
   useEffect(() => {
     const subscription = AppState.addEventListener("change", (status) => {

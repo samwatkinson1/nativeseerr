@@ -46,6 +46,8 @@
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.85.2",
+    "@rozenite/metro": "^1.0.0-alpha.15",
+    "@rozenite/tanstack-query-plugin": "^1.0.0-alpha.15",
     "@types/react": "~19.1.0",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~10.0.0",
