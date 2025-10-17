@@ -1,21 +1,31 @@
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { useQueryClient, UseQueryResult } from "@tanstack/react-query";
 import { Redirect, router, useFocusEffect } from "expo-router";
-import { getItem } from "expo-secure-store";
-import { Suspense, use, useCallback, useEffect } from "react";
+import { Suspense, use, useCallback } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
-import { store } from "@/const/keys";
-import { GetAuthMeResponse } from "@/http/gen";
-import { getAuthMeOptions } from "@/http/gen/@tanstack/react-query.gen";
+import { Loading } from "@/components/loading";
+import { useBaseUrl } from "@/hooks/use-base-url";
 import { client } from "@/http/gen/client.gen";
 
-function RedirectToDiscover({
-  query,
-}: {
-  query: UseQueryResult<GetAuthMeResponse>;
-}) {
+interface RedirectToDiscoverProps {
+  query: UseQueryResult<string | null>;
+}
+
+function RedirectToDiscover({ query }: RedirectToDiscoverProps) {
+  const qc = useQueryClient();
   const data = use(query.promise);
-  return <Redirect href={!data ? "/login/jellyfin" : "/discover"} />;
+
+  useFocusEffect(
+    useCallback(() => {
+      if (!data) return router.navigate("/login/jellyfin");
+
+      client.setConfig({ baseUrl: `${data}/api/v1` });
+      void qc.resetQueries();
+    }, [data, qc])
+  );
+
+  if (!data) return <Loading />;
+  return <Redirect href="/discover" />;
 }
 
 export function ErrorBoundary() {
@@ -25,20 +35,11 @@ export function ErrorBoundary() {
     }, [])
   );
 
-  return (
-    <View style={styles.container}>
-      <ActivityIndicator size="small" />
-    </View>
-  );
+  return <Loading />;
 }
 
 export default function IndexScreen() {
-  const query = useQuery({ ...getAuthMeOptions() });
-
-  useEffect(() => {
-    const url = getItem(store.serverUrl);
-    if (url) client.setConfig({ baseUrl: `${url}/api/v1` });
-  }, []);
+  const query = useBaseUrl();
 
   return (
     <View style={styles.container}>
