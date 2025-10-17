@@ -19,7 +19,6 @@ export function DiscoverList({ query }: DiscoverListProps) {
       data={data}
       automaticallyAdjustContentInsets
       contentInsetAdjustmentBehavior="always"
-      recycleItems
       contentContainerStyle={styles.container}
       keyExtractor={(item) => DiscoverSliderType[item.type]}
       renderItem={({ item }) => {
