@@ -5,9 +5,7 @@ export default function SeriesScreen() {
   const { colors, fonts } = useTheme();
   return (
     <View style={styles.container}>
-      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
-        /series
-      </Text>
+      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>/series</Text>
     </View>
   );
 }

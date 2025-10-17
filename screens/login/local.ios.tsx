@@ -33,22 +33,14 @@ export default function LoginLocalScreen() {
             <VStack spacing={12}>
               <Spacer minLength={16} />
 
-              <Button
-                controlSize="large"
-                variant="glassProminent"
-                onPress={handleSubmit}
-              >
+              <Button controlSize="large" variant="glassProminent" onPress={handleSubmit}>
                 <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
                   <Image systemName="iphone.and.arrow.right.inward" size={18} />
                   <Text>Sign In</Text>
                 </HStack>
               </Button>
 
-              <Button
-                controlSize="large"
-                variant="glass"
-                onPress={handleRedirect}
-              >
+              <Button controlSize="large" variant="glass" onPress={handleRedirect}>
                 <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
                   <Image systemName="wifi" size={18} />
                   <Text>Login with Jellyfin</Text>

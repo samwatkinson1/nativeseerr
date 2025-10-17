@@ -5,9 +5,7 @@ export default function RequestsScreen() {
   const { colors, fonts } = useTheme();
   return (
     <View style={styles.container}>
-      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
-        /requests
-      </Text>
+      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>/requests</Text>
     </View>
   );
 }

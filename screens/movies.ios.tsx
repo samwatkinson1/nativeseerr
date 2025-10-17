@@ -5,9 +5,7 @@ export default function MoviesScreen() {
   const { colors, fonts } = useTheme();
   return (
     <View style={styles.container}>
-      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>
-        /movies
-      </Text>
+      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>/movies</Text>
     </View>
   );
 }

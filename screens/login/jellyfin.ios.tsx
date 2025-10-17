@@ -80,14 +80,8 @@ export default function LoginJellyfinScreen() {
                     variant="glassProminent"
                     onPress={form.handleSubmit}
                   >
-                    <HStack
-                      spacing={8}
-                      modifiers={[frame({ maxWidth: Infinity })]}
-                    >
-                      <Image
-                        systemName="iphone.and.arrow.right.inward"
-                        size={18}
-                      />
+                    <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
+                      <Image systemName="iphone.and.arrow.right.inward" size={18} />
                       <Text>Sign In</Text>
                     </HStack>
                   </Button>
@@ -102,10 +96,7 @@ export default function LoginJellyfinScreen() {
                     variant="glass"
                     onPress={handleRedirect}
                   >
-                    <HStack
-                      spacing={8}
-                      modifiers={[frame({ maxWidth: Infinity })]}
-                    >
+                    <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
                       <Image systemName="wifi" size={18} />
                       <Text>Login with Seerr</Text>
                     </HStack>
@@ -123,9 +114,7 @@ export default function LoginJellyfinScreen() {
                 keyboardType="url"
                 placeholder="Server URL"
                 defaultValue={field.state.value}
-                onChangeFocus={(focused) =>
-                  !focused ? field.handleBlur() : undefined
-                }
+                onChangeFocus={(focused) => (!focused ? field.handleBlur() : undefined)}
                 onChangeText={field.handleChange}
               />
             )}
@@ -138,9 +127,7 @@ export default function LoginJellyfinScreen() {
                 keyboardType="email-address"
                 placeholder="Username"
                 defaultValue={field.state.value}
-                onChangeFocus={(focused) =>
-                  !focused ? field.handleBlur() : undefined
-                }
+                onChangeFocus={(focused) => (!focused ? field.handleBlur() : undefined)}
                 onChangeText={field.handleChange}
               />
             )}
@@ -150,9 +137,7 @@ export default function LoginJellyfinScreen() {
               <SecureField
                 placeholder="Password"
                 defaultValue={field.state.value}
-                onChangeFocus={(focused) =>
-                  !focused ? field.handleBlur() : undefined
-                }
+                onChangeFocus={(focused) => (!focused ? field.handleBlur() : undefined)}
                 onChangeText={field.handleChange}
               />
             )}

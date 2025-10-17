@@ -7,9 +7,5 @@ export interface SliderTitleProps {
 
 export function SliderTitle({ title }: SliderTitleProps) {
   const { colors, fonts } = useTheme();
-  return (
-    <Text style={{ color: colors.text, ...fonts.bold, fontSize: 34 }}>
-      {title}
-    </Text>
-  );
+  return <Text style={{ color: colors.text, ...fonts.bold, fontSize: 34 }}>{title}</Text>;
 }

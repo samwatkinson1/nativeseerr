@@ -6,9 +6,7 @@ export interface PillProps {
 }
 
 export function Pill({ title, style }: PillProps) {
-  return (
-    <Text style={StyleSheet.compose(styles.container, style)}>{title}</Text>
-  );
+  return <Text style={StyleSheet.compose(styles.container, style)}>{title}</Text>;
 }
 
 const styles = StyleSheet.create({

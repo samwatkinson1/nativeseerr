@@ -1,7 +1,4 @@
-import {
-  DarkTheme as RNDarkTheme,
-  DefaultTheme as RNDefaultTheme,
-} from "@react-navigation/native";
+import { DarkTheme as RNDarkTheme, DefaultTheme as RNDefaultTheme } from "@react-navigation/native";
 
 export const DarkTheme = {
   ...RNDarkTheme,

@@ -12,10 +12,7 @@ export default function LoginLayout() {
       }}
     >
       <Stack.Screen name="local" options={{ title: "Login with Seerr" }} />
-      <Stack.Screen
-        name="jellyfin"
-        options={{ title: "Login with Jellyfin" }}
-      />
+      <Stack.Screen name="jellyfin" options={{ title: "Login with Jellyfin" }} />
     </Stack>
   );
 }
