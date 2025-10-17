@@ -24,6 +24,13 @@ export default defineConfig({
             readOnly: true,
           };
         },
+        MediaRequest(schema) {
+          schema.properties.type = {
+            type: "string",
+            enum: ["movie", "tv"],
+            readOnly: true,
+          };
+        },
       },
     },
   },

@@ -469,6 +469,7 @@ export type MediaRequest = {
     serverId?: number;
     profileId?: number;
     rootFolder?: string;
+    type?: 'movie' | 'tv';
 };
 
 export type MediaInfo = {
