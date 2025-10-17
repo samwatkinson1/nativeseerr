@@ -1,7 +1,5 @@
 import { Stack } from "expo-router";
 
 export default function Layout() {
-  return (
-    <Stack screenOptions={{ headerTransparent: true, headerTitle: "Movies" }} />
-  );
+  return <Stack screenOptions={{ headerTransparent: true, headerTitle: "" }} />;
 }

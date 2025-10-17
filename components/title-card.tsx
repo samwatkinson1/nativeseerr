@@ -17,7 +17,7 @@ export function TitleCard({ item }: TitleCardProps) {
   const { colors } = useTheme();
 
   return (
-    <Link href={`/movie/${item.id}`}>
+    <Link href={`/movies/${item.id}`}>
       <Link.Trigger>
         <ImageBackground
           source={`https://image.tmdb.org/t/p/w300_and_h450_face${item.posterPath}`}
@@ -39,7 +39,7 @@ export function TitleCard({ item }: TitleCardProps) {
             )}
         </ImageBackground>
       </Link.Trigger>
-      <Link.Preview />
+      <Link.Preview style={{ backgroundColor: colors.card }} />
     </Link>
   );
 }

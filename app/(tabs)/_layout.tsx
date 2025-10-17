@@ -3,7 +3,7 @@ import { Platform } from "react-native";
 
 export default function TabsLayout() {
   return (
-    <NativeTabs>
+    <NativeTabs minimizeBehavior="onScrollDown">
       <NativeTabs.Trigger name="discover">
         <Label>Discover</Label>
         {Platform.select({
