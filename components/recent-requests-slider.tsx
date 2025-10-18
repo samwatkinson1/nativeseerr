@@ -59,7 +59,7 @@ export function RecentRequestsSlider() {
   const baseUrl = use(baseUrlQuery.promise);
 
   const data = use(query.promise);
-  if (!data.results) return null;
+  if (!data.results?.length) return null;
 
   return (
     <View style={styles.container}>

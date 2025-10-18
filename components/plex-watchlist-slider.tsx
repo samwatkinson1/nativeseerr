@@ -4,18 +4,25 @@ import { ScrollView, StyleSheet, View } from "react-native";
 
 import { SliderHeader } from "@/components/slider-header";
 import { TitleCard } from "@/components/title-card";
-import { MediaInfo } from "@/http/gen";
 import {
-  getMediaOptions,
+  getDiscoverWatchlistOptions,
   getMovieByMovieIdOptions,
   getTvByTvIdOptions,
 } from "@/http/gen/@tanstack/react-query.gen";
 
-interface RecentlyAddedItemsProps {
-  items: MediaInfo[];
+interface PlexWatchlistItem {
+  tmdbId?: number;
+  ratingKey?: string;
+  type?: string;
+  title?: string;
+  mediaType?: "movie" | "tv";
 }
 
-function RecentlyAddedItems({ items }: RecentlyAddedItemsProps) {
+interface PlexWatchlistItemsProps {
+  items: PlexWatchlistItem[];
+}
+
+function PlexWatchlistItems({ items }: PlexWatchlistItemsProps) {
   const titles = useSuspenseQueries({
     queries: items.map((item) => {
       const id = item.tmdbId!; // fixme: remove non-null assertion
@@ -33,7 +40,7 @@ function RecentlyAddedItems({ items }: RecentlyAddedItemsProps) {
       {titles.map((title, i) => {
         return (
           <TitleCard
-            key={`recently-added-${title.id}`}
+            key={`plex-watchlist-${title.id}`}
             title={title}
             style={i === 0 ? styles.cardFirst : styles.card}
           />
@@ -43,20 +50,18 @@ function RecentlyAddedItems({ items }: RecentlyAddedItemsProps) {
   );
 }
 
-export function RecentlyAddedSlider() {
-  const query = useQuery({
-    ...getMediaOptions({
-      query: { filter: "allavailable", take: 20, sort: "mediaAdded" },
-    }),
-  });
+// todo: check user watchlistSyncMovies/watchlistSyncTv
+export function PlexWatchlistSlider() {
+  const query = useQuery({ ...getDiscoverWatchlistOptions() });
 
   const data = use(query.promise);
   if (!data.results?.length) return null;
 
   return (
     <View style={styles.container}>
-      <SliderHeader title="Recently Added" />
-      <RecentlyAddedItems items={data.results} />
+      {/* todo: /discover/watchlist */}
+      <SliderHeader title="Your Watchlist" />
+      <PlexWatchlistItems items={data.results} />
     </View>
   );
 }

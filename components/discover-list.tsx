@@ -2,6 +2,7 @@ import { UseQueryResult } from "@tanstack/react-query";
 import { ElementType, Fragment, use } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
+import { PlexWatchlistSlider } from "@/components/plex-watchlist-slider";
 import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
 import { DiscoverSliderType } from "@/const/discover";
@@ -31,7 +32,7 @@ export function DiscoverList({ query }: DiscoverListProps) {
 const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.RECENTLY_ADDED]: RecentlyAddedSlider,
   [DiscoverSliderType.RECENT_REQUESTS]: RecentRequestsSlider,
-  [DiscoverSliderType.PLEX_WATCHLIST]: Fragment,
+  [DiscoverSliderType.PLEX_WATCHLIST]: PlexWatchlistSlider,
   [DiscoverSliderType.TRENDING]: Fragment,
   [DiscoverSliderType.POPULAR_MOVIES]: Fragment,
   [DiscoverSliderType.MOVIE_GENRES]: Fragment,
