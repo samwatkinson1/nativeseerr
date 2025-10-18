@@ -240,7 +240,7 @@ export type PublicSettings = {
 
 export type MovieResult = {
     id: number;
-    mediaType: string;
+    mediaType: 'movie';
     popularity?: number;
     posterPath?: string;
     backdropPath?: string;
@@ -259,7 +259,7 @@ export type MovieResult = {
 
 export type TvResult = {
     id?: number;
-    mediaType?: string;
+    mediaType?: 'tv';
     popularity?: number;
     posterPath?: string;
     backdropPath?: string;
@@ -957,6 +957,41 @@ export type SonarrSettingsWritable = {
     externalUrl?: string;
     syncEnabled?: boolean;
     preventSearch?: boolean;
+};
+
+export type MovieResultWritable = {
+    id: number;
+    popularity?: number;
+    posterPath?: string;
+    backdropPath?: string;
+    voteCount?: number;
+    voteAverage?: number;
+    genreIds?: Array<number>;
+    overview?: string;
+    originalLanguage?: string;
+    title: string;
+    originalTitle?: string;
+    releaseDate?: string;
+    adult?: boolean;
+    video?: boolean;
+    mediaInfo?: MediaInfoWritable;
+};
+
+export type TvResultWritable = {
+    id?: number;
+    popularity?: number;
+    posterPath?: string;
+    backdropPath?: string;
+    voteCount?: number;
+    voteAverage?: number;
+    genreIds?: Array<number>;
+    overview?: string;
+    originalLanguage?: string;
+    name?: string;
+    originalName?: string;
+    originCountry?: Array<string>;
+    firstAirDate?: string;
+    mediaInfo?: MediaInfoWritable;
 };
 
 export type MovieDetailsWritable = {

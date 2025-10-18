@@ -31,6 +31,20 @@ export default defineConfig({
             readOnly: true,
           };
         },
+        MovieResult(schema) {
+          schema.properties.mediaType = {
+            type: "string",
+            enum: ["movie"],
+            readOnly: true,
+          };
+        },
+        TvResult(schema) {
+          schema.properties.mediaType = {
+            type: "string",
+            enum: ["tv"],
+            readOnly: true,
+          };
+        },
         User(schema) {
           schema.properties.displayName = {
             type: "string",

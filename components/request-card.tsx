@@ -39,7 +39,7 @@ export function RequestCard({ baseUrl, request, title, style }: RequestCardProps
           start={[0, 0]}
           end={[1, 1.65]}
           locations={[0, 0.75]}
-          style={styles.gradient}
+          style={{ ...styles.gradient, ...styles.radius }}
         />
 
         <View style={{ flex: 1 }}>

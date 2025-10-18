@@ -5,6 +5,7 @@ import { ScrollView, StyleSheet } from "react-native";
 import { PlexWatchlistSlider } from "@/components/plex-watchlist-slider";
 import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
+import { TrendingSlider } from "@/components/trending-slider";
 import { DiscoverSliderType } from "@/const/discover";
 import { GetSettingsDiscoverResponse } from "@/http/gen";
 
@@ -33,7 +34,7 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.RECENTLY_ADDED]: RecentlyAddedSlider,
   [DiscoverSliderType.RECENT_REQUESTS]: RecentRequestsSlider,
   [DiscoverSliderType.PLEX_WATCHLIST]: PlexWatchlistSlider,
-  [DiscoverSliderType.TRENDING]: Fragment,
+  [DiscoverSliderType.TRENDING]: TrendingSlider,
   [DiscoverSliderType.POPULAR_MOVIES]: Fragment,
   [DiscoverSliderType.MOVIE_GENRES]: Fragment,
   [DiscoverSliderType.UPCOMING_MOVIES]: Fragment,
@@ -54,5 +55,5 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
 };
 
 const styles = StyleSheet.create({
-  container: { gap: 8, paddingBottom: 16 },
+  container: { gap: 8, paddingBottom: 32 },
 });

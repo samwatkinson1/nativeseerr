@@ -7,10 +7,10 @@ import { Spacer } from "@/components/spacer";
 import { StatusBadgeMini } from "@/components/status-badge-mini";
 import { TitlePill } from "@/components/title-pill";
 import { MediaStatus } from "@/const/media";
-import { MovieDetails, TvDetails } from "@/http/gen";
+import { MovieDetails, MovieResult, TvDetails, TvResult } from "@/http/gen";
 
 export interface TitleCardProps {
-  title: MovieDetails | TvDetails;
+  title: (MovieDetails & MovieResult) | (TvDetails & TvResult);
   style?: StyleProp<ViewStyle>;
 }
 
@@ -18,7 +18,7 @@ export function TitleCard({ title, style }: TitleCardProps) {
   const { colors } = useTheme();
 
   const { posterPath, mediaInfo } = title;
-  const mediaType = mediaInfo?.mediaType;
+  const mediaType = mediaInfo?.mediaType ?? title.mediaType;
   const status = mediaInfo?.status;
 
   return (
