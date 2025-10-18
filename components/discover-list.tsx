@@ -3,6 +3,7 @@ import { ElementType, Fragment, use } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
 import { PlexWatchlistSlider } from "@/components/plex-watchlist-slider";
+import { PopularMoviesSlider } from "@/components/popular-movies-slider";
 import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
 import { TrendingSlider } from "@/components/trending-slider";
@@ -35,7 +36,7 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.RECENT_REQUESTS]: RecentRequestsSlider,
   [DiscoverSliderType.PLEX_WATCHLIST]: PlexWatchlistSlider,
   [DiscoverSliderType.TRENDING]: TrendingSlider,
-  [DiscoverSliderType.POPULAR_MOVIES]: Fragment,
+  [DiscoverSliderType.POPULAR_MOVIES]: PopularMoviesSlider,
   [DiscoverSliderType.MOVIE_GENRES]: Fragment,
   [DiscoverSliderType.UPCOMING_MOVIES]: Fragment,
   [DiscoverSliderType.STUDIOS]: Fragment,
