@@ -11,15 +11,15 @@ export interface SliderHeaderProps extends SliderTitleProps {
 export function SliderHeader({ href, title }: SliderHeaderProps) {
   if (!href) {
     return (
-      <Host>
+      <Host style={{ marginHorizontal: 16 }}>
         <SliderTitle title={title} />
       </Host>
     );
   }
 
   return (
-    <Host>
-      <Link href={href} asChild>
+    <Link href={href} asChild>
+      <Host style={{ marginHorizontal: 16 }}>
         <HStack alignment="center">
           <SliderTitle title={title} />
           <Image
@@ -28,7 +28,7 @@ export function SliderHeader({ href, title }: SliderHeaderProps) {
             modifiers={[frame({ height: 24, width: 24 })]}
           />
         </HStack>
-      </Link>
-    </Host>
+      </Host>
+    </Link>
   );
 }

@@ -29,10 +29,16 @@ function RecentlyAddedItems({ items }: RecentlyAddedItemsProps) {
   });
 
   return (
-    <ScrollView horizontal contentContainerStyle={styles.container}>
-      {titles.map((title) => (
-        <TitleCard key={`recently-added-${title.id}`} title={title} />
-      ))}
+    <ScrollView horizontal scrollIndicatorInsets={{ left: 16, right: 16 }}>
+      {titles.map((title, i) => {
+        return (
+          <TitleCard
+            key={`recently-added-${title.id}`}
+            title={title}
+            style={i === 0 ? styles.cardFirst : styles.card}
+          />
+        );
+      })}
     </ScrollView>
   );
 }
@@ -57,4 +63,6 @@ export function RecentlyAddedSlider() {
 
 const styles = StyleSheet.create({
   container: { gap: 16 },
+  card: { marginRight: 16 },
+  cardFirst: { marginHorizontal: 16 },
 });

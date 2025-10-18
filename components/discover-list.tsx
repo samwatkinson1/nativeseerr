@@ -53,5 +53,5 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
 };
 
 const styles = StyleSheet.create({
-  container: { gap: 8, paddingHorizontal: 16, paddingBottom: 16 },
+  container: { gap: 8, paddingBottom: 16 },
 });

@@ -2,7 +2,7 @@ import { useTheme } from "@react-navigation/core";
 import { Image, ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
 
 import { StatusBadgeMini } from "@/components/status-badge-mini";
 import { MediaStatus } from "@/const/media";
@@ -12,9 +12,10 @@ export interface RequestCardProps {
   baseUrl: string | null;
   request: MediaRequest;
   title: MovieDetails & TvDetails;
+  style?: StyleProp<ViewStyle>;
 }
 
-export function RequestCard({ baseUrl, request, title }: RequestCardProps) {
+export function RequestCard({ baseUrl, request, title, style }: RequestCardProps) {
   const { colors, fonts } = useTheme();
 
   const { requestedBy } = request;
@@ -22,10 +23,11 @@ export function RequestCard({ baseUrl, request, title }: RequestCardProps) {
   const displayName = requestedBy?.displayName;
 
   const { backdropPath, posterPath, mediaInfo } = title;
+  const mediaType = mediaInfo?.mediaType;
   const status = mediaInfo?.status;
 
   return (
-    <View style={{ ...styles.base, ...styles.margin }}>
+    <View style={StyleSheet.compose({ ...styles.base, ...styles.margin }, style)}>
       <ImageBackground
         source={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${backdropPath}`}
         contentFit="cover"
@@ -55,7 +57,7 @@ export function RequestCard({ baseUrl, request, title }: RequestCardProps) {
           {status && status !== MediaStatus.UNKNOWN && <StatusBadgeMini status={status} />}
         </View>
 
-        <Link href={`/requests/${request.id}`}>
+        <Link href={mediaType === "movie" ? `/movies/${title.id}` : `/series/${title.id}`}>
           <Link.Trigger>
             <Image
               source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${posterPath}`}

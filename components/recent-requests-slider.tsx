@@ -31,8 +31,8 @@ function RecentRequestsItems({ items, baseUrl }: RecentRequestsItemsProps) {
   });
 
   return (
-    <ScrollView horizontal contentContainerStyle={styles.container}>
-      {items.map((request) => {
+    <ScrollView horizontal scrollIndicatorInsets={{ left: 16, right: 16 }}>
+      {items.map((request, i) => {
         // fixme: nullables
         const title = titles.find((data) => data.mediaInfo?.tmdbId === request.media?.tmdbId);
         if (!title) return null; // todo: error state
@@ -42,6 +42,7 @@ function RecentRequestsItems({ items, baseUrl }: RecentRequestsItemsProps) {
             request={request}
             title={title}
             baseUrl={baseUrl}
+            style={i === 0 ? styles.cardFirst : styles.card}
           />
         );
       })}
@@ -70,4 +71,6 @@ export function RecentRequestsSlider() {
 
 const styles = StyleSheet.create({
   container: { gap: 16 },
+  card: { marginRight: 16 },
+  cardFirst: { marginHorizontal: 16 },
 });

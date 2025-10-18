@@ -1,7 +1,7 @@
 import { useTheme } from "@react-navigation/core";
 import { ImageBackground } from "expo-image";
 import { Link } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 
 import { Spacer } from "@/components/spacer";
 import { StatusBadgeMini } from "@/components/status-badge-mini";
@@ -11,9 +11,10 @@ import { MovieDetails, TvDetails } from "@/http/gen";
 
 export interface TitleCardProps {
   title: MovieDetails | TvDetails;
+  style?: StyleProp<ViewStyle>;
 }
 
-export function TitleCard({ title }: TitleCardProps) {
+export function TitleCard({ title, style }: TitleCardProps) {
   const { colors } = useTheme();
 
   const { posterPath, mediaInfo } = title;
@@ -21,7 +22,7 @@ export function TitleCard({ title }: TitleCardProps) {
   const status = mediaInfo?.status;
 
   return (
-    <View style={{ ...styles.base, ...styles.margin }}>
+    <View style={StyleSheet.compose({ ...styles.base, ...styles.margin }, style)}>
       <Link href={mediaType === "movie" ? `/movies/${title.id}` : `/series/${title.id}`}>
         <Link.Trigger>
           <ImageBackground
