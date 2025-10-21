@@ -42,8 +42,10 @@ export function RequestCard({ baseUrl, request, title, style }: RequestCardProps
           style={{ ...styles.gradient, ...styles.radius }}
         />
 
-        <View style={{ flex: 1 }}>
-          <Text style={{ ...styles.title, ...fonts.heavy }}>{title.title || title.name}</Text>
+        <View style={{ flex: 1, gap: 2 }}>
+          <Text numberOfLines={1} style={{ ...styles.title, ...fonts.heavy }}>
+            {title.title || title.name}
+          </Text>
 
           {/* todo: permissions */}
           <View style={styles.requestor}>
