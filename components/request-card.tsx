@@ -76,7 +76,7 @@ export function RequestCard({ baseUrl, request, title, style }: RequestCardProps
 const styles = StyleSheet.create({
   base: { width: 288, height: 152, flexDirection: "row" },
   card: { padding: 16, borderStyle: "solid", borderWidth: 1, gap: 16 },
-  gradient: { position: "absolute", top: 0, left: 0, right: 0, bottom: 0 },
+  gradient: { position: "absolute", inset: 0 },
   margin: { marginBottom: 12 },
   radius: { borderRadius: 12 },
   poster: { width: 80, height: 120, borderRadius: 6 },

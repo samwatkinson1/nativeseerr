@@ -9,6 +9,7 @@ import {
 import * as Network from "expo-network";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import * as SystemUI from "expo-system-ui";
 import { useEffect } from "react";
 import { AppState, LogBox, Platform, useColorScheme } from "react-native";
 
@@ -48,6 +49,11 @@ export default function RootLayout() {
 
     return () => subscription.remove();
   }, []);
+
+  useEffect(() => {
+    const { colors } = scheme === "dark" ? DarkTheme : DefaultTheme;
+    void SystemUI.setBackgroundColorAsync(colors.background);
+  }, [scheme]);
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -1,16 +1,25 @@
-import { useTheme } from "@react-navigation/core";
-import { StyleSheet, Text, View } from "react-native";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
+
+import { InfiniteTitleList } from "@/components/infinite-title-list";
+import { Loading } from "@/components/loading";
+import { TvResult } from "@/http/gen";
+import { getDiscoverTvInfiniteOptions } from "@/http/gen/@tanstack/react-query.gen";
 
 export default function SeriesScreen() {
-  const { colors, fonts } = useTheme();
+  const query = useInfiniteQuery({
+    ...getDiscoverTvInfiniteOptions(),
+    initialPageParam: 1,
+    getNextPageParam: ({ page = 1 }) => page + 1,
+    select({ pages }) {
+      // fixme: remove cast
+      return pages.flatMap((page) => page.results as TvResult[]);
+    },
+  });
+
   return (
-    <View style={styles.container}>
-      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>/series</Text>
-    </View>
+    <Suspense fallback={<Loading />}>
+      <InfiniteTitleList query={query} />
+    </Suspense>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
-  body: { fontSize: 17, lineHeight: 22 },
-});

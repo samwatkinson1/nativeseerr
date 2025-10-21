@@ -22,11 +22,15 @@ export function TitleCard({ title, style }: TitleCardProps) {
   const status = mediaInfo?.status;
 
   return (
-    <View style={StyleSheet.compose({ ...styles.base, ...styles.margin }, style)}>
+    <View
+      style={StyleSheet.compose({ ...styles.base, ...styles.container, ...styles.margin }, style)}
+    >
       <Link href={mediaType === "movie" ? `/movies/${title.id}` : `/series/${title.id}`}>
         <Link.Trigger>
           <ImageBackground
             source={`https://image.tmdb.org/t/p/w300_and_h450_face${posterPath}`}
+            placeholder={require("@/assets/images/poster-not-found.png")}
+            placeholderContentFit="cover"
             contentFit="contain"
             imageStyle={styles.radius}
             style={{ ...styles.base, ...styles.card, ...styles.radius, borderColor: colors.border }}
@@ -43,8 +47,9 @@ export function TitleCard({ title, style }: TitleCardProps) {
 }
 
 const styles = StyleSheet.create({
-  base: { width: 144, height: 216, flexDirection: "row", alignItems: "flex-start" },
-  card: { padding: 4, borderStyle: "solid", borderWidth: 1 },
+  base: { flexDirection: "row", alignItems: "flex-start" },
+  container: { width: 144, height: 216 },
+  card: { width: "100%", height: "100%", padding: 4, borderStyle: "solid", borderWidth: 1 },
   margin: { marginBottom: 12 },
   radius: { borderRadius: 12 },
   loading: { flex: 1, alignItems: "center", justifyContent: "center" },

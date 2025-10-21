@@ -25,8 +25,8 @@ export const GenreCard: FC<GenreCardProps> = ({ genre, style }) => {
           imageStyle={{ ...styles.radius }}
           style={{ ...styles.base, ...styles.card, ...styles.radius, borderColor: colors.border }}
         >
-          <View style={{ ...styles.overlay, backgroundColor: "#1e2939", opacity: 0.3 }} />
-          <Text style={{ color: colors.text, ...fonts.heavy, ...styles.text }}>{name}</Text>
+          <View style={{ ...styles.overlay, ...styles.radius }} />
+          <Text style={{ color: "white", ...fonts.heavy, ...styles.text }}>{name}</Text>
         </ImageBackground>
       </Link>
     </View>
@@ -36,7 +36,7 @@ export const GenreCard: FC<GenreCardProps> = ({ genre, style }) => {
 const styles = StyleSheet.create({
   base: { width: 224, height: 128, alignItems: "center", justifyContent: "center" },
   card: { padding: 4, borderStyle: "solid", borderWidth: 1 },
-  overlay: { position: "absolute", top: 0, left: 0, right: 0, bottom: 0 },
+  overlay: { position: "absolute", inset: 0, backgroundColor: "#1e2939", opacity: 0.3 },
   text: { fontSize: 28, lineHeight: 34, textAlign: "center" },
   margin: { marginBottom: 12 },
   radius: { borderRadius: 12 },
