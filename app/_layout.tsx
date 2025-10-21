@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-query";
 import * as Network from "expo-network";
 import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { AppState, LogBox, Platform, useColorScheme } from "react-native";
 
@@ -24,6 +25,8 @@ const queryClient = new QueryClient({
 client.interceptors.error.use(mapHttpErrors);
 
 LogBox.uninstall(); // fixme: disable logbox until expo-router handles suspense better
+
+SplashScreen.setOptions({ duration: 1000, fade: true });
 
 export default function RootLayout() {
   const scheme = useColorScheme();
