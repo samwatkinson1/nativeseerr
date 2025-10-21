@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
   overlay: { position: "absolute", top: 0, left: 0, right: 0, bottom: 0 },
   margin: { marginBottom: 12 },
   radius: { borderRadius: 12 },
-  loading: { flex: 1, alignItems: "center", justifyContent: "center" },
 });
 
 type AvailableColors =

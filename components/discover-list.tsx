@@ -7,6 +7,7 @@ import { PlexWatchlistSlider } from "@/components/plex-watchlist-slider";
 import { PopularMoviesSlider } from "@/components/popular-movies-slider";
 import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
+import { StudioSlider } from "@/components/studio-slider";
 import { TrendingSlider } from "@/components/trending-slider";
 import { UpcomingMoviesSlider } from "@/components/upcoming-movies-slider";
 import { DiscoverSliderType } from "@/const/discover";
@@ -41,7 +42,7 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.POPULAR_MOVIES]: PopularMoviesSlider,
   [DiscoverSliderType.MOVIE_GENRES]: MovieGenreSlider,
   [DiscoverSliderType.UPCOMING_MOVIES]: UpcomingMoviesSlider,
-  [DiscoverSliderType.STUDIOS]: Fragment,
+  [DiscoverSliderType.STUDIOS]: StudioSlider,
   [DiscoverSliderType.POPULAR_TV]: Fragment,
   [DiscoverSliderType.TV_GENRES]: Fragment,
   [DiscoverSliderType.UPCOMING_TV]: Fragment,
