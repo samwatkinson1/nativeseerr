@@ -3,13 +3,17 @@ import { ElementType, Fragment, use } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
 import { MovieGenreSlider } from "@/components/movie-genre-slider";
+import { NetworkSlider } from "@/components/network-slider";
 import { PlexWatchlistSlider } from "@/components/plex-watchlist-slider";
 import { PopularMoviesSlider } from "@/components/popular-movies-slider";
+import { PopularTvSlider } from "@/components/popular-tv-slider";
 import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
 import { StudioSlider } from "@/components/studio-slider";
 import { TrendingSlider } from "@/components/trending-slider";
+import { TvGenreSlider } from "@/components/tv-genre-slider";
 import { UpcomingMoviesSlider } from "@/components/upcoming-movies-slider";
+import { UpcomingTvSlider } from "@/components/upcoming-tv-slider";
 import { DiscoverSliderType } from "@/const/discover";
 import { GetSettingsDiscoverResponse } from "@/http/gen";
 
@@ -43,10 +47,10 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.MOVIE_GENRES]: MovieGenreSlider,
   [DiscoverSliderType.UPCOMING_MOVIES]: UpcomingMoviesSlider,
   [DiscoverSliderType.STUDIOS]: StudioSlider,
-  [DiscoverSliderType.POPULAR_TV]: Fragment,
-  [DiscoverSliderType.TV_GENRES]: Fragment,
-  [DiscoverSliderType.UPCOMING_TV]: Fragment,
-  [DiscoverSliderType.NETWORKS]: Fragment,
+  [DiscoverSliderType.POPULAR_TV]: PopularTvSlider,
+  [DiscoverSliderType.TV_GENRES]: TvGenreSlider,
+  [DiscoverSliderType.UPCOMING_TV]: UpcomingTvSlider,
+  [DiscoverSliderType.NETWORKS]: NetworkSlider,
   [DiscoverSliderType.TMDB_MOVIE_KEYWORD]: Fragment,
   [DiscoverSliderType.TMDB_MOVIE_GENRE]: Fragment,
   [DiscoverSliderType.TMDB_TV_KEYWORD]: Fragment,
