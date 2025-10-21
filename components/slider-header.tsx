@@ -17,6 +17,7 @@ export function SliderHeader({ href, title }: SliderHeaderProps) {
     );
   }
 
+  // fixme: this doesn't work
   return (
     <Link href={href} asChild>
       <Host style={{ marginHorizontal: 16 }}>

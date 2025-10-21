@@ -8,6 +8,7 @@ import { PopularMoviesSlider } from "@/components/popular-movies-slider";
 import { RecentRequestsSlider } from "@/components/recent-requests-slider";
 import { RecentlyAddedSlider } from "@/components/recently-added-slider";
 import { TrendingSlider } from "@/components/trending-slider";
+import { UpcomingMoviesSlider } from "@/components/upcoming-movies-slider";
 import { DiscoverSliderType } from "@/const/discover";
 import { GetSettingsDiscoverResponse } from "@/http/gen";
 
@@ -39,7 +40,7 @@ const sliders: Record<DiscoverSliderType, ElementType> = {
   [DiscoverSliderType.TRENDING]: TrendingSlider,
   [DiscoverSliderType.POPULAR_MOVIES]: PopularMoviesSlider,
   [DiscoverSliderType.MOVIE_GENRES]: MovieGenreSlider,
-  [DiscoverSliderType.UPCOMING_MOVIES]: Fragment,
+  [DiscoverSliderType.UPCOMING_MOVIES]: UpcomingMoviesSlider,
   [DiscoverSliderType.STUDIOS]: Fragment,
   [DiscoverSliderType.POPULAR_TV]: Fragment,
   [DiscoverSliderType.TV_GENRES]: Fragment,
