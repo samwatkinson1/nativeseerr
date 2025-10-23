@@ -22,6 +22,9 @@ export const InfiniteTitleList: FC<MoviesListProps> = ({ query }) => {
   const width = window.width / columns - paddingHorizontal;
   const height = width * aspectRatio;
 
+  // todo: empty state
+  if (!data.length) return null;
+
   return (
     <LegendList
       data={data}

@@ -25,6 +25,13 @@ export default defineConfig({
           };
         },
         MediaRequest(schema) {
+          schema.properties.canRemove = {
+            type: "boolean",
+            readOnly: true,
+          };
+          schema.properties.profileName = {
+            type: "string",
+          };
           schema.properties.type = {
             type: "string",
             enum: ["movie", "tv"],

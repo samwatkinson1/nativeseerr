@@ -1,16 +1,20 @@
-import { useTheme } from "@react-navigation/core";
-import { StyleSheet, Text, View } from "react-native";
+import { useQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
+
+import { Loading } from "@/components/loading";
+import { RequestList } from "@/components/request-list";
+import { getRequestOptions } from "@/http/gen/@tanstack/react-query.gen";
 
 export default function RequestsScreen() {
-  const { colors, fonts } = useTheme();
+  const query = useQuery({
+    ...getRequestOptions({
+      query: { take: 999, filter: "all", mediaType: "all", sort: "added", sortDirection: "desc" },
+    }),
+  });
+
   return (
-    <View style={styles.container}>
-      <Text style={{ color: colors.text, ...fonts.regular, ...styles.body }}>/requests</Text>
-    </View>
+    <Suspense fallback={<Loading />}>
+      <RequestList query={query} />
+    </Suspense>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
-  body: { fontSize: 17, lineHeight: 22 },
-});

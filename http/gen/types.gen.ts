@@ -470,6 +470,8 @@ export type MediaRequest = {
     serverId?: number;
     profileId?: number;
     rootFolder?: string;
+    readonly canRemove?: boolean;
+    profileName?: string;
     type?: 'movie' | 'tv';
 };
 
@@ -1058,6 +1060,7 @@ export type MediaRequestWritable = {
     serverId?: number;
     profileId?: number;
     rootFolder?: string;
+    profileName?: string;
 };
 
 export type MediaInfoWritable = {
