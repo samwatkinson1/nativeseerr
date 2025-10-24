@@ -1,18 +1,32 @@
-import { useTheme } from "@react-navigation/core";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Suspense, use } from "react";
 
-export default function TVIDScreen() {
-  const { id } = useLocalSearchParams();
-  const { colors } = useTheme();
+import { Loading } from "@/components/loading";
+import { TitleDetails } from "@/components/title-details";
+import type { TvDetails } from "@/http/gen";
+import { getTvByTvIdOptions } from "@/http/gen/@tanstack/react-query.gen";
 
-  return (
-    <View style={styles.container}>
-      <Text style={{ color: colors.text }}>{id}</Text>
-    </View>
-  );
+interface TvDetailsProps {
+  query: UseQueryResult<TvDetails>;
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
-});
+function TvDetails({ query }: TvDetailsProps) {
+  const data = use(query.promise);
+  // todo: empty state
+  if (!data) return null;
+
+  return <TitleDetails title={data} mediaType="tv" />;
+}
+
+export default function TvIdScreen() {
+  const { id } = useLocalSearchParams();
+
+  const query = useQuery({ ...getTvByTvIdOptions({ path: { tvId: Number(id) } }) });
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <TvDetails query={query} />
+    </Suspense>
+  );
+}

@@ -10,7 +10,8 @@ export default function Layout() {
       screenOptions={{
         headerTransparent: true,
         headerTitle: "",
-        headerLeft: () => <SortHeaderButton />,
+        headerBackVisible: true,
+        headerLeft: ({ canGoBack }) => (!canGoBack ? <SortHeaderButton /> : null),
         headerRight: () => <UserHeaderButton />,
       }}
     />

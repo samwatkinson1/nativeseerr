@@ -1,18 +1,32 @@
-import { useTheme } from "@react-navigation/core";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Suspense, use } from "react";
+
+import { Loading } from "@/components/loading";
+import { TitleDetails } from "@/components/title-details";
+import type { MovieDetails } from "@/http/gen";
+import { getMovieByMovieIdOptions } from "@/http/gen/@tanstack/react-query.gen";
+
+interface MovieDetailsProps {
+  query: UseQueryResult<MovieDetails>;
+}
+
+function MovieDetails({ query }: MovieDetailsProps) {
+  const data = use(query.promise);
+  // todo: empty state
+  if (!data) return null;
+
+  return <TitleDetails title={data} mediaType="movie" />;
+}
 
 export default function MovieIDScreen() {
   const { id } = useLocalSearchParams();
-  const { colors } = useTheme();
+
+  const query = useQuery({ ...getMovieByMovieIdOptions({ path: { movieId: Number(id) } }) });
 
   return (
-    <View style={styles.container}>
-      <Text style={{ color: colors.text }}>{id}</Text>
-    </View>
+    <Suspense fallback={<Loading />}>
+      <MovieDetails query={query} />
+    </Suspense>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", justifyContent: "center" },
-});

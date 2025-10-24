@@ -8,9 +8,10 @@ export default function Layout() {
   return (
     <Stack
       screenOptions={{
+        headerBackVisible: true,
         headerTransparent: true,
         headerTitle: "",
-        headerLeft: () => <SortHeaderButton />,
+        headerLeft: ({ canGoBack }) => (!canGoBack ? <SortHeaderButton /> : null),
         headerRight: () => <UserHeaderButton />,
       }}
     />
