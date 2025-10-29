@@ -6,7 +6,7 @@ import {
   Text as SwiftText,
   VStack,
 } from "@expo/ui/swift-ui";
-import { frame, padding } from "@expo/ui/swift-ui/modifiers";
+import { frame, ignoreSafeArea, padding } from "@expo/ui/swift-ui/modifiers";
 import { useTheme } from "@react-navigation/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { format, formatDistanceToNowStrict } from "date-fns";
@@ -193,7 +193,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
         </View>
 
         <Host matchContents>
-          <VStack spacing={8}>
+          <VStack spacing={8} modifiers={[ignoreSafeArea()]}>
             {status !== MediaRequestStatus.PENDING && (
               <>
                 <Button variant="glassProminent" role="destructive" onPress={handleDeleteRequest}>

@@ -13,19 +13,19 @@ export default function TabsLayout() {
       <NativeTabs.Trigger name="movies">
         <Label>Movies</Label>
         {Platform.select({
-          ios: <Icon sf={{ default: "film", selected: "film.fill" }} />,
+          ios: <Icon sf="film" />,
         })}
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="series">
         <Label>Series</Label>
         {Platform.select({
-          ios: <Icon sf={{ default: "tv", selected: "tv.fill" }} />,
+          ios: <Icon sf="tv" />,
         })}
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="requests">
         <Label>Requests</Label>
         {Platform.select({
-          ios: <Icon sf={{ default: "clock", selected: "clock.fill" }} />,
+          ios: <Icon sf="clock" />,
         })}
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="search" role="search">
