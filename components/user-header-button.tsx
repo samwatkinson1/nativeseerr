@@ -6,9 +6,7 @@ import { FC } from "react";
 import { useBaseUrl } from "@/hooks/use-base-url";
 import { getAuthMeOptions } from "@/http/gen/@tanstack/react-query.gen";
 
-export interface UserHeaderButtonProps {}
-
-export const UserHeaderButton: FC<UserHeaderButtonProps> = () => {
+export const UserHeaderButton: FC = () => {
   const { data: baseUrl } = useBaseUrl();
   const { data: user } = useQuery({ ...getAuthMeOptions() });
 
@@ -18,7 +16,7 @@ export const UserHeaderButton: FC<UserHeaderButtonProps> = () => {
     <HeaderButton>
       <Image
         source={`${baseUrl}${user.avatar}`}
-        style={{ width: 24, height: 24, borderRadius: 999 }}
+        style={{ width: 20, height: 20, borderRadius: 999 }}
       />
     </HeaderButton>
   );

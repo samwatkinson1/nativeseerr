@@ -1,29 +1,34 @@
-import { Host, Image } from "@expo/ui/swift-ui";
-import { HeaderButton } from "@react-navigation/elements";
-import { Stack } from "expo-router";
+import { Stack, useGlobalSearchParams } from "expo-router";
 
-import { UserHeaderButton } from "@/components/user-header-button";
+import { useTitleHeaderItems } from "@/hooks/use-title-header-items";
+
+export type MoviesParams = {
+  sort: "popularity" | "release_date" | "vote_average" | "original_title";
+  sortDirection: "asc" | "desc";
+};
+
+const sorts: { label: string; value: MoviesParams["sort"] }[] = [
+  { label: "Popularity", value: "popularity" },
+  { label: "Release Date", value: "release_date" },
+  { label: "TMDB Rating", value: "vote_average" },
+  { label: "Title", value: "original_title" },
+];
 
 export default function Layout() {
+  const { sort = "popularity", sortDirection = "desc" } = useGlobalSearchParams<MoviesParams>();
+
+  const headerItems = useTitleHeaderItems({ items: sorts, sort, sortDirection });
+
   return (
     <Stack
       screenOptions={{
+        headerBackVisible: true,
         headerTransparent: true,
         headerTitle: "",
-        headerBackVisible: true,
-        headerLeft: ({ canGoBack }) => (!canGoBack ? <SortHeaderButton /> : null),
-        headerRight: () => <UserHeaderButton />,
+        ...headerItems,
       }}
-    />
-  );
-}
-
-function SortHeaderButton() {
-  return (
-    <HeaderButton>
-      <Host matchContents>
-        <Image systemName={"arrow.up.arrow.down"} size={16} />
-      </Host>
-    </HeaderButton>
+    >
+      <Stack.Screen name="index" initialParams={{ sort, sortDirection }} />
+    </Stack>
   );
 }
