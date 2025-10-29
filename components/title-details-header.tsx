@@ -56,7 +56,7 @@ export const TitleDetailsHeader: FC<TitleDetailsHeaderProps> = ({ title, mediaTy
         style={styles.poster}
       />
 
-      <View>
+      <View style={{ gap: 4 }}>
         <Text style={{ ...styles.title, ...fonts.heavy, color: colors.text }}>
           {titleName} {titleReleaseDate ? `(${format(titleReleaseDate, "yyyy")})` : ""}
         </Text>
@@ -114,7 +114,7 @@ export const TitleDetailsHeader: FC<TitleDetailsHeaderProps> = ({ title, mediaTy
 
 const styles = StyleSheet.create({
   container: { flex: 1, paddingHorizontal: 16, paddingBottom: 16, alignItems: "center", gap: 16 },
-  poster: { width: 128, height: 192, borderRadius: 12 },
+  poster: { width: 128, height: 192, borderRadius: 6 },
   attributes: { gap: 6, flexDirection: "row", alignItems: "center", justifyContent: "center" },
   border: { borderWidth: StyleSheet.hairlineWidth, borderStyle: "solid" },
   rating: { borderRadius: 4, borderWidth: 1, paddingHorizontal: 2 },

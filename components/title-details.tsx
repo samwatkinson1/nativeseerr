@@ -2,7 +2,7 @@ import { useTheme } from "@react-navigation/core";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Stack } from "expo-router";
+import { Stack, useIsPreview } from "expo-router";
 import { FC } from "react";
 import { StyleSheet, View } from "react-native";
 import Animated, {
@@ -13,6 +13,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 import { TitleDetailsHeader } from "@/components/title-details-header";
+import { TitleDetailsOverview } from "@/components/title-details-overview";
 import { MovieDetails, TvDetails } from "@/http/gen";
 import { rgbToRgba } from "@/utils/rgb-to-rgba";
 
@@ -23,6 +24,7 @@ export interface TitleDetailsProps {
 
 export const TitleDetails: FC<TitleDetailsProps> = ({ title, mediaType }) => {
   const header = useHeaderHeight();
+  const isPreview = useIsPreview();
   const { colors } = useTheme();
 
   const ref = useAnimatedRef<Animated.ScrollView>();
@@ -34,15 +36,20 @@ export const TitleDetails: FC<TitleDetailsProps> = ({ title, mediaType }) => {
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          headerBackground: () => (
-            <Animated.View
-              style={[{ height: header, backgroundColor: colors.background }, headerAnimatedStyle]}
-            />
-          ),
-        }}
-      />
+      {!isPreview && (
+        <Stack.Screen
+          options={{
+            headerBackground: () => (
+              <Animated.View
+                style={[
+                  { height: header, backgroundColor: colors.background },
+                  headerAnimatedStyle,
+                ]}
+              />
+            ),
+          }}
+        />
+      )}
 
       <View style={styles.container}>
         <ImageBackground
@@ -56,9 +63,13 @@ export const TitleDetails: FC<TitleDetailsProps> = ({ title, mediaType }) => {
           />
         </ImageBackground>
 
-        <Animated.ScrollView ref={ref} scrollEventThrottle={16}>
+        <Animated.ScrollView
+          ref={ref}
+          scrollEventThrottle={16}
+          contentContainerStyle={{ paddingBottom: header }}
+        >
           <TitleDetailsHeader title={title} mediaType={mediaType} />
-          <View style={{ height: 200, backgroundColor: colors.background }} />
+          <TitleDetailsOverview title={title} mediaType={mediaType} />
         </Animated.ScrollView>
       </View>
     </>

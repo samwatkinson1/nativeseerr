@@ -2,7 +2,7 @@ import { useTheme } from "@react-navigation/core";
 import { Image, ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
-import { StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
+import { PlatformColor, StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
 
 import { StatusBadgeMini } from "@/components/status-badge-mini";
 import { MediaStatus } from "@/const/media";
@@ -83,5 +83,5 @@ const styles = StyleSheet.create({
   title: { color: "white", fontSize: 17, lineHeight: 22 },
   requestor: { flexDirection: "row", gap: 4, paddingBottom: 4 },
   avatar: { width: 20, height: 20, borderRadius: 999 },
-  displayName: { color: "darkgray", fontSize: 15, lineHeight: 20 },
+  displayName: { color: PlatformColor("systemGray"), fontSize: 15, lineHeight: 20 },
 });
