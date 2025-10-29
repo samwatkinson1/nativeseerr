@@ -57,6 +57,12 @@ export const useTitleHeaderItems = ({
             ],
           },
         },
+        {
+          type: "button",
+          label: "",
+          icon: { type: "sfSymbol", name: "slider.vertical.3" },
+          onPress: () => router.navigate("./filters", { relativeToDirectory: true }),
+        },
       ];
     },
     unstable_headerRightItems: () => {

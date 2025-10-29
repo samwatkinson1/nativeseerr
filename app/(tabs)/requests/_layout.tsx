@@ -75,7 +75,7 @@ export default function Layout() {
                 {
                   type: "submenu",
                   label: "Filter",
-                  icon: { type: "sfSymbol", name: "line.3.horizontal.decrease.circle" },
+                  icon: { type: "sfSymbol", name: "slider.vertical.3" },
                   items: filters.map(({ label, value }) => ({
                     type: "action",
                     label: label,

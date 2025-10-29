@@ -1,5 +1,6 @@
 import { Stack, useGlobalSearchParams } from "expo-router";
 
+import { formSheet } from "@/const/stack";
 import { useTitleHeaderItems } from "@/hooks/use-title-header-items";
 
 export type SeriesParams = {
@@ -20,15 +21,10 @@ export default function Layout() {
   const headerItems = useTitleHeaderItems({ items: sorts, sort, sortDirection });
 
   return (
-    <Stack
-      screenOptions={{
-        headerBackVisible: true,
-        headerTransparent: true,
-        headerTitle: "",
-        ...headerItems,
-      }}
-    >
-      <Stack.Screen name="index" initialParams={{ sort, sortDirection }} />
+    <Stack screenOptions={{ headerBackVisible: true, headerTransparent: true, headerTitle: "" }}>
+      <Stack.Screen name="index" initialParams={{ sort, sortDirection }} options={headerItems} />
+      <Stack.Screen name="[id]" />
+      <Stack.Screen name="filters" options={formSheet} />
     </Stack>
   );
 }

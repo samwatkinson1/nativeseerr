@@ -71,7 +71,10 @@ export const TitleDetailsHeader: FC<TitleDetailsHeaderProps> = ({ title, mediaTy
           <Text style={{ ...styles.footnote, ...fonts.medium, color: colors.text }}>{length}</Text>
           <View style={{ ...styles.divider, ...styles.border, borderColor: colors.text }} />
           <Text style={{ ...styles.footnote, ...fonts.medium, color: colors.text }}>
-            {genres.map((item) => item.name).join(", ")}
+            {genres
+              .slice(0, 3)
+              .map((item) => item.name)
+              .join(", ")}
           </Text>
         </View>
       </View>
