@@ -38,6 +38,12 @@ export default defineConfig({
             readOnly: true,
           };
         },
+        MovieDetails(schema) {
+          schema.properties.keywords = {
+            type: "array",
+            items: { $ref: "#/components/schemas/Keyword" },
+          };
+        },
         MovieResult(schema) {
           schema.properties.mediaType = {
             type: "string",

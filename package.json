@@ -12,7 +12,7 @@
     "lint": "expo lint"
   },
   "dependencies": {
-    "@expo/ui": "~0.2.0-canary-20251023-4c86f95",
+    "@expo/ui": "~0.2.0-canary-20251031-b135dff",
     "@expo/vector-icons": "^15.0.3",
     "@legendapp/list": "^2.0.14",
     "@react-navigation/bottom-tabs": "^7.4.0",

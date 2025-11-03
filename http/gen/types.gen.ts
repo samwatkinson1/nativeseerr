@@ -372,6 +372,7 @@ export type MovieDetails = {
     externalIds?: ExternalIds;
     mediaInfo?: MediaInfo;
     watchProviders?: Array<WatchProviders>;
+    keywords?: Array<Keyword>;
 };
 
 export type Episode = {
@@ -1050,6 +1051,7 @@ export type MovieDetailsWritable = {
     externalIds?: ExternalIds;
     mediaInfo?: MediaInfoWritable;
     watchProviders?: Array<WatchProviders>;
+    keywords?: Array<Keyword>;
 };
 
 export type MediaRequestWritable = {

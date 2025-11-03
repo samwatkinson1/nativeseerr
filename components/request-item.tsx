@@ -202,7 +202,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
                     modifiers={[frame({ maxWidth: Infinity }), padding({ all: 4 })]}
                   >
                     <SwiftImage systemName="trash.fill" size={16} />
-                    <SwiftText weight="bold">Delete Request</SwiftText>
+                    <SwiftText>Delete Request</SwiftText>
                   </HStack>
                 </Button>
                 {canRemove && (
@@ -212,7 +212,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
                       modifiers={[frame({ maxWidth: Infinity }), padding({ all: 4 })]}
                     >
                       <SwiftImage systemName="trash.fill" size={16} />
-                      <SwiftText weight="bold">
+                      <SwiftText>
                         {mediaType === "movie" ? "Remove from Radarr" : "Remove from Sonarr"}
                       </SwiftText>
                     </HStack>

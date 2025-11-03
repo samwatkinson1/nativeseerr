@@ -1,23 +1,10 @@
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
-import { Suspense, use } from "react";
+import { Suspense } from "react";
 
 import { Loading } from "@/components/loading";
-import { TitleDetails } from "@/components/title-details";
-import type { MovieDetails } from "@/http/gen";
+import { MovieDetails } from "@/components/movie-details";
 import { getMovieByMovieIdOptions } from "@/http/gen/@tanstack/react-query.gen";
-
-interface MovieDetailsProps {
-  query: UseQueryResult<MovieDetails>;
-}
-
-function MovieDetails({ query }: MovieDetailsProps) {
-  const data = use(query.promise);
-  // todo: empty state
-  if (!data) return null;
-
-  return <TitleDetails title={data} mediaType="movie" />;
-}
 
 export default function MovieIDScreen() {
   const { id } = useLocalSearchParams();
