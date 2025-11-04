@@ -123,7 +123,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
               style={styles.poster}
             />
 
-            <View>
+            <View style={{ flexShrink: 1 }}>
               {subheadingDate && (
                 <Text style={{ ...styles.subheading, ...fonts.medium }}>
                   {format(subheadingDate, "yyyy")}
