@@ -28,12 +28,16 @@ import Animated, {
   useScrollOffset,
 } from "react-native-reanimated";
 
+import { ExternalLinkBlock } from "@/components/external-link-block";
+import { MovieCastSlider } from "@/components/movie-cast-slider";
+import { MovieRecommendationsSlider } from "@/components/movie-recommendations-slider";
+import { MovieSimilarSlider } from "@/components/movie-similar-slider";
 import { StatusBadgeMini } from "@/components/status-badge-mini";
 import { Tag } from "@/components/tag";
 import { MediaRequestStatus, MediaStatus } from "@/const/media";
 import { Permission } from "@/const/permission";
 import { UserType } from "@/const/user";
-import { MovieDetails as _MovieDetails } from "@/http/gen";
+import { MovieDetails as _MovieDetails, WatchProviderDetails } from "@/http/gen";
 import {
   getAuthMeOptions,
   getMovieByMovieIdRatingscombinedOptions,
@@ -41,6 +45,7 @@ import {
 } from "@/http/gen/@tanstack/react-query.gen";
 import { getMediaLinks } from "@/utils/get-media-links";
 import { hasPermission } from "@/utils/has-permission";
+import { iso31661ToUnicode } from "@/utils/iso-3166-1-to-unicode";
 import { rgbToRgba } from "@/utils/rgb-to-rgba";
 import { sortCrewPriority } from "@/utils/sort-crew-priority";
 
@@ -97,6 +102,15 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
     releases?.filter(({ type }) => type > 2 && type < 6),
     "type"
   );
+
+  const spokenLanguage = title.spokenLanguages?.find(
+    (lang) => lang.iso_639_1 === title.originalLanguage
+  );
+
+  const streamingRegion = user?.settings?.streamingRegion || settings.streamingRegion || "US";
+  const streamingProviders: WatchProviderDetails[] =
+    title?.watchProviders?.find((provider) => provider.iso_3166_1 === streamingRegion)?.flatrate ??
+    [];
 
   return (
     <>
@@ -357,7 +371,6 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
               </Link>
             )}
 
-            {/* todo: media facts */}
             {/* fixme: we're short-circuit rendering somewhere below */}
             <View>
               {(!!title.voteCount ||
@@ -588,12 +601,108 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                   </View>
                 </View>
               )}
+
+              {spokenLanguage && (
+                <View style={{ borderBottomWidth: 1, borderColor: colors.border }}>
+                  <View style={styles.mediaFact}>
+                    <Text style={{ ...styles.body, ...fonts.bold, color: colors.text }}>
+                      Original Language
+                    </Text>
+                    <Text
+                      style={{
+                        ...styles.body,
+                        ...fonts.regular,
+                        color: PlatformColor("secondaryLabel"),
+                      }}
+                    >
+                      {spokenLanguage.name}
+                    </Text>
+                  </View>
+                </View>
+              )}
+
+              {title.productionCountries && title.productionCountries.length > 0 && (
+                <View style={{ borderBottomWidth: 1, borderColor: colors.border }}>
+                  <View style={styles.mediaFact}>
+                    {/* todo: pluralise */}
+                    <Text style={{ ...styles.body, ...fonts.bold, color: colors.text }}>
+                      Production Countries
+                    </Text>
+                    <View style={{ flexDirection: "row", gap: 4, alignItems: "center" }}>
+                      {title.productionCountries.map((item) => (
+                        <Text key={`prodcountry-${item.iso_3166_1}`} style={styles.body}>
+                          {iso31661ToUnicode(item.iso_3166_1, item.name)}
+                        </Text>
+                      ))}
+                    </View>
+                  </View>
+                </View>
+              )}
+
+              {title.productionCompanies && title.productionCompanies.length > 0 && (
+                <View style={{ borderBottomWidth: 1, borderColor: colors.border }}>
+                  <View style={styles.mediaFact}>
+                    {/* todo: pluralise */}
+                    <Text style={{ ...styles.body, ...fonts.bold, color: colors.text }}>
+                      Studios
+                    </Text>
+                    <View style={{ alignItems: "flex-end" }}>
+                      {title.productionCompanies.map((item) => (
+                        <Text
+                          key={`prodcompany-${item.id}`}
+                          style={{
+                            ...styles.body,
+                            ...fonts.regular,
+                            color: PlatformColor("secondaryLabel"),
+                          }}
+                        >
+                          {item.name}
+                        </Text>
+                      ))}
+                    </View>
+                  </View>
+                </View>
+              )}
+
+              {streamingProviders.length > 0 && (
+                <View style={{ borderBottomWidth: 1, borderColor: colors.border }}>
+                  <View style={{ ...styles.mediaFact, flexDirection: "column", gap: 6 }}>
+                    <Text style={{ ...styles.body, ...fonts.bold, color: colors.text }}>
+                      Currently Streaming On
+                    </Text>
+                    <View style={styles.streamingProviders}>
+                      {streamingProviders.map((item) => (
+                        <Image
+                          key={`provider-${item.id}`}
+                          source={`https://image.tmdb.org/t/p/original/${item.logoPath}`}
+                          style={{ ...styles.streamingProvider, borderColor: colors.border }}
+                        />
+                      ))}
+                    </View>
+                  </View>
+                </View>
+              )}
+
+              <View style={{ borderBottomWidth: 1, borderColor: colors.border }}>
+                <View style={styles.mediaFact}>
+                  <ExternalLinkBlock
+                    mediaType="movie"
+                    tmdbId={title.id}
+                    tvdbId={title.externalIds?.tvdbId}
+                    imdbId={title.externalIds?.imdbId}
+                    rtUrl={ratings?.rt?.url}
+                    mediaUrl={title.mediaInfo?.mediaUrl ?? title.mediaInfo?.mediaUrl4k}
+                  />
+                </View>
+              </View>
             </View>
-
-            {/* todo: https://github.com/seerr-team/seerr/blob/main/src/components/MovieDetails/index.tsx#L952 */}
-
-            {/* todo: sliders */}
           </View>
+
+          <MovieCastSlider cast={title.credits?.cast?.slice(0, 20) ?? []} />
+
+          <MovieRecommendationsSlider id={title.id!} />
+
+          <MovieSimilarSlider id={title.id!} />
         </Animated.ScrollView>
       </View>
     </>
@@ -637,4 +746,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 8,
   },
+  streamingProviders: { width: "100%", flexDirection: "row", justifyContent: "space-evenly" },
+  streamingProvider: { width: 36, height: 36, borderRadius: 6, borderWidth: 1 },
 });
