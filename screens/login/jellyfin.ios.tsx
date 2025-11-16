@@ -5,18 +5,18 @@ import {
   HStack,
   Image,
   Section,
-  SecureField,
   Spacer,
   Text,
-  TextField,
   VStack,
 } from "@expo/ui/swift-ui";
 import { frame } from "@expo/ui/swift-ui/modifiers";
+import { useTheme } from "@react-navigation/core";
 import { useForm } from "@tanstack/react-form";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { router } from "expo-router";
 import { getItem, setItem } from "expo-secure-store";
-import { Alert, StyleSheet } from "react-native";
+import { Alert, StyleSheet, TextInput } from "react-native";
+import { KeyboardController } from "react-native-keyboard-controller";
 import { z } from "zod";
 
 import { store } from "@/const/keys";
@@ -30,24 +30,31 @@ const loginFormSchema = z.object({
 });
 
 export default function LoginJellyfinScreen() {
-  const { mutateAsync } = useMutation({ ...postAuthJellyfinMutation() });
+  const queryClient = useQueryClient();
+  const { colors, fonts } = useTheme();
+
+  const { mutate } = useMutation({
+    ...postAuthJellyfinMutation(),
+    onMutate: ({ meta }) => {
+      const { serverUrl } = meta as { serverUrl: string };
+      setItem(store.serverUrl, serverUrl);
+      client.setConfig({ baseUrl: `${serverUrl}/api/v1` });
+    },
+    onSuccess: () => {
+      queryClient.removeQueries();
+      router.dismissTo("/");
+    },
+    onError: () => {
+      Alert.alert("Verification Failed", "Check your details and try again.");
+    },
+  });
 
   const form = useForm({
-    defaultValues: {
-      serverUrl: getItem(store.serverUrl) ?? "",
-      username: "",
-      password: "",
-    },
+    defaultValues: { serverUrl: getItem(store.serverUrl) ?? "", username: "", password: "" },
     validators: { onSubmit: loginFormSchema },
     async onSubmit({ value: { serverUrl, username, password } }) {
-      try {
-        setItem(store.serverUrl, serverUrl);
-        client.setConfig({ baseUrl: `${serverUrl}/api/v1` });
-        await mutateAsync({ body: { username, password } });
-        router.dismissTo("/discover");
-      } catch {
-        Alert.alert("Verification Failed", "Check your details and try again.");
-      }
+      await KeyboardController.dismiss();
+      mutate({ body: { username, password }, meta: { serverUrl } });
     },
     onSubmitInvalid({ value, formApi }) {
       if (Object.values(value).every((field) => field === "")) {
@@ -108,37 +115,46 @@ export default function LoginJellyfinScreen() {
         >
           <form.Field name="serverUrl">
             {(field) => (
-              <TextField
-                autocorrection={false}
-                allowNewlines={false}
+              <TextInput
+                autoCorrect={false}
+                autoCapitalize="none"
+                numberOfLines={1}
                 keyboardType="url"
                 placeholder="Server URL"
                 defaultValue={field.state.value}
-                onChangeFocus={(focused) => (!focused ? field.handleBlur() : undefined)}
+                onBlur={field.handleBlur}
                 onChangeText={field.handleChange}
+                style={{ ...styles.body, ...fonts.regular, color: colors.text }}
               />
             )}
           </form.Field>
           <form.Field name="username">
             {(field) => (
-              <TextField
-                autocorrection={false}
-                allowNewlines={false}
+              <TextInput
+                autoCorrect={false}
+                autoCapitalize="none"
+                numberOfLines={1}
                 keyboardType="email-address"
                 placeholder="Username"
                 defaultValue={field.state.value}
-                onChangeFocus={(focused) => (!focused ? field.handleBlur() : undefined)}
+                onBlur={field.handleBlur}
                 onChangeText={field.handleChange}
+                style={{ ...styles.body, ...fonts.regular, color: colors.text }}
               />
             )}
           </form.Field>
           <form.Field name="password">
             {(field) => (
-              <SecureField
+              <TextInput
+                autoCorrect={false}
+                autoCapitalize="none"
+                numberOfLines={1}
+                secureTextEntry
                 placeholder="Password"
                 defaultValue={field.state.value}
-                onChangeFocus={(focused) => (!focused ? field.handleBlur() : undefined)}
+                onBlur={field.handleBlur}
                 onChangeText={field.handleChange}
+                style={{ ...styles.body, ...fonts.regular, color: colors.text }}
               />
             )}
           </form.Field>
@@ -150,4 +166,5 @@ export default function LoginJellyfinScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  body: { fontSize: 17, lineHeight: 22 },
 });
