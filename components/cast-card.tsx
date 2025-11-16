@@ -42,8 +42,14 @@ export function CastCard({ cast, style }: CastCardProps) {
             </View>
 
             <View style={{ alignItems: "center" }}>
-              <Text style={{ ...styles.body, ...fonts.bold, color: colors.text }}>{cast.name}</Text>
-              <Text style={{ ...styles.subhead, ...fonts.regular }}>{cast.character}</Text>
+              <Text
+                style={{ ...styles.body, ...fonts.bold, textAlign: "center", color: colors.text }}
+              >
+                {cast.name}
+              </Text>
+              <Text style={{ ...styles.subhead, ...fonts.regular, textAlign: "center" }}>
+                {cast.character}
+              </Text>
             </View>
           </View>
         </Link.Trigger>
@@ -68,10 +74,5 @@ const styles = StyleSheet.create({
   image: { borderRadius: 9999, width: "75%", height: "100%" },
   margin: { marginBottom: 12 },
   body: { fontSize: 17, lineHeight: 22 },
-  subhead: {
-    fontSize: 15,
-    lineHeight: 20,
-    textAlign: "center",
-    color: PlatformColor("secondaryLabel"),
-  },
+  subhead: { fontSize: 15, lineHeight: 20, color: PlatformColor("secondaryLabel") },
 });
