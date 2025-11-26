@@ -15,11 +15,11 @@ import { UseQueryResult, useSuspenseQuery } from "@tanstack/react-query";
 import { format, intlFormat } from "date-fns";
 import { Image, ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Link, Stack, useFocusEffect, useIsPreview } from "expo-router";
+import { Link, Stack, useIsPreview } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { openBrowserAsync, WebBrowserPresentationStyle } from "expo-web-browser";
 import uniqBy from "lodash.uniqby";
-import { FC, use, useCallback, useState } from "react";
+import { FC, use } from "react";
 import { PlatformColor, Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, {
   interpolate,
@@ -37,6 +37,7 @@ import { Tag } from "@/components/tag";
 import { MediaRequestStatus, MediaStatus } from "@/const/media";
 import { Permission } from "@/const/permission";
 import { UserType } from "@/const/user";
+import { useContrastColour } from "@/hooks/use-contrast-colour";
 import { MovieDetails as _MovieDetails, WatchProviderDetails } from "@/http/gen";
 import {
   getAuthMeOptions,
@@ -71,6 +72,10 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
   });
   const { data: settings } = useSuspenseQuery({ ...getSettingsMainOptions() });
   const { data: user } = useSuspenseQuery({ ...getAuthMeOptions() });
+
+  const { data: collectionText } = useContrastColour(
+    `https://image.tmdb.org/t/p/w1440_and_h320_multi_faces${title.collection?.backdropPath}`
+  );
 
   function openURL(url?: string) {
     if (!url) return;
@@ -363,7 +368,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                   />
 
                   <View style={styles.collectionInner}>
-                    <Text style={{ ...styles.body, ...fonts.medium, color: colors.text }}>
+                    <Text style={{ ...styles.body, ...fonts.medium, color: collectionText }}>
                       {title.collection.name}
                     </Text>
                     <SymbolView name="chevron.right" tintColor="white" size={16} />
