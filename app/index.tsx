@@ -1,5 +1,5 @@
 import { useQueryClient, UseQueryResult } from "@tanstack/react-query";
-import { Redirect, router, useFocusEffect } from "expo-router";
+import { Redirect, router, useFocusEffect, useLocalSearchParams } from "expo-router";
 import { Suspense, use, useCallback } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 
@@ -39,10 +39,12 @@ export function ErrorBoundary() {
 }
 
 export default function IndexScreen() {
+  const { key } = useLocalSearchParams<{ key: string }>();
+
   const query = useBaseUrl();
 
   return (
-    <View style={styles.container}>
+    <View key={key} style={styles.container}>
       <Suspense fallback={<ActivityIndicator size="small" />}>
         <RedirectToDiscover query={query} />
       </Suspense>

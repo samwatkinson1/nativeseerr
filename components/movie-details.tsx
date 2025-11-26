@@ -15,11 +15,11 @@ import { UseQueryResult, useSuspenseQuery } from "@tanstack/react-query";
 import { format, intlFormat } from "date-fns";
 import { Image, ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Link, Stack, useIsPreview } from "expo-router";
+import { Link, Stack, useFocusEffect, useIsPreview } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { openBrowserAsync, WebBrowserPresentationStyle } from "expo-web-browser";
 import uniqBy from "lodash.uniqby";
-import { FC, use } from "react";
+import { FC, use, useCallback, useState } from "react";
 import { PlatformColor, Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, {
   interpolate,
@@ -151,7 +151,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
             style={{ ...styles.header, marginTop: header }}
           >
             <Image
-              source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${title.posterPath}`}
+              source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${title.posterPath}`}
               style={{ ...styles.poster, ...styles.radius }}
             />
 
@@ -317,7 +317,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                         style={{
                           ...styles.body,
                           ...fonts.regular,
-                          color: PlatformColor("secondaryLabel"),
+                          color: PlatformColor("systemGray"),
                         }}
                       >
                         {item.name}
@@ -351,13 +351,14 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
               // todo: collection link
               <Link href="/" style={{ marginTop: 8 }}>
                 <ImageBackground
-                  source={`https://image.tmdb.org/t/p/w1440_and_h320_multi_faces/${title.collection.backdropPath}`}
+                  source={`https://image.tmdb.org/t/p/w1440_and_h320_multi_faces${title.collection.backdropPath}`}
                   contentFit="cover"
                   imageStyle={{ ...styles.radius, opacity: 0.8 }}
                   style={{ ...styles.collection, ...styles.radius, borderColor: colors.border }}
                 >
                   <LinearGradient
-                    colors={[rgbToRgba(colors.card, 0), rgbToRgba(colors.background, 47)]}
+                    colors={[rgbToRgba(colors.card, 0), rgbToRgba(colors.background, 0.47)]}
+                    locations={[0.47, 1]}
                     style={{ ...StyleSheet.absoluteFillObject, ...styles.radius }}
                   />
 
@@ -473,7 +474,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                     style={{
                       ...styles.body,
                       ...fonts.regular,
-                      color: PlatformColor("secondaryLabel"),
+                      color: PlatformColor("systemGray"),
                     }}
                   >
                     {title.status}
@@ -498,26 +499,26 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                             <SymbolView
                               name="ticket"
                               size={16}
-                              tintColor={PlatformColor("secondaryLabel")}
+                              tintColor={PlatformColor("systemGray")}
                             />
                           ) : item.type === 4 ? (
                             <SymbolView
                               name="cloud"
                               size={16}
-                              tintColor={PlatformColor("secondaryLabel")}
+                              tintColor={PlatformColor("systemGray")}
                             />
                           ) : (
                             <SymbolView
                               name="opticaldisc"
                               size={16}
-                              tintColor={PlatformColor("secondaryLabel")}
+                              tintColor={PlatformColor("systemGray")}
                             />
                           )}
                           <Text
                             style={{
                               ...styles.body,
                               ...fonts.regular,
-                              color: PlatformColor("secondaryLabel"),
+                              color: PlatformColor("systemGray"),
                             }}
                           >
                             {intlFormat(item.release_date, {
@@ -543,7 +544,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                         style={{
                           ...styles.body,
                           ...fonts.regular,
-                          color: PlatformColor("secondaryLabel"),
+                          color: PlatformColor("systemGray"),
                         }}
                       >
                         {intlFormat(title.releaseDate, {
@@ -568,7 +569,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                       style={{
                         ...styles.body,
                         ...fonts.regular,
-                        color: PlatformColor("secondaryLabel"),
+                        color: PlatformColor("systemGray"),
                       }}
                     >
                       {/* todo: locale */}
@@ -590,7 +591,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                       style={{
                         ...styles.body,
                         ...fonts.regular,
-                        color: PlatformColor("secondaryLabel"),
+                        color: PlatformColor("systemGray"),
                       }}
                     >
                       {/* todo: locale */}
@@ -612,7 +613,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                       style={{
                         ...styles.body,
                         ...fonts.regular,
-                        color: PlatformColor("secondaryLabel"),
+                        color: PlatformColor("systemGray"),
                       }}
                     >
                       {spokenLanguage.name}
@@ -653,7 +654,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                           style={{
                             ...styles.body,
                             ...fonts.regular,
-                            color: PlatformColor("secondaryLabel"),
+                            color: PlatformColor("systemGray"),
                           }}
                         >
                           {item.name}
@@ -725,7 +726,7 @@ const styles = StyleSheet.create({
   title2: { fontSize: 22, lineHeight: 28 },
   body: { fontSize: 17, lineHeight: 22 },
   callout: { fontSize: 16, lineHeight: 21, textAlign: "right" },
-  tagline: { fontStyle: "italic", color: PlatformColor("secondaryLabel") },
+  tagline: { fontStyle: "italic", color: PlatformColor("systemGray") },
   collection: { width: "100%", height: 62, borderWidth: 1 },
   collectionInner: {
     padding: 16,

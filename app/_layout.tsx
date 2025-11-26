@@ -19,7 +19,7 @@ import { mapHttpErrors } from "@/http/interceptors";
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: { experimental_prefetchInRender: true, retry: false },
+    queries: { experimental_prefetchInRender: true, retry: false, staleTime: 5 * 60 * 1000 },
   },
 });
 

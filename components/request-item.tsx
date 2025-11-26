@@ -119,7 +119,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
         <Link href={mediaType === "movie" ? `/movies/${titleId}` : `/series/${titleId}`}>
           <View style={{ flexDirection: "row", gap: 8, alignItems: "center" }}>
             <Image
-              source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${posterPath}`}
+              source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${posterPath}`}
               style={styles.poster}
             />
 
@@ -139,7 +139,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
         {/* todo: permissions */}
         <View>
           <View style={styles.line}>
-            <Text style={{ color: PlatformColor("secondaryLabel"), ...fonts.heavy }}>Status</Text>
+            <Text style={{ color: PlatformColor("systemGray"), ...fonts.heavy }}>Status</Text>
             {/* todo: status badge component */}
             {mediaStatus && mediaStatus !== MediaStatus.UNKNOWN && (
               <StatusBadgeMini status={mediaStatus} />
@@ -148,9 +148,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
 
           {createdAt && (
             <View style={styles.line}>
-              <Text style={{ color: PlatformColor("secondaryLabel"), ...fonts.heavy }}>
-                Requested
-              </Text>
+              <Text style={{ color: PlatformColor("systemGray"), ...fonts.heavy }}>Requested</Text>
 
               <View style={styles.requestor}>
                 <Text style={{ color: "white" }}>
@@ -166,9 +164,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
 
           {updatedAt && (
             <View style={styles.line}>
-              <Text style={{ color: PlatformColor("secondaryLabel"), ...fonts.heavy }}>
-                Modified
-              </Text>
+              <Text style={{ color: PlatformColor("systemGray"), ...fonts.heavy }}>Modified</Text>
 
               <View style={styles.requestor}>
                 <Text style={{ color: "white" }}>
@@ -184,9 +180,7 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
 
           {profileName && (
             <View style={styles.line}>
-              <Text style={{ color: PlatformColor("secondaryLabel"), ...fonts.heavy }}>
-                Profile
-              </Text>
+              <Text style={{ color: PlatformColor("systemGray"), ...fonts.heavy }}>Profile</Text>
               <Text style={{ color: "white" }}>{profileName}</Text>
             </View>
           )}
@@ -244,5 +238,5 @@ const styles = StyleSheet.create({
   line: { flexDirection: "row", gap: 8, alignItems: "center" },
   requestor: { flexDirection: "row", gap: 4, alignItems: "center" },
   avatar: { width: 20, height: 20, borderRadius: 999 },
-  displayName: { color: PlatformColor("secondaryLabel"), fontSize: 15, lineHeight: 20 },
+  displayName: { color: PlatformColor("systemGray"), fontSize: 15, lineHeight: 20 },
 });

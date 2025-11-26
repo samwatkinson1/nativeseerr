@@ -13,6 +13,7 @@ import { frame } from "@expo/ui/swift-ui/modifiers";
 import { useTheme } from "@react-navigation/core";
 import { useForm } from "@tanstack/react-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import * as Crypto from "expo-crypto";
 import { router } from "expo-router";
 import { getItem, setItem } from "expo-secure-store";
 import { Alert, StyleSheet, TextInput } from "react-native";
@@ -41,8 +42,10 @@ export default function LoginJellyfinScreen() {
       client.setConfig({ baseUrl: `${serverUrl}/api/v1` });
     },
     onSuccess: () => {
+      // queries are remounted when index page is rerendered
       queryClient.removeQueries();
-      router.dismissTo("/");
+      // force rerender index page until we can programmatically retry any error boundary
+      router.dismissTo({ pathname: "/", params: { key: Crypto.randomUUID() } });
     },
     onError: () => {
       Alert.alert("Verification Failed", "Check your details and try again.");
@@ -65,10 +68,6 @@ export default function LoginJellyfinScreen() {
       }
     },
   });
-
-  function handleRedirect() {
-    router.replace("/login/local");
-  }
 
   return (
     <Host style={styles.container}>
@@ -101,7 +100,7 @@ export default function LoginJellyfinScreen() {
                     disabled={isSubmitting}
                     controlSize="large"
                     variant="glass"
-                    onPress={handleRedirect}
+                    onPress={() => router.replace("/login/local")}
                   >
                     <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
                       <Image systemName="wifi" size={18} />

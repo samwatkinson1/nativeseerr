@@ -9,7 +9,7 @@ export default function Layout() {
       screenOptions={{
         headerTransparent: true,
         headerTitle: "",
-        headerRight: () => <UserHeaderButton />,
+        unstable_headerRightItems: () => [{ type: "custom", element: <UserHeaderButton /> }],
       }}
     />
   );

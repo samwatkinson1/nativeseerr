@@ -62,7 +62,7 @@ export function RequestCard({ baseUrl, request, title, style }: RequestCardProps
         <Link href={mediaType === "movie" ? `/movies/${title.id}` : `/series/${title.id}`}>
           <Link.Trigger>
             <Image
-              source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${posterPath}`}
+              source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${posterPath}`}
               style={styles.poster}
             />
           </Link.Trigger>
