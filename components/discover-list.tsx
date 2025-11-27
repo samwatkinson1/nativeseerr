@@ -27,7 +27,7 @@ export function DiscoverList({ query }: DiscoverListProps) {
   return (
     <ScrollView
       automaticallyAdjustContentInsets
-      contentInsetAdjustmentBehavior="always"
+      contentInsetAdjustmentBehavior="automatic"
       contentContainerStyle={styles.container}
     >
       {data.map((item) => {

@@ -19,7 +19,7 @@ export function MovieRecommendationsSlider({ id }: MovieRecommendationsSliderPro
   if (!data.results?.length) return null;
 
   return (
-    <View style={{ ...styles.container, backgroundColor: colors.background }}>
+    <View style={styles.container}>
       <Text style={{ ...styles.title2, ...fonts.heavy, paddingLeft: 16, color: colors.text }}>
         Recommendations
       </Text>

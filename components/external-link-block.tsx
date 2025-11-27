@@ -2,7 +2,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { Image } from "expo-image";
 import { openURL } from "expo-linking";
 import { FC } from "react";
-import { Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, useColorScheme, View } from "react-native";
 
 import { MediaServerType } from "@/const/server";
 import { getSettingsMainOptions } from "@/http/gen/@tanstack/react-query.gen";
@@ -24,6 +24,8 @@ export const ExternalLinkBlock: FC<ExternalLinkBlockProps> = ({
   rtUrl,
   mediaUrl,
 }) => {
+  const scheme = useColorScheme();
+
   const { data: settings } = useSuspenseQuery({ ...getSettingsMainOptions() });
 
   return (
@@ -42,11 +44,17 @@ export const ExternalLinkBlock: FC<ExternalLinkBlockProps> = ({
               contentFit="contain"
               source={require("@/assets/images/emby.svg")}
             />
+          ) : scheme === "light" ? (
+            <Image
+              style={styles.image}
+              contentFit="contain"
+              source={require(`@/assets/images/jellyfin-light.svg`)}
+            />
           ) : (
             <Image
               style={styles.image}
               contentFit="contain"
-              source={require("@/assets/images/jellyfin.svg")}
+              source={require(`@/assets/images/jellyfin-dark.svg`)}
             />
           )}
         </Pressable>
