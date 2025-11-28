@@ -13,13 +13,14 @@ export function TitlePill({ type }: TitlePillProps) {
   return (
     <Pill
       title={type === "movie" ? "MOVIE" : "SERIES"}
-      style={{ ...styles.base, ...styles[type], fontSize: 12, ...fonts.medium }}
+      contentContainerStyle={styles[type]}
+      style={{ ...styles.text, ...fonts.bold }}
     />
   );
 }
 
 const styles = StyleSheet.create({
-  base: { fontSize: 12, color: "white", borderStyle: "solid", borderWidth: 1 },
-  movie: { backgroundColor: "#155dfc", borderColor: "#2b7fff" },
-  tv: { backgroundColor: "#9810fa", borderColor: "#ad46ff" },
+  movie: { backgroundColor: "#155dfc" },
+  tv: { backgroundColor: "#9810fa" },
+  text: { color: "white", fontSize: 12 },
 });

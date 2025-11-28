@@ -1,4 +1,5 @@
 import { Octicons } from "@expo/vector-icons";
+import { GlassView } from "expo-glass-effect";
 import { StyleSheet, Text } from "react-native";
 
 import { MediaStatus } from "@/const/media";
@@ -8,10 +9,11 @@ export interface StatusBadgeMiniProps {
 }
 
 export function StatusBadgeMini({ status }: StatusBadgeMiniProps) {
+  const { backgroundColor, color } = styles[status];
   return (
-    <Text style={{ ...styles.container, ...styles.border, ...styles[status] }}>
-      {icons[status]}
-    </Text>
+    <GlassView glassEffectStyle="clear" style={{ ...styles.container, backgroundColor }}>
+      <Text style={{ textAlign: "center", color }}>{icons[status]}</Text>
+    </GlassView>
   );
 }
 
@@ -26,37 +28,12 @@ const icons = {
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 2, textAlign: "center" },
-  border: { borderRadius: 999, borderStyle: "solid", borderWidth: 1 },
-  [MediaStatus.UNKNOWN]: {},
-  [MediaStatus.PENDING]: {
-    backgroundColor: "#615fff",
-    borderColor: "#7c86ff",
-    color: "#e0e7ff",
-  },
-  [MediaStatus.PROCESSING]: {
-    backgroundColor: "#f0b100",
-    borderColor: "#fdc700",
-    color: "#fef9c2",
-  },
-  [MediaStatus.PARTIALLY_AVAILABLE]: {
-    backgroundColor: "#00c950",
-    borderColor: "#05df72",
-    color: "#dcfce7",
-  },
-  [MediaStatus.AVAILABLE]: {
-    backgroundColor: "#00c950",
-    borderColor: "#05df72",
-    color: "#dcfce7",
-  },
-  [MediaStatus.BLACKLISTED]: {
-    backgroundColor: "#fb2c36",
-    borderColor: "#ffffff",
-    color: "#ffffff",
-  },
-  [MediaStatus.DELETED]: {
-    backgroundColor: "#fb2c36",
-    borderColor: "#ff6467",
-    color: "#ffe2e2",
-  },
+  container: { padding: 4, textAlign: "center", borderRadius: 999 },
+  [MediaStatus.UNKNOWN]: { backgroundColor: "#000000", color: "#ffffff" },
+  [MediaStatus.PENDING]: { backgroundColor: "#615fff", color: "#e0e7ff" },
+  [MediaStatus.PROCESSING]: { backgroundColor: "#f0b100", color: "#fef9c2" },
+  [MediaStatus.PARTIALLY_AVAILABLE]: { backgroundColor: "#00c950", color: "#dcfce7" },
+  [MediaStatus.AVAILABLE]: { backgroundColor: "#00c950", color: "#dcfce7" },
+  [MediaStatus.BLACKLISTED]: { backgroundColor: "#fb2c36", color: "#ffffff" },
+  [MediaStatus.DELETED]: { backgroundColor: "#fb2c36", color: "#ffe2e2" },
 });
