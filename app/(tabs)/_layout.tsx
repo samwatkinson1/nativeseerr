@@ -4,26 +4,22 @@ import { Platform } from "react-native";
 export default function TabsLayout() {
   return (
     <NativeTabs minimizeBehavior="onScrollDown">
-      <NativeTabs.Trigger name="discover">
-        <Label>Discover</Label>
+      <NativeTabs.Trigger name="discover" options={{ title: "" }}>
         {Platform.select({
           ios: <Icon sf="sparkles" />,
         })}
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="movies">
-        <Label>Movies</Label>
+      <NativeTabs.Trigger name="movies" options={{ title: "" }}>
         {Platform.select({
           ios: <Icon sf="film" />,
         })}
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="series">
-        <Label>Series</Label>
+      <NativeTabs.Trigger name="series" options={{ title: "" }}>
         {Platform.select({
           ios: <Icon sf="tv" />,
         })}
       </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="requests">
-        <Label>Requests</Label>
+      <NativeTabs.Trigger name="requests" options={{ title: "" }}>
         {Platform.select({
           ios: <Icon sf="clock" />,
         })}

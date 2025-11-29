@@ -53,7 +53,6 @@ export default function Layout() {
     <Stack
       screenOptions={{
         headerTransparent: true,
-        headerTitle: "",
         unstable_headerLeftItems: () => [
           {
             type: "menu",
@@ -115,7 +114,11 @@ export default function Layout() {
         unstable_headerRightItems: () => [{ type: "custom", element: <UserHeaderButton /> }],
       }}
     >
-      <Stack.Screen name="index" initialParams={{ filter, mediaType, sort, sortDirection }} />
+      <Stack.Screen
+        name="index"
+        initialParams={{ filter, mediaType, sort, sortDirection }}
+        options={{ headerTitle: "Requests" }}
+      />
     </Stack>
   );
 }

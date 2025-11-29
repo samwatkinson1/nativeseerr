@@ -8,7 +8,7 @@ export default function Layout() {
     <Stack
       screenOptions={{
         headerTransparent: true,
-        headerTitle: "",
+        headerTitle: "Discover",
         unstable_headerRightItems: () => [{ type: "custom", element: <UserHeaderButton /> }],
       }}
     />

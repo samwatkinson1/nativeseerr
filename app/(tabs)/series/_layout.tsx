@@ -21,9 +21,13 @@ export default function Layout() {
   const headerItems = useTitleHeaderItems({ items: sorts, sort, sortDirection });
 
   return (
-    <Stack screenOptions={{ headerTransparent: true, headerTitle: "" }}>
-      <Stack.Screen name="index" initialParams={{ sort, sortDirection }} options={headerItems} />
-      <Stack.Screen name="[id]" options={{ headerBackButtonMenuEnabled: false }} />
+    <Stack screenOptions={{ headerBackButtonDisplayMode: "minimal", headerTransparent: true }}>
+      <Stack.Screen
+        name="index"
+        initialParams={{ sort, sortDirection }}
+        options={{ ...headerItems, headerTitle: "Series" }}
+      />
+      <Stack.Screen name="[id]" options={{ headerBackButtonMenuEnabled: false, headerTitle: "" }} />
       <Stack.Screen name="filters" options={formSheet} />
     </Stack>
   );
