@@ -12,6 +12,7 @@ import { LegendList } from "@legendapp/list";
 import { useTheme } from "@react-navigation/core";
 import { UseQueryResult, useSuspenseQuery } from "@tanstack/react-query";
 import { format, intlFormat } from "date-fns";
+import { GlassView } from "expo-glass-effect";
 import { Image, ImageBackground } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
@@ -333,28 +334,33 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
           )}
 
           {title.collection && (
-            // todo: collection link
-            <Link href="/" style={{ marginTop: 8 }}>
-              <ImageBackground
-                source={`https://image.tmdb.org/t/p/w1440_and_h320_multi_faces${title.collection.backdropPath}`}
-                contentFit="cover"
-                imageStyle={{ ...styles.radius, opacity: 0.8 }}
-                style={{ ...styles.collection, ...styles.radius, borderColor: colors.border }}
-              >
-                <LinearGradient
-                  colors={[rgbToRgba(colors.card, 0), rgbToRgba(colors.background, 0.47)]}
-                  locations={[0.47, 1]}
-                  style={{ ...StyleSheet.absoluteFillObject, ...styles.radius }}
-                />
+            <GlassView
+              isInteractive
+              style={{ ...styles.collection, ...styles.radius, marginTop: 8 }}
+            >
+              {/* todo: collection link */}
+              <Link href="/">
+                <ImageBackground
+                  source={`https://image.tmdb.org/t/p/w1440_and_h320_multi_faces${title.collection.backdropPath}`}
+                  contentFit="cover"
+                  imageStyle={{ ...styles.radius, opacity: 0.8 }}
+                  style={styles.collection}
+                >
+                  <LinearGradient
+                    colors={[rgbToRgba(colors.card, 0), rgbToRgba(colors.background, 0.47)]}
+                    locations={[0.47, 1]}
+                    style={{ ...StyleSheet.absoluteFillObject, ...styles.radius }}
+                  />
 
-                <View style={styles.collectionInner}>
-                  <Text style={{ ...styles.body, ...fonts.medium, color: collectionText }}>
-                    {title.collection.name}
-                  </Text>
-                  <SymbolView name="chevron.right" tintColor="white" size={16} />
-                </View>
-              </ImageBackground>
-            </Link>
+                  <View style={styles.collectionInner}>
+                    <Text style={{ ...styles.body, ...fonts.medium, color: collectionText }}>
+                      {title.collection.name}
+                    </Text>
+                    <SymbolView name="chevron.right" tintColor="white" size={16} />
+                  </View>
+                </ImageBackground>
+              </Link>
+            </GlassView>
           )}
 
           {/* fixme: we're short-circuit rendering somewhere below */}
@@ -698,7 +704,7 @@ const styles = StyleSheet.create({
   body: { fontSize: 17, lineHeight: 22 },
   callout: { fontSize: 16, lineHeight: 21, textAlign: "right" },
   tagline: { fontStyle: "italic", color: PlatformColor("systemGray") },
-  collection: { width: "100%", height: 62, borderWidth: 1 },
+  collection: { width: "100%", height: 62 },
   collectionInner: {
     padding: 16,
     flexDirection: "row",
