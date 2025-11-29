@@ -5,4 +5,5 @@ export const formSheet: NativeStackNavigationOptions = {
   sheetAllowedDetents: "fitToContents",
   sheetGrabberVisible: true,
   contentStyle: { backgroundColor: "transparent" },
+  headerTitle: "Filters",
 };

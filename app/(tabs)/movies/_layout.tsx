@@ -21,9 +21,9 @@ export default function Layout() {
   const headerItems = useTitleHeaderItems({ items: sorts, sort, sortDirection });
 
   return (
-    <Stack screenOptions={{ headerBackVisible: true, headerTransparent: true, headerTitle: "" }}>
+    <Stack screenOptions={{ headerTransparent: true, headerTitle: "" }}>
       <Stack.Screen name="index" initialParams={{ sort, sortDirection }} options={headerItems} />
-      <Stack.Screen name="[id]" />
+      <Stack.Screen name="[id]" options={{ headerBackButtonMenuEnabled: false }} />
       <Stack.Screen name="filters" options={formSheet} />
     </Stack>
   );
