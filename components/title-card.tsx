@@ -28,7 +28,7 @@ export function TitleCard({ title, style }: TitleCardProps) {
       <Link href={mediaType === "movie" ? `/movies/${title.id}` : `/series/${title.id}`}>
         <Link.Trigger>
           <ImageBackground
-            source={`https://image.tmdb.org/t/p/w300_and_h450_face${posterPath}`}
+            source={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${posterPath}`}
             placeholder={require("@/assets/images/poster-not-found.png")}
             placeholderContentFit="cover"
             contentFit="contain"

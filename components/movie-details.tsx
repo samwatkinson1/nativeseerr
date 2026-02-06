@@ -336,7 +336,13 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
           {title.collection && (
             <GlassView
               isInteractive
-              style={{ ...styles.collection, ...styles.radius, marginTop: 8 }}
+              style={{
+                ...styles.collection,
+                ...styles.border,
+                ...styles.radius,
+                marginTop: 8,
+                borderColor: colors.border,
+              }}
             >
               {/* todo: collection link */}
               <Link href="/">

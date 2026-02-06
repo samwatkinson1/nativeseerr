@@ -16,7 +16,7 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({ hideIcon = false, onPress
       glassEffectStyle="clear"
       {...props}
       isInteractive
-      style={StyleSheet.compose(styles.link, props.style)}
+      style={StyleSheet.compose({ ...styles.link, borderColor: colors.border }, props.style)}
     >
       <Pressable onPress={onPress}>
         <View style={styles.container}>
@@ -31,7 +31,12 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({ hideIcon = false, onPress
 };
 
 const styles = StyleSheet.create({
-  link: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 999 },
+  link: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 999,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
   container: { flexDirection: "row", alignItems: "center", gap: 4 },
   icon: { height: 16, width: 16 },
   text: { fontSize: 13, lineHeight: 18 },
