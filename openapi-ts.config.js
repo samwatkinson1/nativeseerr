@@ -1,11 +1,8 @@
 import { defineConfig } from "@hey-api/openapi-ts";
 
-const openapi =
-  "https://raw.githubusercontent.com/seerr-team/seerr/refs/heads/main/jellyseerr-api.yml";
-
 /** @type {import('@hey-api/openapi-ts').UserConfig} */
 export default defineConfig({
-  input: openapi,
+  input: { path: "./seerr/seerr-api.yml" },
   output: "./http/gen",
   plugins: [
     { dates: true, name: "@hey-api/transformers" },

@@ -105,7 +105,23 @@ export type MainSettings = {
 
 export type NetworkSettings = {
     csrfProtection?: boolean;
+    forceIpv4First?: boolean;
     trustProxy?: boolean;
+    proxy?: {
+        enabled?: boolean;
+        hostname?: string;
+        port?: number;
+        useSsl?: boolean;
+        user?: string;
+        password?: string;
+        bypassFilter?: string;
+        bypassLocalAddresses?: boolean;
+    };
+    dnsCache?: {
+        enabled?: boolean;
+        forceMinTtl?: number;
+        forceMaxTtl?: number;
+    };
 };
 
 export type PlexLibrary = {
@@ -176,6 +192,13 @@ export type JellyfinSettings = {
     adminPass?: string;
     readonly libraries?: Array<JellyfinLibrary>;
     readonly serverID?: string;
+};
+
+export type MetadataSettings = {
+    settings?: {
+        tv?: 'tvdb' | 'tmdb';
+        anime?: 'tvdb' | 'tmdb';
+    };
 };
 
 export type TautulliSettings = {
@@ -565,6 +588,7 @@ export type WebhookSettings = {
         webhookUrl?: string;
         authHeader?: string;
         jsonPayload?: string;
+        supportVariables?: boolean;
     };
 };
 
@@ -1264,7 +1288,9 @@ export type GetSettingsJellyfinUsersResponses = {
      */
     200: Array<{
         username?: string;
-        userId?: number;
+        id?: string;
+        thumb?: string;
+        email?: string;
     }>;
 };
 
@@ -1458,6 +1484,59 @@ export type GetSettingsPlexUsersResponses = {
 };
 
 export type GetSettingsPlexUsersResponse = GetSettingsPlexUsersResponses[keyof GetSettingsPlexUsersResponses];
+
+export type GetSettingsMetadatasData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/settings/metadatas';
+};
+
+export type GetSettingsMetadatasResponses = {
+    /**
+     * OK
+     */
+    200: MetadataSettings;
+};
+
+export type GetSettingsMetadatasResponse = GetSettingsMetadatasResponses[keyof GetSettingsMetadatasResponses];
+
+export type PutSettingsMetadatasData = {
+    body: MetadataSettings;
+    path?: never;
+    query?: never;
+    url: '/settings/metadatas';
+};
+
+export type PutSettingsMetadatasResponses = {
+    /**
+     * Values were successfully updated
+     */
+    200: MetadataSettings;
+};
+
+export type PutSettingsMetadatasResponse = PutSettingsMetadatasResponses[keyof PutSettingsMetadatasResponses];
+
+export type PostSettingsMetadatasTestData = {
+    body: {
+        tmdb?: boolean;
+        tvdb?: boolean;
+    };
+    path?: never;
+    query?: never;
+    url: '/settings/metadatas/test';
+};
+
+export type PostSettingsMetadatasTestResponses = {
+    /**
+     * Succesfully connected to TVDB
+     */
+    200: {
+        message?: string;
+    };
+};
+
+export type PostSettingsMetadatasTestResponse = PostSettingsMetadatasTestResponses[keyof PostSettingsMetadatasTestResponses];
 
 export type GetSettingsTautulliData = {
     body?: never;
@@ -1834,6 +1913,18 @@ export type GetSettingsCacheResponses = {
                 imageCount?: number;
             };
         };
+        dnsCache?: {
+            stats?: {
+                size?: number;
+                maxSize?: number;
+                hits?: number;
+                misses?: number;
+                failures?: number;
+                ipv4Fallbacks?: number;
+                hitRate?: number;
+            };
+            entries?: Array<unknown>;
+        };
         apiCaches?: Array<{
             id?: string;
             name?: string;
@@ -1867,6 +1958,24 @@ export type PostSettingsCacheByCacheIdFlushResponses = {
 };
 
 export type PostSettingsCacheByCacheIdFlushResponse = PostSettingsCacheByCacheIdFlushResponses[keyof PostSettingsCacheByCacheIdFlushResponses];
+
+export type PostSettingsCacheDnsByDnsEntryFlushData = {
+    body?: never;
+    path: {
+        dnsEntry: string;
+    };
+    query?: never;
+    url: '/settings/cache/dns/{dnsEntry}/flush';
+};
+
+export type PostSettingsCacheDnsByDnsEntryFlushResponses = {
+    /**
+     * Flushed dns cache
+     */
+    204: void;
+};
+
+export type PostSettingsCacheDnsByDnsEntryFlushResponse = PostSettingsCacheDnsByDnsEntryFlushResponses[keyof PostSettingsCacheDnsByDnsEntryFlushResponses];
 
 export type GetSettingsLogsData = {
     body?: never;
@@ -3496,6 +3605,10 @@ export type GetDiscoverMoviesData = {
         genre?: string;
         studio?: number;
         keywords?: string;
+        /**
+         * Comma-separated list of keyword IDs to exclude from results
+         */
+        excludeKeywords?: string;
         sortBy?: string;
         primaryReleaseDateGte?: string;
         primaryReleaseDateLte?: string;
@@ -3659,6 +3772,10 @@ export type GetDiscoverTvData = {
         genre?: string;
         network?: number;
         keywords?: string;
+        /**
+         * Comma-separated list of keyword IDs to exclude from results
+         */
+        excludeKeywords?: string;
         sortBy?: string;
         firstAirDateGte?: string;
         firstAirDateLte?: string;
@@ -4010,6 +4127,7 @@ export type GetRequestCountResponses = {
         declined?: number;
         processing?: number;
         available?: number;
+        completed?: number;
     };
 };
 
@@ -4284,26 +4402,26 @@ export type GetTvByTvIdResponses = {
 
 export type GetTvByTvIdResponse = GetTvByTvIdResponses[keyof GetTvByTvIdResponses];
 
-export type GetTvByTvIdSeasonBySeasonIdData = {
+export type GetTvByTvIdSeasonBySeasonNumberData = {
     body?: never;
     path: {
         tvId: number;
-        seasonId: number;
+        seasonNumber: number;
     };
     query?: {
         language?: string;
     };
-    url: '/tv/{tvId}/season/{seasonId}';
+    url: '/tv/{tvId}/season/{seasonNumber}';
 };
 
-export type GetTvByTvIdSeasonBySeasonIdResponses = {
+export type GetTvByTvIdSeasonBySeasonNumberResponses = {
     /**
      * TV details
      */
     200: Season;
 };
 
-export type GetTvByTvIdSeasonBySeasonIdResponse = GetTvByTvIdSeasonBySeasonIdResponses[keyof GetTvByTvIdSeasonBySeasonIdResponses];
+export type GetTvByTvIdSeasonBySeasonNumberResponse = GetTvByTvIdSeasonBySeasonNumberResponses[keyof GetTvByTvIdSeasonBySeasonNumberResponses];
 
 export type GetTvByTvIdRecommendationsData = {
     body?: never;
@@ -4498,6 +4616,12 @@ export type DeleteMediaByMediaIdFileResponse = DeleteMediaByMediaIdFileResponses
 
 export type PostMediaByMediaIdByStatusData = {
     body?: {
+        /**
+         * When true, updates the 4K status field (status4k).
+         * When false or not provided, updates the regular status field (status).
+         * This applies to all status values (available, partial, processing, pending, unknown).
+         *
+         */
         is4k?: boolean;
     };
     path: {
