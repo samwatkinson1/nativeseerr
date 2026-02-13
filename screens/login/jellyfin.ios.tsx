@@ -9,7 +9,7 @@ import {
   Text,
   VStack,
 } from "@expo/ui/swift-ui";
-import { frame } from "@expo/ui/swift-ui/modifiers";
+import { buttonStyle, controlSize, disabled, frame } from "@expo/ui/swift-ui/modifiers";
 import { useTheme } from "@react-navigation/core";
 import { useForm } from "@tanstack/react-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -81,9 +81,11 @@ export default function LoginJellyfinScreen() {
               <form.Subscribe>
                 {({ isSubmitting }) => (
                   <Button
-                    disabled={isSubmitting}
-                    controlSize="large"
-                    variant="glassProminent"
+                    modifiers={[
+                      buttonStyle("glassProminent"),
+                      controlSize("large"),
+                      disabled(isSubmitting),
+                    ]}
                     onPress={form.handleSubmit}
                   >
                     <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
@@ -97,9 +99,7 @@ export default function LoginJellyfinScreen() {
               <form.Subscribe>
                 {({ isSubmitting }) => (
                   <Button
-                    disabled={isSubmitting}
-                    controlSize="large"
-                    variant="glass"
+                    modifiers={[buttonStyle("glass"), controlSize("large"), disabled(isSubmitting)]}
                     onPress={() => router.replace("/login/local")}
                   >
                     <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>

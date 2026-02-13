@@ -1,6 +1,6 @@
 import { router, Stack, useGlobalSearchParams } from "expo-router";
 
-import { UserHeaderButton } from "@/components/user-header-button";
+import { useSignOut } from "@/hooks/use-sign-out";
 
 export type RequestsParams = {
   filter:
@@ -48,6 +48,8 @@ export default function Layout() {
     sort = "added",
     sortDirection = "desc",
   } = useGlobalSearchParams<RequestsParams>();
+
+  const signOut = useSignOut();
 
   return (
     <Stack
@@ -111,7 +113,24 @@ export default function Layout() {
             },
           },
         ],
-        unstable_headerRightItems: () => [{ type: "custom", element: <UserHeaderButton /> }],
+        unstable_headerRightItems: () => [
+          {
+            type: "menu",
+            label: "",
+            icon: { type: "sfSymbol", name: "person.crop.circle" },
+            menu: {
+              items: [
+                {
+                  type: "action",
+                  label: "Sign out",
+                  destructive: true,
+                  icon: { type: "sfSymbol", name: "rectangle.portrait.and.arrow.right" },
+                  onPress: () => signOut.mutate(),
+                },
+              ],
+            },
+          },
+        ],
       }}
     >
       <Stack.Screen

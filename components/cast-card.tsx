@@ -2,7 +2,15 @@ import { useTheme } from "@react-navigation/core";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
-import { PlatformColor, StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
+import {
+  PlatformColor,
+  Pressable,
+  StyleProp,
+  StyleSheet,
+  Text,
+  View,
+  ViewStyle,
+} from "react-native";
 
 import { Cast } from "@/http/gen";
 import { rgbToRgba } from "@/utils/rgb-to-rgba";
@@ -17,9 +25,9 @@ export function CastCard({ cast, style }: CastCardProps) {
 
   return (
     <View style={StyleSheet.compose({ ...styles.container, ...styles.margin }, style)}>
-      <Link href={`/person/${cast.id}`}>
+      <Link href={`/person/${cast.id}`} asChild>
         <Link.Trigger>
-          <View
+          <Pressable
             style={{
               ...styles.card,
               ...styles.radius,
@@ -51,7 +59,7 @@ export function CastCard({ cast, style }: CastCardProps) {
                 {cast.character}
               </Text>
             </View>
-          </View>
+          </Pressable>
         </Link.Trigger>
         <Link.Preview style={{ backgroundColor: colors.card }} />
       </Link>

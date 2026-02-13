@@ -6,7 +6,7 @@ import {
   Text as SwiftText,
   VStack,
 } from "@expo/ui/swift-ui";
-import { frame, ignoreSafeArea, padding } from "@expo/ui/swift-ui/modifiers";
+import { buttonStyle, frame, ignoreSafeArea, padding } from "@expo/ui/swift-ui/modifiers";
 import { useTheme } from "@react-navigation/core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { format, formatDistanceToNowStrict } from "date-fns";
@@ -190,7 +190,11 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
           <VStack spacing={8} modifiers={[ignoreSafeArea()]}>
             {status !== MediaRequestStatus.PENDING && (
               <>
-                <Button variant="glassProminent" role="destructive" onPress={handleDeleteRequest}>
+                <Button
+                  modifiers={[buttonStyle("glassProminent")]}
+                  role="destructive"
+                  onPress={handleDeleteRequest}
+                >
                   <HStack
                     spacing={8}
                     modifiers={[frame({ maxWidth: Infinity }), padding({ all: 4 })]}
@@ -200,7 +204,11 @@ export function RequestItem({ baseUrl, request, title, style }: RequestItemProps
                   </HStack>
                 </Button>
                 {canRemove && (
-                  <Button variant="glassProminent" role="destructive" onPress={handleDeleteFile}>
+                  <Button
+                    modifiers={[buttonStyle("glassProminent")]}
+                    role="destructive"
+                    onPress={handleDeleteFile}
+                  >
                     <HStack
                       spacing={8}
                       modifiers={[frame({ maxWidth: Infinity }), padding({ all: 4 })]}

@@ -11,7 +11,7 @@ import {
   TextField,
   VStack,
 } from "@expo/ui/swift-ui";
-import { frame } from "@expo/ui/swift-ui/modifiers";
+import { buttonStyle, controlSize, frame } from "@expo/ui/swift-ui/modifiers";
 import { router } from "expo-router";
 import { StyleSheet } from "react-native";
 
@@ -33,14 +33,20 @@ export default function LoginLocalScreen() {
             <VStack spacing={12}>
               <Spacer minLength={16} />
 
-              <Button controlSize="large" variant="glassProminent" onPress={handleSubmit}>
+              <Button
+                modifiers={[buttonStyle("glassProminent"), controlSize("large")]}
+                onPress={handleSubmit}
+              >
                 <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
                   <Image systemName="iphone.and.arrow.right.inward" size={18} />
                   <Text>Sign In</Text>
                 </HStack>
               </Button>
 
-              <Button controlSize="large" variant="glass" onPress={handleRedirect}>
+              <Button
+                modifiers={[buttonStyle("glass"), controlSize("large")]}
+                onPress={handleRedirect}
+              >
                 <HStack spacing={8} modifiers={[frame({ maxWidth: Infinity })]}>
                   <Image systemName="wifi" size={18} />
                   <Text>Login with Jellyfin</Text>

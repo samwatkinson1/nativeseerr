@@ -1,7 +1,7 @@
 import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { router } from "expo-router";
 
-import { UserHeaderButton } from "@/components/user-header-button";
+import { useSignOut } from "@/hooks/use-sign-out";
 
 interface UseTitleHeaderItemsProps {
   items: { label: string; value: string }[];
@@ -19,6 +19,8 @@ export const useTitleHeaderItems = ({
   sort,
   sortDirection,
 }: UseTitleHeaderItemsProps): UseTitleHeaderItemsReturn => {
+  const signOut = useSignOut();
+
   return {
     unstable_headerLeftItems: ({ canGoBack }) => {
       if (canGoBack) return [];
@@ -65,8 +67,23 @@ export const useTitleHeaderItems = ({
         },
       ];
     },
-    unstable_headerRightItems: () => {
-      return [{ type: "custom", element: <UserHeaderButton /> }];
-    },
+    unstable_headerRightItems: () => [
+      {
+        type: "menu",
+        label: "",
+        icon: { type: "sfSymbol", name: "person.crop.circle" },
+        menu: {
+          items: [
+            {
+              type: "action",
+              label: "Sign out",
+              destructive: true,
+              icon: { type: "sfSymbol", name: "rectangle.portrait.and.arrow.right" },
+              onPress: () => signOut.mutate(),
+            },
+          ],
+        },
+      },
+    ],
   };
 };

@@ -7,7 +7,7 @@ import {
   Text as SwiftText,
   VStack,
 } from "@expo/ui/swift-ui";
-import { ignoreSafeArea, padding } from "@expo/ui/swift-ui/modifiers";
+import { buttonStyle, foregroundStyle, ignoreSafeArea, padding } from "@expo/ui/swift-ui/modifiers";
 import { LegendList } from "@legendapp/list";
 import { useTheme } from "@react-navigation/core";
 import { UseQueryResult, useSuspenseQuery } from "@tanstack/react-query";
@@ -187,7 +187,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                   title?.mediaInfo?.status !== MediaStatus.PARTIALLY_AVAILABLE &&
                   title?.mediaInfo?.status !== MediaStatus.PENDING &&
                   title?.mediaInfo?.status !== MediaStatus.BLACKLISTED && (
-                    <Button variant="glass">
+                    <Button modifiers={[buttonStyle("glass")]}>
                       <SwiftImage
                         systemName="eye.slash"
                         size={16}
@@ -198,7 +198,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
 
                 {title?.mediaInfo?.status !== MediaStatus.BLACKLISTED &&
                   user?.userType !== UserType.PLEX && (
-                    <Button variant="glass">
+                    <Button modifiers={[buttonStyle("glass")]}>
                       <SwiftImage
                         systemName={title.onUserWatchlist ? "minus.circle" : "star"}
                         size={16}
@@ -220,7 +220,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                     ))}
                   </ContextMenu.Items>
                   <ContextMenu.Trigger>
-                    <Button variant="glass">
+                    <Button modifiers={[buttonStyle("glass")]}>
                       <SwiftImage systemName="play" size={16} modifiers={[padding({ all: 6 })]} />
                     </Button>
                   </ContextMenu.Trigger>
@@ -239,7 +239,12 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                     user?.permissions ?? 0,
                     "or"
                   ) && (
-                    <Button variant="glassProminent" color="orange">
+                    <Button
+                      modifiers={[
+                        buttonStyle("glassProminent"),
+                        foregroundStyle({ type: "color", color: "orange" }),
+                      ]}
+                    >
                       <SwiftImage
                         systemName="exclamationmark.triangle"
                         size={16}
@@ -255,7 +260,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                     (title.mediaInfo?.status &&
                       (title.mediaInfo?.status !== MediaStatus.UNKNOWN ||
                         title.mediaInfo?.status4k !== MediaStatus.UNKNOWN))) && (
-                    <Button variant="glass">
+                    <Button modifiers={[buttonStyle("glass")]}>
                       <SwiftImage systemName="gear" size={16} modifiers={[padding({ all: 6 })]} />
                     </Button>
                   )}
@@ -269,7 +274,7 @@ export const MovieDetails: FC<MovieDetailsProps> = ({ query }) => {
                   user?.permissions ?? 0,
                   "or"
                 ) && (
-                  <Button variant="glassProminent">
+                  <Button modifiers={[buttonStyle("glassProminent")]}>
                     <HStack spacing={8} modifiers={[padding({ all: 4 })]}>
                       <SwiftImage systemName="arrow.down.to.line.compact" size={16} />
                       <SwiftText>Request</SwiftText>
